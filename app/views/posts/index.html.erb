@@ -1,0 +1,148 @@
+<style>
+.postimage1{
+	background: url("https://unsplash.imgix.net/photo-1416339442236-8ceb164046f8?q=75&fm=jpg&s=8eb83df8a744544977722717b1ea4d09");
+	background-size: cover;
+}
+</style>
+
+<div class="moneybg">
+  <div class="row padding4v valign-middle">
+    <div class="large-14 columns content2 eventheader">
+      <%= image_tag('moneyzonelogo.png', class: "inlineblock eventslogo") %>
+      <a href="#"><p class="textup font07 inlineblock addnewpost white" id="postbutton">Add Post <%= image_tag('whiteplus.png', class: "neweventplus") %></p></a>
+    </div>
+    <div class="large-10 columns content2 text-right">
+      <p class="margin0t font08 ubuntu margin0b white">Get upcoming franchise events straight to your inbox</p>
+      <div class="row valign-normal right">
+      	<%= form_tag('/posts/subscribe', method: "post", id: "subscribe") do%>
+	        <div class="large-18 columns text-right mailer">
+          	<%= email_field(:email, :email, {id: "mailersub", placeholder: "Enter your email"}) %>
+	        </div>
+	        <div class="large-6 columns text-right mailer">
+		        <%= submit_tag("Submit", id: "mailersubmit") %>
+	        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row darkgreybg postformcontainer padding3v" style="display: none;">
+	<div class="large-5 columns">
+		<br>
+	</div>
+	<div class="large-14 columns content">
+    <h4 class="weight100 margin1b white">Add a post to The Money Zone</h4>
+    <%= form_for(@post) do |post| %>
+	    <%= post.text_field :name, :placeholder => "Full Name", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Full Name'" %>
+	    <%= post.text_field :title, :placeholder => "Title", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Title'" %>
+	    <%= post.text_area :content, :placeholder => "Content", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Content'" %>
+	    <%= post.text_field :website, :placeholder => "Website URL", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Website URL'" %>
+      <%= post.check_box :toc %>
+      <%= post.label :toc, "I agree to the UKF terms and conditions", class: "textup offwhite" %>
+	    <%= post.submit "SUBMIT POST" %>
+    <% end %>
+	</div>
+	<div class="large-5 columns">
+		<br>
+	</div>
+</div>
+
+<div class="row">
+	<div class="large-15 columns">
+		<div class="postimage1">
+			<div class="postimageoverlay1 content2 row1 padding10t1b">
+					<h1 class="margin0b margin0t white weight100 font2 padding05b"><%= @post1.title %></h1>
+					<p class="white weight100 font09 posttitleborder">Posted by <span class="italic weight600"><%= @post1.name %></span> on <span class="italic"><%= @post1.created_at.strftime("%b %d, %Y") %></span></p>
+			</div>
+		</div>
+	</div>
+	<div class="large-9 columns">
+		<div class="postimage1">
+			<div class="postimageoverlay content2 row1 padding10t1b">
+					<h2 class="margin0b margin0t white weight100 font14 padding05b"><%= @post2.title %></h2>
+					<p class="white weight100 font09 posttitleborder">Posted by <span class="italic weight600"><%= @post2.name %></span> on <span class="italic"><%= @post2.created_at.strftime("%b %d, %Y") %></span></p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="large-12 columns text-left">
+		<div class="postimage1">
+			<div class="postimageoverlay content2">
+				<div class="row valign-middle row2 padding3v">
+					<div class="large-24 columns">
+						<h3 class=" margin0t white weight100 font12">How to cut your distribution expenses in 10 steps</h3>
+						<p class="white weight100 font07 posttitleborder">Posted by <span class="italic weight600 margin0b">Callum Short</span> on <span class="italic">24th January 2014</span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="large-12 columns text-left">
+		<div class="postimage1">
+			<div class="postimageoverlay content2">
+				<div class="row valign-middle row2">
+					<div class="large-24 columns">
+						<h3 class=" margin0t white weight100 font12">How to cut your distribution expenses in 10 steps</h3>
+						<p class="white weight100 font07 posttitleborder">Posted by <span class="italic weight600 margin0b">Callum Short</span> on <span class="italic">24th January 2014</span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+    (function() {
+
+        $(function() {
+
+
+          $(function() {
+            $('.row1').matchHeight();
+          });
+
+          $(function() {
+            $('.row2').matchHeight();
+          });
+
+          $(function() {
+            $('.mailer').matchHeight();
+          });
+
+          
+        });
+
+			 $(function() {
+			    $("#postbutton").click(function () {
+			        $('.postformcontainer').slideToggle("slow"); // toggles between show/hide
+			    });
+			  });
+
+				$('.postnewform')
+				.click(function() {
+				    // when click check input empty or not
+				    // if empty change border-bottom to yellow
+				    if($(this).val() == ""){
+				        $(this).css('border-bottom','1px solid #C0AE31');
+				    }
+				})
+
+				// when keyup check for valid name and change border-bottom to green
+				.keyup(function() {
+				    if($(this).length){
+				    $(this).css('border-bottom','1px solid rgb(74, 192, 49)');
+				    }
+				})
+
+				.keyup(function() {
+				    if($(this).val() ==""){
+				    $(this).css('border-bottom','1px solid #C0AE31');
+				    }
+				})
+				// when focusout return border-bottom to input border
+
+    })();
+</script>

@@ -1,0 +1,263 @@
+// Place all the styles related to the listings controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#newstorycontainer{
+	background: #cecece;
+}
+
+
+.newstoryform::-webkit-input-placeholder {
+   color: #333;
+}
+
+.newstoryform:focus::-webkit-input-placeholder{
+   color: #333;
+}
+
+.newstoryform:-moz-placeholder { /* Firefox 18- */
+   color: #333;  
+}
+
+.newstoryform::-moz-placeholder {  /* Firefox 19+ */
+   color: #333; 
+}
+
+.newstoryform:-ms-input-placeholder {  
+   color: #333;
+}
+
+.new_story input[type="text"]{
+	background: #ececec;
+	box-shadow: none;
+	border: none;
+	color: #333;
+	border-bottom: 1px solid #262626s;
+	font-size: 1rem;
+	font-weight: 100;
+}
+
+.new_story input[type="text"]:focus{
+	background: #efefef;
+	box-shadow: none;
+	border: none;
+	color: #000;
+	border-bottom: 1px solid #262626s;
+	font-size: 1rem;
+	font-weight: 100;
+}
+
+.new_story textarea{
+	background: #ececec;
+	box-shadow: none;
+	border: none;
+	color: #333;
+	border-bottom: 1px solid #262626s;
+	font-size: 0.9rem;
+	font-weight: 100;
+	height: 5rem
+}
+
+.charcount1{
+	position: absolute;
+	right: 2rem;
+}
+
+.new_story textarea:focus{
+	background: #efefef;
+	box-shadow: none;
+	border: none;
+	color: #333;
+	border-bottom: 1px solid #262626s;
+	font-size: 0.9rem;
+	font-weight: 100;
+	height: 5rem
+}
+
+.storyborder{
+	border-top: 1px solid #B0B0B0;
+	height: 6.9rem;
+}
+
+
+.new_story input[type="submit"]{
+width: 100%;
+border: none;
+box-shadow: none;
+background: #ececec;
+color: #333;
+outline: none;
+padding: 1rem 0;
+font-weight: 500;
+font-size: 0.9rem;
+text-transform: uppercase;
+border-bottom: rgb(74, 192, 49) 1px solid;
+transition-duration: 300ms;
+}
+
+.new_story input[type="submit"]:hover{
+	background: #efefef;
+}
+
+
+.newstorybutton{
+	font-size: 0.7rem;
+	background: #C2C2C2;
+	padding: 0.4rem 1rem 0.4rem 1rem;
+	border-radius: 3px;
+	margin-left: 1rem;
+	text-transform: uppercase;
+	cursor: pointer
+}
+
+.new_listing input[type="text"], .new_lead input[type="text"]{
+	background: #373737;
+	box-shadow: none;
+	border: none;
+	color: #fff;
+	border-bottom: 1px solid #262626s;
+	font-size: 1rem;
+	font-weight: 100;
+}
+
+
+.new_listing select, .new_lead select{
+	background-color: #373737;
+	box-shadow: none;
+	border: none;
+	color: #A9A9A9;
+	font-size: 0.9rem;
+	border-bottom: 1px solid #262626s;
+	font-weight: 100;
+	outline: none;
+}
+
+.new_lead input[type="text"]{
+	background-color: #373737;
+	box-shadow: none;
+	border: none;
+	color: #fff;
+	border-bottom: 1px solid #262626s;
+	font-size: 1rem;
+	font-weight: 100;
+	outline: none;
+}
+
+.new_lead input[type="text"]{
+	height: 2.3rem;
+	font-size: 0.9rem;
+}
+
+.new_listing input[type="submit"]{
+width: 100%;
+border: none;
+box-shadow: none;
+background: #434343;
+color: #fff;
+outline: none;
+padding: 1rem 0;
+font-weight: 500;
+font-size: 0.9rem;
+text-transform: uppercase;
+border-bottom: rgb(74, 192, 49) 1px solid;
+transition-duration: 300ms;
+}
+
+.new_listing input[type="submit"]:hover, .new_lead input[type="submit"]:hover{
+	background: #404040;
+}
+
+
+.new_listing textarea{
+	background: #373737;
+	box-shadow: none;
+	border: none;
+	color: #fff;
+	border-bottom: 1px solid #262626s;
+	font-size: 0.9rem;
+	font-weight: 100;
+	height: 5rem
+}
+
+.new_listing .textareabig{
+	height: 20rem;
+}
+
+.statsrow{
+	border-bottom: 1px solid #333333;
+}
+
+.iconcolumn{
+	background: #414141;
+	padding: 0.5rem 0;
+}
+
+.facebookcolumn{
+	background: rgba(59, 89, 152, 0.44);
+	padding: 0.5rem 0;
+	transition-duration: 300ms;
+}
+
+.twittercolumn{
+	background: rgba(0, 172, 237, 0.44);
+	padding: 0.5rem 0;
+	transition-duration: 300ms;
+}
+
+.googlepluscolumn{
+	background: rgba(221, 75, 57, 0.44);
+	padding: 0.5rem 0;
+	transition-duration: 300ms;
+}
+
+.linkedincolumn{
+	background: rgba(0, 123, 182, 0.44);
+	padding: 0.5rem 0;
+	transition-duration: 300ms;
+}
+
+.facebookcolumn:hover{
+	background: rgba(59, 89, 152, 0.54);
+	padding: 0.5rem 0;
+	transition-duration: 300ms;
+}
+
+.twittercolumn:hover{
+	background: rgba(0, 172, 237, 0.54);
+	padding: 0.5rem 0;
+	transition-duration: 300ms;
+}
+
+.googlepluscolumn:hover{
+	background: rgba(221, 75, 57, 0.54);
+	padding: 0.5rem 0;
+	transition-duration: 300ms;
+}
+
+.linkedincolumn:hover{
+	background: rgba(0, 123, 182, 0.54);
+	padding: 0.5rem 0;
+	transition-duration: 300ms;
+}
+
+
+.column{
+	background: #00aced;
+	padding: 0.5rem 0;
+}
+
+.stattext{
+	margin-bottom: 0;
+	margin-top: 0;
+	padding-top: 0.7rem;
+}
+
+.requestinformation{
+	background: #333;
+	border-radius: 3px;
+	color: #fff;
+	text-transform: uppercase;
+	padding: 0.8rem 3rem;
+	margin-bottom: 0;
+}
+

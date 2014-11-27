@@ -1,0 +1,20 @@
+<%= form_for(@event) do |event| %>
+<%= event.text_field :eventname, :placeholder => "Event Name", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Event Name'", class: "eventnewform" %>
+<div class="row">
+	<div class="large-11 columns">
+    <%= event.text_field :startdate, :placeholder => "Start Date (DD/MM/YYYY)", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Start Date (DD/MM/YYYY)'", class: "eventnewform" %>
+  </div>
+  <div class="large-2 columns">
+  	<br>
+  </div>
+  <div class="large-11 columns">
+    <%= event.text_field :enddate %>
+  </div>
+  <%= event.text_area :shortdescription %>
+  <%= event.text_field :region %>
+  <%= event.text_field :postcode %>
+  <%= event.text_field :website %>
+  <%= event.text_field :approved %>
+  <%= event.submit "Update", class: "margin1t" %>
+</div>
+<% end %>

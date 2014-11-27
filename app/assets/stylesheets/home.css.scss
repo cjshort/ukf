@@ -1,0 +1,52 @@
+// Place all the styles related to the HOME controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.latestlogo{
+	height: 2.5rem;
+}
+
+.latestlogocontainer{
+	background: #fff;
+}
+
+.latestbb{
+	border-bottom: 1px solid #aaa;
+}
+
+.latesticon{
+	height: 1em;
+}
+
+.latestlisting{
+	border: 1px solid #c2c2c2;
+	transition-duration: 300ms;
+}
+
+.latestlisting:hover{
+	border: 1px solid #A9A9A9;
+	transition-duration: 300ms;
+}
+
+.spotlightlogo{
+	height: 3rem
+}
+
+.eventlearnmore{
+	margin-bottom: 0;
+	background: #353535;
+	padding: 0.4em 0;
+	color: #717171;
+	font-size: 0.7rem;
+}
+
+.eventcontainer{
+	border: 1px solid #353535;
+	transition-duration: 300ms;
+}
+
+.eventcontainer:hover{
+	border: 1px solid #212121;
+	transition-duration: 300ms;
+}

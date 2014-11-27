@@ -1,0 +1,10 @@
+<% @post.each do |post| %>
+<ul>
+	<li><%= post.name %></li>
+	<li><%= post.title %></li>
+	<li><%= post.content %></li>
+	<li><%= post.website %></li>
+	<li><%= post.approved %></li>
+	<li><%= link_to 'Finalise', edit_post_path(post) %></li>
+</ul>
+<% end %>

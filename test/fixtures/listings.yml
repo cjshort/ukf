@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fullname: MyString
+  jobtitle: MyString
+  email: MyString
+  franchisename: MyString
+  shortdescription: MyText
+  longdescription: MyText
+  branchcount: 1
+  scale: MyString
+  mininvestment: 1
+  investmentrange: 1
+  category: 1
+
+two:
+  fullname: MyString
+  jobtitle: MyString
+  email: MyString
+  franchisename: MyString
+  shortdescription: MyText
+  longdescription: MyText
+  branchcount: 1
+  scale: MyString
+  mininvestment: 1
+  investmentrange: 1
+  category: 1

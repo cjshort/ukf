@@ -1,0 +1,213 @@
+<div class="row">
+  <div class="large-18 medium-18 columns content2 text-center padding5v indexbackdrop row1">
+    <div class="row">
+      <%= form_tag home_search_path, :method => :get, class: "homesearch" do %>
+        <div class="large-21 medium-21 columns">
+          <%= text_field_tag :search, params[:search], id: "indexsearch", :placeholder => "Search by industry, franchise name or related keyword", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Search by industry, franchise name or related keyword'" %>
+        </div>
+        <div class="large-3 medium-3 columns">
+          <%= submit_tag "", :name => nil %>
+        </div>
+      <% end %>
+    </div>
+    <%= image_tag('orbar.png', class: "orbar") %>
+    <h5><a href="#"><span class="advancedsearch">Advanced Search</span></a></h5>
+  </div>
+  <div class="large-6 medium-6 columns indexthemoneyzone row1 themoneyzonebg text-center">
+    <a href="<%= posts_index_path %>">
+      <div class="row valign-middle row1">
+        <div class="large-24 columns">
+        	<%= image_tag('themoneyzonelogo.png', class: 'themoneyzonelogo content' ) %>
+          <p class="white font08 padding11t content2">Master franchising, make some money and stay updated with the franchise industries movements, all on one website.</p>
+          <p class="themoneyzoneenter"><span class="entertext">ENTER</span></p>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+    
+<div class="row darkgreybg">
+  <div class="large-18 medium-18 columns section1">
+    <div class="row">
+      <div class="large-17 columns darkgreybg row2">
+        <h5 class="weight700 textup font08 margin0b margin0t padding05v darkheader content white">Spotlight</h5>
+        <div class="row content1 padding1v">
+          <% @spotlight.each do |latest| %>
+            <div class="large-12 columns content1">
+              <div class="whitebg text-center">
+                <img class="spotlightlogo margin1v" src="<%= latest.logourl %>">
+              </div>
+              <div class="greybg">
+                <div class="row lightgreybg padding05v content latestbb">
+                  <div class="large-12 columns text-left">
+                    <h4 class="font07 margin0b margin0t"><%= image_tag('listingicon1.png', class: "latesticon") %><span class="listingicontext"><%= latest.franchisename %></span></h4>
+                  </div>
+                </div>
+                <div class="row lightgreybg padding05v content">
+                  <div class="large-24 columns text-left">
+                    <h4 class="font07 margin0b margin0t"><%= image_tag('listingicon2.png', class: "latesticon") %><span class="listingicontext"><%= latest.mininvestment %> Minimum Investment</span></h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="large-7 columns bluegradientbg row2">
+        <h5 class="weight700 textup font08 margin0b margin0t padding05v blueheader content white">Free Marketing</h5>
+        <div class="row valign-middle row2 content3 height85">
+          <div class="large-24 columns">
+            <%= image_tag('mapicon.png') %>
+            <h3 class="white weight100 font1 margin05t">Put your franchise on the map</h3>
+            <a href="<%= new_listing_path %>"><h6 class="createlistingbutton">CREATE YOUR LISTING FOR FREE</h6></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-17 columns greybg row3">
+          <h5 class="weight700 textup font08 margin0b margin0t padding05v lightheader content">Success Stories</h5>
+          <br><br><br><br><br><br><br><br><br><br><br><br>
+      </div>
+      <div class="large-7 columns darkgreybg row3">
+        <h5 class="weight700 textup font08 margin0b margin0t padding05v darkheader content white">Events</h5>
+        <% @events.each do |event| %>
+          <div class="row content padding1t">
+            <%= link_to(events_index_path) do %>
+              <div class="large-24 columns eventcontainer">
+                <div class="darkgreybg2 padding05t">
+                  <h4 class="white font08 content weight100"><%= event.eventname %> in <%= event.region %>, <%= event.postcode %></h4>
+                  <p class="text-center eventlearnmore">LEARN MORE</p>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-24 columns greybg br1grey">
+        <h5 class="weight700 textup font08 margin0b margin0t padding05v lightheader content">Jump To Category</h5>
+        <div class="row padding1v">
+          <div class="large-6 columns">
+            <ul class="no-bullet catjump margin0b">
+              <%= link_to industry_accounting_path do %><li>Accounting</li><% end %>
+              <%= link_to industry_agriculture_path do %><li>Agriculture</li><% end %>
+              <%= link_to industry_automotive_path do %><li>Automotive</li><% end %>
+              <%= link_to industry_beverage_path do %><li>Beverage</li><% end %>
+              <%= link_to industry_B2B_path do %><li>B2B</li><% end %>
+              <%= link_to industry_cafeandcoffee_path do %><li>Cafe &amp; Coffee</li><% end %>
+              <%= link_to industry_care_path do %><li>Care</li><% end %>
+              <%= link_to industry_chemical_path do %><li>Chemical</li><% end %>
+              <%= link_to industry_childrenandbabies_path do %><li>Children &amp; Babies</li><% end %>
+              <%= link_to industry_cleaning_path do %><li>Cleaning</li><% end %>
+              <%= link_to industry_communications_path do %><li>Communications</li><% end %>
+            </ul>
+          </div>
+          <div class="large-6 columns">
+            <ul class="no-bullet catjump margin0b">
+              <%= link_to industry_computers_path do %><li>Computers</li><% end %>
+              <%= link_to industry_construction_path do %><li>Construction</li><% end %>
+              <%= link_to industry_consultancy_path do %><li>Consultancy</li><% end %>
+              <%= link_to industry_logistics_path do %><li>Logistics</li><% end %>
+              <%= link_to industry_educationandtraining_path do %><li>Education &amp; Training</li><% end %>
+              <%= link_to industry_electrical_path do %><li>Electrical</li><% end %>
+              <%= link_to industry_entertainment_path do %><li>Entertainment</li><% end %>
+              <%= link_to industry_enviromental_path do %><li>Environmental</li><% end %>
+              <%= link_to industry_estateagents_path do %><li>Estate Agents</li><% end %>
+              <%= link_to industry_fashion_path do %><li>Fashion</li><% end %>
+              <%= link_to industry_financial_path do %><li>Financial</li><% end %>
+            </ul>
+          </div>
+          <div class="large-6 columns">
+            <ul class="no-bullet catjump margin0b">
+              <%= link_to industry_food_path do %><li>Food</li><% end %>
+              <%= link_to industry_health_path do %><li>Health</li><% end %>
+              <%= link_to industry_hirerental_path do %><li>Hire &amp; Rental</li><% end %>
+              <%= link_to industry_hospitality_path do %><li>Hospitality</li><% end %>
+              <%= link_to industry_indoorpropertyservices_path do %><li>Indoor Property Services</li><% end %>
+              <%= link_to industry_outdoorpropertyservices_path do %><li>Outdoor Property Services</li><% end %>
+              <%= link_to industry_internet_path do %><li>Internet</li><% end %>
+              <%= link_to industry_legal_path do %><li>Legal</li><% end %>
+              <%= link_to industry_manafacture_path do %><li>Manafacture</li><% end %>
+              <%= link_to industry_pets_path do %><li>Pets</li><% end %>
+              <%= link_to industry_promotional_path do %><li>Promotional</li><% end %>
+            </ul>
+          </div>
+          <div class="large-6 columns">
+            <ul class="no-bullet catjump margin0b">
+              <%= link_to industry_print_path do %><li>Print</li><% end %>
+              <%= link_to industry_promotional_path do %><li>Promotional</li><% end %>
+              <%= link_to industry_print_path do %><li>Print</li><% end %>
+              <%= link_to industry_repairandmaintenance_path do %><li>Repair &amp; Maintenance</li><% end %>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="large-6 medium-6 columns greybg section1">
+      <h5 class="weight700 textup font08 margin0b margin0t padding05v lightheader content">Top Franchises</h5>
+      <% @latest.each do |latest| %>
+        <div class="row content padding1t padding0b text-center">
+          <%= link_to(latest) do %>
+            <div class="large-24 columns latestlisting">
+              <div class="latestlogocontainer padding1v"><img class="latestlogo" src="<%= latest.logourl %>"></div>
+              <div class="row lightgreybg padding05v content latestbb">
+                <div class="large-24 columns text-left">
+                  <h4 class="font07 margin0b margin0t"><%= image_tag('listingicon1.png', class: "latesticon") %><span class="listingicontext"><%= latest.franchisename %></span></h4>
+                </div>
+              </div>
+              <div class="row lightgreybg padding05v content">
+                <div class="large-24 columns text-left">
+                  <h4 class="font07 margin0b margin0t"><%= image_tag('listingicon2.png', class: "latesticon") %><span class="listingicontext"><%= latest.mininvestment %> Minimum Investment</span></h4>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+  </div>
+</div>
+
+<script type="text/javascript">
+    (function() {
+
+        $(function() {
+
+          $(function() {
+            $('.row1').matchHeight();
+          });
+
+          $(function() {
+            $('.row2').matchHeight();
+          });
+
+          $(function() {
+            $('.row3').matchHeight();
+          });
+
+          $(function() {
+            $('.row4').matchHeight();
+          });
+
+          $(function() {
+            $('.section1').matchHeight();
+          });
+
+          $(function() {
+            $('.nav').matchHeight();
+          });
+
+          
+        });
+
+    })();
+</script>

@@ -1,0 +1,104 @@
+<div class="row padding3v">
+  <div class="large-12 columns content">
+    <%= form_for(@listing) do |f| %>
+      <p>
+        <%= f.label :fullname %><br>
+        <%= f.text_field :fullname %>
+      </p>
+     
+      <p>
+        <%= f.label :jobtitle %><br>
+        <%= f.text_area :jobtitle %>
+      </p>
+
+      <p>
+        <%= f.label :email %><br>
+        <%= f.text_area :email %>
+      </p>
+
+      <p>
+        <%= f.label :franchisename %><br>
+        <%= f.text_area :franchisename %>
+      </p>
+
+      <p>
+        <%= f.label :leadrecepient %><br>
+        <%= f.text_area :leadrecepient %>
+      </p>
+
+      <p>
+        <%= f.label :longdescription %><br>
+        <%= f.text_area :longdescription %>
+      </p>
+
+      <p>
+        <%= f.label :website %><br>
+        <%= f.text_area :website %>
+      </p>
+
+      <p>
+        <%= f.label :branchcount %><br>
+        <%= f.text_area :branchcount %>
+      </p>
+
+      <p>
+        <%= f.label :scale %><br>
+        <%= f.text_area :scale %>
+      </p>
+
+      <p>
+        <%= f.label :mininvestment %><br>
+        <%= f.text_area :mininvestment %>
+      </p>
+
+      <p>
+        <%= f.label :investmentrange %><br>
+        <%= f.text_area :investmentrange %>
+      </p>
+
+      <p>
+        <%= f.label :category %><br>
+        <%= f.select :category, @industrylist %>
+      </p>
+
+      <p>
+        <%= f.label :hexbg %><br>
+        <%= f.text_area :hexbg %>
+      </p>
+
+      <p>
+        <%= f.label :logourl %><br>
+        <%= f.text_area :logourl %>
+      </p>
+
+      <p>
+        <%= f.label :approved %><br>
+        <%= f.text_area :approved %>
+      </p>
+
+      <p>
+        <%= f.label :facebook %><br>
+        <%= f.text_area :facebook %>
+      </p>
+
+      <p>
+        <%= f.label :twitter %><br>
+        <%= f.text_area :twitter %>
+      </p>
+
+      <p>
+        <%= f.label :linkedin %><br>
+        <%= f.text_area :linkedin %>
+      </p>
+
+      <p>
+        <%= f.label :googleplus %><br>
+        <%= f.text_area :googleplus %>
+      </p>
+
+      <p>
+        <%= f.submit %>
+      </p>
+    <% end %>
+  </div>
+</div>

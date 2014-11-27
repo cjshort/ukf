@@ -1,0 +1,128 @@
+<div class="mapbg">
+	<div class="mapbgoverlay">
+	  <div class="row padding4v valign-middle">
+	    <div class="large-14 columns content2 eventheader">
+	      <%= image_tag('eventslogo.png', class: "inlineblock eventslogo") %>
+	      <a href="#"><p class="textup font07 inlineblock addnewevent" id="eventsbutton">Add Event <%= image_tag('plus.png', class: "neweventplus") %></p></a>
+	    </div>
+	    <div class="large-10 columns content2 text-right">
+	      <p class="margin0t font08 ubuntu margin0b">Get upcoming franchise events straight to your inbox</p>
+	      <div class="row valign-normal right">
+	      	<%= form_tag('/posts/subscribe', method: "post", id: "subscribe") do%>
+		        <div class="large-18 columns text-right mailer">
+	          	<%= email_field(:email, :email, {id: "mailersub", placeholder: "Enter your email"}) %>
+		        </div>
+		        <div class="large-6 columns text-right mailer">
+			        <%= submit_tag("Submit", id: "mailersubmit") %>
+		        </div>
+	        <% end %>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+</div>
+
+<div class="row eventsformcontainer padding3v" style="display: none;">
+	<div class="large-5 columns">
+		<br>
+	</div>
+	<div class="large-14 columns content">
+    <h4 class="weight100 margin1b">Add your event in just a few steps.</h4>
+    <%= form_for(@event) do |event| %>
+      <%= event.text_field :eventname, :placeholder => "Event Name", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Event Name'", class: "eventnewform" %>
+      <div class="row">
+      	<div class="large-11 columns">
+		      <%= event.text_field :startdate, :placeholder => "Start Date (DD/MM/YYYY)", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Start Date (DD/MM/YYYY)'", class: "eventnewform" %>
+		    </div>
+		    <div class="large-2 columns">
+		    	<br>
+		    </div>
+			  <div class="large-11 columns">
+		      <%= event.text_field :enddate, :placeholder => "End Date (DD/MM/YYYY)", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'End Date (DD/MM/YYYY)'", class: "eventnewform" %>
+		    </div>
+	      <%= event.text_area :shortdescription, :placeholder => "Short Description", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Short Description'", class: "eventnewform" %>
+	      <%= event.text_field :region, :placeholder => "Region", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Region'", class: "eventnewform" %>
+	      <%= event.text_field :postcode, :placeholder => "Postal Code", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Postal Code'", class: "eventnewform" %>
+	      <%= event.text_field :website, :placeholder => "Event Website", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Event Website'", class: "eventnewform" %>
+        <%= event.check_box :toc %>
+        <%= event.label :toc, "I agree to the UKF terms and conditions", class: "textup" %>
+        <%= event.submit "Create Your Event", class: "margin1t" %>
+		  </div>
+    <% end %>
+	</div>
+	<div class="large-5 columns">
+		<br>
+	</div>
+</div>
+
+
+<% @events.in_groups_of(3, false) do |row_event| %>
+	<div class="row padding3t content">
+		<% for event in row_event %>
+			<div class="large-8 columns content">
+				<a href="<%= event.website %>">
+					<div class="singleevent">
+						<h4 class="font095 padding15t1b content"><span class="weight600"><%= event.eventname %></span><br> <span class="weight100">in</span> <%= event.region %>, <%= event.postcode %></h4>
+						<p class="text-center textup margin0b content dateline"><%= event.startdate %> to <%= event.enddate %></p>
+						<p class="font08 padding1v content"><%= event.shortdescription %></p>
+						<a href="#"><p class="text-center textup margin0b content moreline font08">MORE INFORMATION</p></a>
+					</div>
+				</a>
+			</div>
+		<% end %>
+	</div>
+<% end %>
+
+<div class="row">
+	<div class="large-24 columns padding15v">
+	</div>
+</div>
+
+<script type="text/javascript">
+    (function() {
+
+        $(function() {
+
+
+          $(function() {
+            $('.row1').matchHeight();
+          });
+
+          $(function() {
+            $('.mailer').matchHeight();
+          });
+
+          
+        });
+
+			 $(function() {
+			    $("#eventsbutton").click(function () {
+			        $('.eventsformcontainer').slideToggle("slow"); // toggles between show/hide
+			    });
+			  });
+
+				$('.eventnewform')
+				.click(function() {
+				    // when click check input empty or not
+				    // if empty change border-bottom to yellow
+				    if($(this).val() == ""){
+				        $(this).css('border-bottom','1px solid #C0AE31');
+				    }
+				})
+
+				// when keyup check for valid name and change border-bottom to green
+				.keyup(function() {
+				    if($(this).length){
+				    $(this).css('border-bottom','1px solid rgb(74, 192, 49)');
+				    }
+				})
+
+				.keyup(function() {
+				    if($(this).val() ==""){
+				    $(this).css('border-bottom','1px solid #C0AE31');
+				    }
+				})
+				// when focusout return border-bottom to input border
+
+    })();
+</script>

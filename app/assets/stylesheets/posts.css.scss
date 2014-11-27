@@ -1,0 +1,91 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.postimageoverlay1{
+background: -moz-linear-gradient(top,  rgba(51,51,51,0.3) 0%, rgba(51,51,51, 1) 78%, rgba(51,51,51, 1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(51,51,51,0.3)), color-stop(78%,rgba(51,51,51, 1)), color-stop(100%,rgba(51,51,51, 1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(51,51,51,0.3) 0%,rgba(51,51,51, 1) 78%,rgba(51,51,51, 1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(51,51,51,0.3) 0%,rgba(51,51,51, 1) 78%,rgba(51,51,51, 1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(51,51,51,0.3) 0%,rgba(51,51,51, 1) 78%,rgba(51,51,51, 1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(51,51,51,0.3) 0%,rgba(51,51,51, 1) 78%,rgba(51,51,51, 1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4d333333', endColorstr='#de333333',GradientType=0 ); /* IE6-9 */
+}
+
+.postimageoverlay{
+	background: rgba(51, 51, 51, 0.85);
+}
+
+.posttitleborder{
+border-top: 1px solid rgba(236, 236, 236, 0.18);
+}
+
+.moneybg{
+	background: url("http://i.imgur.com/BqegZln.png");
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+}
+
+.addnewpost{
+	background: #2d2d2d;
+	border-radius: 3px;
+	padding: 0.4em 3em;
+	font-weight: 500;
+}
+
+.new_post input[type="text"]{
+	background: #373737;
+	box-shadow: none;
+	border: none;
+	color: #fff;
+	border-bottom: 1px solid #262626s;
+	font-size: 1rem;
+	font-weight: 100;
+}
+
+.new_post select{
+	background-color: #373737;
+	box-shadow: none;
+	border: none;
+	color: #fff;
+	border-bottom: 1px solid #262626s;
+	font-size: 1rem;
+	font-weight: 100;
+	outline: none;
+}
+
+.new_post input[type="submit"]{
+width: 100%;
+border: none;
+box-shadow: none;
+background: #434343;
+color: #fff;
+outline: none;
+padding: 1rem 0;
+font-weight: 500;
+font-size: 0.9rem;
+text-transform: uppercase;
+border-bottom: rgb(74, 192, 49) 1px solid;
+transition-duration: 300ms;
+}
+
+.new_post input[type="submit"]:hover{
+	background: #404040;
+}
+
+
+.new_post textarea{
+	background: #373737;
+	box-shadow: none;
+	border: none;
+	color: #fff;
+	border-bottom: 1px solid #262626s;
+	font-size: 0.9rem;
+	font-weight: 100;
+	height: 5rem
+}
+
+.new_post .textareabig{
+	height: 20rem;
+}

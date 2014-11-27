@@ -1,0 +1,12 @@
+<% @events.each do |event| %>
+<ul>
+	<li><%= event.eventname %></li>
+	<li><%= event.startdate %></li>
+	<li><%= event.enddate %></li>
+	<li><%= event.shortdescription %></li>
+	<li><%= event.region %></li>
+	<li><%= event.postcode %></li>
+	<li><%= event.approved %></li>
+	<li><%= link_to 'Finalise', edit_event_path(event) %></li>
+</ul>
+<% end %>

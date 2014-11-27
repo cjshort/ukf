@@ -1,0 +1,9 @@
+<% @listings.each do |listing| %>
+<ul>
+	<li><%= listing.franchisename %></li>
+	<li><%= listing.branchcount %></li>
+	<li><%= listing.category %></li>
+	<li>Registered by <%= listing.fullname %>, <%= listing.jobtitle %></li>
+	<li><%= link_to 'Finalise', edit_listing_path(listing) %></li>
+</ul>
+<% end %>

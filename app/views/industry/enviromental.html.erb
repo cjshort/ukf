@@ -1,0 +1,31 @@
+<div class="row darkgreybg padding3t1b">
+	<div class="large-24 columns content2">
+		<h1 class="white industrytitle">Environmental</h1>
+	</div>
+</div>
+
+<% @listing.in_groups_of(3, false) do |row_listing| %>
+<div class="row padding3v content">
+	<% for listing in row_listing %>
+		<div class="large-8 columns content">
+			<a href="<%= listing_path(listing) %>">
+				<div class="singlelisting">
+					<div class="text-center">
+						<div style="border-bottom: 2px solid <%= listing.hexbg %>"><img src="<%= listing.logourl %>" class="padding1v listinglogo"></div>
+					</div>
+					<p class="font08 content3 lightergreybg padding1v margin0b"><%= listing.longdescription %></p>
+					<div class="row lightgreybg padding05v">
+						<div class="large-12 columns text-center">
+							<h4 class="font08 margin0b margin0t"><%= image_tag('listingicon1.png', class: "listingicon") %><span class="listingicontext"><%= listing.franchisename %></span></h4>
+						</div>
+						<div class="large-12 columns text-center">
+							<h4 class="font08 margin0b margin0t"><%= image_tag('listingicon2.png', class: "listingicon") %><span class="listingicontext"><%= listing.mininvestment %></span></h4>
+						</div>
+					</div>
+					<p class="text-center textup white margin0b padding05v font07 viewfranchiseprofile">VIEW FRANCHISE PROFILE</p>
+				</div>
+			</a>
+		</div>
+	<% end %>
+</div>
+<% end %>

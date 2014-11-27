@@ -1,0 +1,72 @@
+<div class="darkgreybg">
+  <div class="row content padding3v">
+    <div class="large-5 columns">
+      <br>
+    </div>
+    <div class="large-14 columns">
+      <h4 class="white weight100 margin1b">First, tell us a little bit about yourself.</h4>
+      <%= form_for(@listing) do |f| %>
+          <%= f.text_field :fullname, :placeholder => "Full Name", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Full Name'", class: "listingnewform" %>
+
+          <%= f.text_field :email, :placeholder => "Email", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Email'", class: "listingnewform"%>
+
+          <%= f.text_field :jobtitle, :placeholder => "Job Title", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Job Title'", class: "listingnewform"  %>
+
+          <h4 class="white weight100 margin1b margin3t">Now lets talk about your franchise.</h4>
+            
+          <%= f.text_field :franchisename, :placeholder => "Franchise Name", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Franchise Name'", class: "listingnewform"   %>
+
+          <%= f.text_field :leadrecepient, :placeholder => "Lead Recepient Email", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Lead Recepient Email'", class: "listingnewform"   %>
+
+          <p class="offwhite weight100 margin3t">Your description should be used to descriptevely explain the nature of your franchise and what it involves. You may also want to include requirements, awards or any other information of importance.</p>
+
+          <%= f.text_area :longdescription, class: "textareabig listingnewform", :placeholder => "Description", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Description'" %>
+
+          <%= f.text_field :website, :placeholder => "Website Address", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Website Address'", class: "listingnewform"   %>
+
+          <%= f.text_field :branchcount, :placeholder => "Number Of Branches", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Number Of Branches'", class: "listingnewform"   %>
+        
+          <%= f.text_field :mininvestment, :placeholder => "Minimum Investment", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Minimum Investment'", class: "listingnewform"   %>
+
+          <%= f.select :category, @industrylist, :prompt => "Select a Service" %>
+
+          <%= f.check_box :toc %>
+          <%= f.label :toc, "I agree to the UKF terms and conditions", class: "textup offwhite" %>
+
+        <p>
+          <%= f.submit "Create Your Listing", class: "margin1t" %>
+        </p>
+      <% end %>
+    </div>
+    <div class="large-5 columns">
+      <br>
+    </div>
+  </div>
+</div>
+
+<script>
+
+$('.listingnewform')
+.click(function() {
+    // when click check input empty or not
+    // if empty change border-bottom to yellow
+    if($(this).val() == ""){
+        $(this).css('border-bottom','1px solid #C0AE31');
+    }
+})
+
+// when keyup check for valid name and change border-bottom to green
+.keyup(function() {
+    if($(this).length){
+    $(this).css('border-bottom','1px solid rgb(74, 192, 49)');
+    }
+})
+
+.keyup(function() {
+    if($(this).val() ==""){
+    $(this).css('border-bottom','1px solid #C0AE31');
+    }
+})
+// when focusout return border-bottom to input border
+
+</script>

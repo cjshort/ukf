@@ -1,0 +1,84 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UKF: Directory &amp; Opportunities</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600,300italic,600italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,700,600' rel='stylesheet' type='text/css'>
+  </head>
+  <body>  
+
+  <div class="navbg">
+<div class="navrow valign-middle">
+  <div class="large-4 medium-6 text-center columns nav content">
+    <a href="<%= root_path %>"><%= image_tag('logo.png') %></a>
+  </div>
+  <div class="large-16 medium-16 columns text-center lineheight0 nav content">
+    <div class="icon-bar four-up">
+      <a href="finder.html" class="item">
+        <%= image_tag('find.png', class: "itemicon") %>
+        <label class="itemtext">Finder</label>
+      </a>
+      <a href="discover.html" class="item">
+        <%= image_tag('discover.png', class: "itemicon") %>
+        <label class="itemtext">Discover</label>
+      </a>
+      <a href="<%= events_index_path %>" class="item">
+        <%= image_tag('events.png', class: "itemicon") %>
+        <label class="itemtext">Events</label>
+      </a>
+      <a href="<%= posts_index_path %>" class="item">
+        <%= image_tag('moneyzone.png', class: "itemicon") %>
+        <label class="itemtext">Money Zone</label>
+      </a>
+    </div>
+  </div>
+  <div class="large-4 columns nav">
+  </div>
+</div>
+</div>
+
+<% if flash[:notice] %>
+<div class="row notice">
+  <div class="large-20 columns">
+  <%= notice %>
+  </div>
+  <div class="large-4 columns">
+    <a href="">X</a>
+  </div>
+</div>
+<% end %>
+<% if flash[:alert] %>
+  <div class="row alert">
+    <div class="large-20 columns">
+    <%= alert %>
+    </div>
+    <div class="large-4 columns">
+      <a href="">X</a>
+    </div>
+  </div>
+<% end %>  
+
+<%= yield %>
+
+<div class="footerbg">
+  <div class="row padding3v opacity03">
+    <div class="large-4 text-center columns content">
+      <%= image_tag('logo.png') %>
+    </div>
+    <div class="large-20 columns content">
+    </div>  
+  </div>
+</div>
+
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>
+
