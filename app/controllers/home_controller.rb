@@ -6,11 +6,11 @@ class HomeController < ApplicationController
   end
 
   def search
-  	@query = params[:search]
-  	@search = Listing.search do
-  		fulltext params[:search]  		
-  	end
-  	@result = @search.results
+  if params[:search].nil?
+    @result = []
+  else
+    @result = Listing.search params[:search]
+  end
   end
 
 end

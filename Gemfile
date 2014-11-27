@@ -1,14 +1,12 @@
 source 'https://rubygems.org'
 
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+gem 'bonsai-elasticsearch-rails'
+
 gem 'devise', '3.2.4'
 gem 'impressionist'
 gem 'gibbon', git: 'git://github.com/amro/gibbon.git'
-
-gem 'sunspot_rails', '2.1.0'
- 
-group :development do
-    gem 'sunspot_solr', '2.1.0'
-end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
