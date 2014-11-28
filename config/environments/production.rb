@@ -1,4 +1,16 @@
 Rails.application.configure do
+
+
+  ActionMailer::Base.smtp_settings = {
+    address: "auth.smtp.1and1.co.uk",   
+    port: 25, #587
+    domain: "1and1.co.uk",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: ENV["SMTP_USERNAME"],
+    password: ENV["SMTP_PASSWORD"]
+}
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.

@@ -26,7 +26,7 @@ class ListingsController < ApplicationController
         	format.html { redirect_to root_path, notice: 'Success! Your listing has been submited for approval.' }
         	format.json {  }
     	else
-        	format.html { redirect_to root_path, notice: 'There was an error in your listing submission, please try again.'  }
+        	format.html { redirect_to root_path, alert: 'There was an error in your listing submission, please try again.'  }
         	format.json {  }
     	end
     end
