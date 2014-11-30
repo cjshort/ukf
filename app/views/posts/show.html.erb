@@ -1,2 +1,40 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<%
+meta title: ["#{@post.title}", "UKF"],
+     description: "#{@metadesc}",
+     keywords: ["post", "blog", "the money zone", "guide", "make money with franchising"]
+%>
+
+<style>
+.postimage{
+	background: url("https://unsplash.imgix.net/uploads/141315993607248a8be6a/5cf8b62b?q=75&fm=jpg&s=6adf6a540109ea61881d2e46ae1e489e");
+	background-size: cover;
+}
+</style>
+
+
+<div class="postimage">
+	<div class="postimageoverlay1">
+		<div class="row padding5v content2">
+			<div class="large-24 columns text-center padding5v">
+				<h1 class="white weight100"><%= @post.title %></h1>
+			</div>
+		</div>
+		<a href="<%= @post.website %>">
+			<div class="row">
+				<div class="large-24 columns text-center">
+				<p class="white weight100 font09 posttitleborder margin0b padding1v">Posted by <span class="italic weight600"><%= @post.name %></span> on <span class="italic"><%= @post.created_at.strftime("%b %d, %Y") %></span></p>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>
+
+<div class="row padding3v whitebg">
+	<div class="large-5 columns"><br>
+	</div>
+	<div class="large-14 columns merriweather">
+		<%= simple_format(@post.content, class: "font1", sanitize: true) %>
+	</div>
+	<div class="large-5 columns"><br>
+	</div>
+</div>

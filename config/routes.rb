@@ -1,101 +1,62 @@
 Rails.application.routes.draw do
 
   get 'lead_form/new'
-
   get 'lead_form/create'
 
   get 'posts/index'
-
   get 'posts/new'
-
   get 'posts/edit'
-
   get 'posts/show'
 
   get 'events/index'
-
   get 'events/new'
-
   get 'events/show'
-
   get 'events/edit'
 
   get 'industry/accounting'
-
   get 'industry/agriculture'
-
   get 'industry/automotive'
-
   get 'industry/beverage'
-
   get 'industry/B2B'
-
   get 'industry/cafeandcoffee'
-
   get 'industry/care'
-
   get 'industry/chemical'
-
   get 'industry/childrenandbabies'
-
   get 'industry/cleaning'
-
   get 'industry/communications'
-
   get 'industry/computers'
-
   get 'industry/construction'
-
   get 'industry/consultancy'
-
   get 'industry/logistics'
-
   get 'industry/educationandtraining'
-
   get 'industry/electrical'
-
   get 'industry/entertainment'
-
   get 'industry/enviromental'
-
   get 'industry/estateagents'
-
   get 'industry/fashion'
-
   get 'industry/financial'
-
   get 'industry/food'
-
   get 'industry/health'
-
   get 'industry/hirerental'
-
   get 'industry/hospitality'
-
   get 'industry/indoorpropertyservices'
-
   get 'industry/outdoorpropertyservices'
-
   get 'industry/internet'
-
   get 'industry/legal'
-
   get 'industry/manafacture'
-
   get 'industry/pets'
-
   get 'industry/promotional'
-
   get 'industry/print'
-
   get 'industry/repairandmaintenance'
 
+  get 'industry/investment1'
+  get 'industry/investment2'
+  get 'industry/investment3'
+  get 'industry/investment4'
+
   get 'admin/overview'
-
   get 'admin/listings'
-
   get 'admin/events'
-
   get 'admin/moneyzone'
 
   resources :listings do
@@ -110,10 +71,6 @@ Rails.application.routes.draw do
   post 'posts/subscribe' => 'posts#subscribe'
 
   resources :events
-  
-  get 'panel/index'
-
-  get 'panel/listings'
 
   devise_for :admins
   root to: 'home#index'

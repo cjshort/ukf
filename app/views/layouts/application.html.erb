@@ -1,10 +1,10 @@
 <!doctype html>
 <html class="no-js" lang="en">
   <head>
+    <%= metamagic keywords: [:keywords, "UK", "franchise", "franchising", "opportunities", "directory"], separator: " | " %>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UKF: Directory &amp; Opportunities</title>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'application', params[:controller], media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <link href="//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic" rel="stylesheet" type="text/css">
@@ -16,7 +16,7 @@
   <div class="navbg">
 <div class="navrow valign-middle">
   <div class="large-4 medium-6 text-center columns nav content">
-    <a href="<%= root_path %>"><%= image_tag('logo.png') %></a>
+    <a href="<%= root_path %>"><%= image_tag('logo.png', alt: "Uk Franchise Directory") %></a>
   </div>
   <div class="large-16 medium-16 columns text-center lineheight0 nav content">
     <div class="icon-bar four-up">

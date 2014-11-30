@@ -1,17 +1,23 @@
 require 'elasticsearch/model'
 
 class Listing < ActiveRecord::Base
+  has_many :leads
+  has_many :stories
+
+  extend FriendlyId
+  friendly_id :franchisename, use: :slugged
+
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
 
-	has_many :stories
 	is_impressionable
-
+  
   validates :fullname, :jobtitle, :email, :franchisename, :leadrecepient, :longdescription,
             :website, :branchcount, :mininvestment, :category, presence: true
   validates :franchisename, :website, uniqueness: true
   validates :fullname, :jobtitle, :email, :franchisename, :leadrecepient, :website, length: { minimum: 5, maximum: 80 }
   validates :branchcount, numericality: { only_integer: true }
+  validates :longdescription, length: {minimum: 500 , maximum: 4000 }
 
 def self.search(query)
   __elasticsearch__.search(

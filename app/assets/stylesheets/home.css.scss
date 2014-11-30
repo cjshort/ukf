@@ -2,6 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.pricerange{
+	background: #363636;
+	border-top: 1px solid #2E2E2E;
+	border-bottom: 1px solid #2E2E2E;
+	transition-duration: 300ms;
+}
+
+.pricerange:hover{
+	background: #333;
+	transition-duration: 300ms;
+}
 
 .latestlogo{
 	height: 2.5rem;

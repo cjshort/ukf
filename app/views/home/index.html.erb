@@ -1,3 +1,9 @@
+<%
+meta title: "Franchise Opportunities and Directory | UKF",
+     description: "On track to become the UK's largest franchise directory, providing opportunities, information and industry news all in one place.",
+     keywords: ["investment", "money", "events", "home"]
+%>
+
 <div class="row">
   <div class="large-18 medium-18 columns content2 text-center padding5v indexbackdrop row1">
     <div class="row">
@@ -34,21 +40,23 @@
         <div class="row content1 padding1v">
           <% @spotlight.each do |latest| %>
             <div class="large-12 columns content1">
-              <div class="whitebg text-center">
-                <img class="spotlightlogo margin1v" src="<%= latest.logourl %>">
-              </div>
-              <div class="greybg">
-                <div class="row lightgreybg padding05v content latestbb">
-                  <div class="large-12 columns text-left">
-                    <h4 class="font07 margin0b margin0t"><%= image_tag('listingicon1.png', class: "latesticon") %><span class="listingicontext"><%= latest.franchisename %></span></h4>
+              <%= link_to(latest) do %>
+                <div class="whitebg text-center">
+                  <img class="spotlightlogo margin1v" src="<%= latest.logourl %>">
+                </div>
+                <div class="greybg">
+                  <div class="row lightgreybg padding05v content latestbb">
+                    <div class="large-12 columns text-left">
+                      <h4 class="font07 margin0b margin0t"><%= image_tag('listingicon1.png', class: "latesticon") %><span class="listingicontext"><%= latest.franchisename %></span></h4>
+                    </div>
+                  </div>
+                  <div class="row lightgreybg padding05v content">
+                    <div class="large-24 columns text-left">
+                      <h4 class="font07 margin0b margin0t"><%= image_tag('listingicon2.png', class: "latesticon") %><span class="listingicontext"><%= latest.mininvestment %> Minimum Investment</span></h4>
+                    </div>
                   </div>
                 </div>
-                <div class="row lightgreybg padding05v content">
-                  <div class="large-24 columns text-left">
-                    <h4 class="font07 margin0b margin0t"><%= image_tag('listingicon2.png', class: "latesticon") %><span class="listingicontext"><%= latest.mininvestment %> Minimum Investment</span></h4>
-                  </div>
-                </div>
-              </div>
+              <% end %>
             </div>
           <% end %>
         </div>
@@ -66,7 +74,7 @@
     </div>
     <div class="row">
       <div class="large-17 columns greybg row3">
-          <h5 class="weight700 textup font08 margin0b margin0t padding05v lightheader content">Success Stories</h5>
+          <h5 class="weight700 textup font08 margin0b margin0t padding05v lightheader content">Latest from The Money Zone</h5>
           <br><br><br><br><br><br><br><br><br><br><br><br>
       </div>
       <div class="large-7 columns darkgreybg row3">
@@ -85,8 +93,35 @@
         <% end %>
       </div>
     </div>
+  </div>
+  <div class="large-6 medium-6 columns greybg section1">
+      <h5 class="weight700 textup font08 margin0b margin0t padding05v lightheader content">Top Franchises</h5>
+      <% @latest.each do |latest| %>
+        <div class="row content padding1t padding0b text-center">
+          <%= link_to(latest) do %>
+            <div class="large-24 columns latestlisting">
+              <div class="latestlogocontainer padding1v"><img class="latestlogo" src="<%= latest.logourl %>"></div>
+              <div class="row lightgreybg padding05v content latestbb">
+                <div class="large-24 columns text-left">
+                  <h4 class="font07 margin0b margin0t"><%= image_tag('listingicon1.png', class: "latesticon") %><span class="listingicontext"><%= latest.franchisename %></span></h4>
+                </div>
+              </div>
+              <div class="row lightgreybg padding05v content">
+                <div class="large-24 columns text-left">
+                  <h4 class="font07 margin0b margin0t"><%= image_tag('listingicon2.png', class: "latesticon") %><span class="listingicontext"><%= latest.mininvestment %> Minimum Investment</span></h4>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-18 columns">
     <div class="row">
-      <div class="large-24 columns greybg br1grey">
+      <div class="large-24 columns greybg br1grey row4">
         <h5 class="weight700 textup font08 margin0b margin0t padding05v lightheader content">Jump To Category</h5>
         <div class="row padding1v">
           <div class="large-6 columns">
@@ -153,27 +188,12 @@
       </div>
     </div>
   </div>
-  <div class="large-6 medium-6 columns greybg section1">
-      <h5 class="weight700 textup font08 margin0b margin0t padding05v lightheader content">Top Franchises</h5>
-      <% @latest.each do |latest| %>
-        <div class="row content padding1t padding0b text-center">
-          <%= link_to(latest) do %>
-            <div class="large-24 columns latestlisting">
-              <div class="latestlogocontainer padding1v"><img class="latestlogo" src="<%= latest.logourl %>"></div>
-              <div class="row lightgreybg padding05v content latestbb">
-                <div class="large-24 columns text-left">
-                  <h4 class="font07 margin0b margin0t"><%= image_tag('listingicon1.png', class: "latesticon") %><span class="listingicontext"><%= latest.franchisename %></span></h4>
-                </div>
-              </div>
-              <div class="row lightgreybg padding05v content">
-                <div class="large-24 columns text-left">
-                  <h4 class="font07 margin0b margin0t"><%= image_tag('listingicon2.png', class: "latesticon") %><span class="listingicontext"><%= latest.mininvestment %> Minimum Investment</span></h4>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
+  <div class="large-6 columns darkgreybg row4">
+    <h5 class="weight700 textup font08 margin0b margin0t padding05v darkheader content white">Price Ranges</h5>
+    <a href="<%= industry_investment1_path %>"><p class="padding1v margin0b margin0t text-center offwhite pricerange content textup font09">Less than £15,000</p></a>
+    <a href="<%= industry_investment2_path %>"><p class="padding1v margin0b margin0t text-center offwhite pricerange content textup font09">£15,000 to £50,000</p></a>
+    <a href="<%= industry_investment3_path %>"><p class="padding1v margin0b margin0t text-center offwhite pricerange content textup font09">£50,000 to £75,000</p></a>
+    <a href="<%= industry_investment4_path %>"><p class="padding1v margin0b margin0t text-center offwhite pricerange content textup font09">More than £75,000</p></a>
   </div>
 </div>
 

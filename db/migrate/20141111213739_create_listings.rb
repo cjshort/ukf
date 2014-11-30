@@ -1,5 +1,4 @@
 class CreateListings < ActiveRecord::Migration
-
   
   def change
     create_table :listings do |t|
@@ -13,7 +12,7 @@ class CreateListings < ActiveRecord::Migration
       t.integer :branchcount
       t.string :scale
       t.string :mininvestment
-      t.integer :investmentrange
+      t.string :investmentrange
       t.string :category
       t.string :hexbg
       t.string :logourl

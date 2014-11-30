@@ -1,3 +1,10 @@
+<%
+meta title: ["#{@listing.franchisename}", "UKF"],
+     description: "#{@metadesc}",
+     keywords: ["#{@listing.franchisename}", "#{@listing.scale}", "#{@listing.category}"]
+%>
+
+
 <style>
 
 .franchisecolorbg{
@@ -44,7 +51,7 @@ transition-duration: 300ms;
   <div class="large-17 small-push-24 columns whitebg row1">
       <h5 class="weight700 textup font08 margin0b margin0t padding05v lightheader content">Introduction</h5>
       <div class="content3 whitebg franchisetextcontainer padding1v">
-        <%= @listing.longdescription %>
+        <%= simple_format(@listing.longdescription, class: "font09", sanitize: true) %>
       </div>
   </div>
   <div class="large-7 small-pull-24 columns darkgreybg row1">
@@ -163,7 +170,7 @@ transition-duration: 300ms;
         <div class="row padding1v storyborder content3">
           <div class="large 12 columns">
             <p class="font09 margin0b weight600"><%= story.fullname %>, <%= story.jobrole %></p>
-            <p class="font08 margin0b">"<%= truncate(story.story, :length => 360, :separator => '', :omission => "") %>"</p>
+            <p class="font09 margin0b">"<%= truncate(story.story, :length => 360, :separator => '', :omission => "") %>"</p>
           </div>
         </div>
         <% end %>

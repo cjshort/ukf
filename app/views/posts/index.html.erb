@@ -1,3 +1,9 @@
+<%
+meta title: ["The Money Zone", "UKF"],
+     description: "The Money Zone is your insight into the franchise industries developments and opportunities. Stay in sync with the latest ways to make money with franchising.",
+     keywords: ["The Money Zone", "blog", "posts", "franchise information", "guides", "research", "money"]
+%>
+
 <style>
 .postimage1{
 	background: url("https://unsplash.imgix.net/photo-1416339442236-8ceb164046f8?q=75&fm=jpg&s=8eb83df8a744544977722717b1ea4d09");
@@ -36,7 +42,8 @@
     <%= form_for(@post) do |post| %>
 	    <%= post.text_field :name, :placeholder => "Full Name", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Full Name'" %>
 	    <%= post.text_field :title, :placeholder => "Title", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Title'" %>
-	    <%= post.text_area :content, :placeholder => "Content", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Content'" %>
+	    <%= post.text_area :content, :placeholder => "Content", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Content'", class: "margin0b charlimit4 textareabig" %>
+	    <div class="charcount4 text-right white margin1b"></div>
 	    <%= post.text_field :website, :placeholder => "Website URL", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Website URL'" %>
       <%= post.check_box :toc %>
       <%= post.label :toc, "I agree to the UKF terms and conditions", class: "textup offwhite" %>
@@ -50,18 +57,24 @@
 
 <div class="row">
 	<div class="large-15 columns">
+		<%= link_to(@post1) do %>
 		<div class="postimage1">
-			<div class="postimageoverlay1 content2 row1 padding10t1b">
+			<div class="postimageoverlay1 content2 row1 padding6v">
 					<h1 class="margin0b margin0t white weight100 font2 padding05b"><%= @post1.title %></h1>
-					<p class="white weight100 font09 posttitleborder">Posted by <span class="italic weight600"><%= @post1.name %></span> on <span class="italic"><%= @post1.created_at.strftime("%b %d, %Y") %></span></p>
+					<p class="white weight100 font09 posttitleborder margin0b">Posted by <span class="italic weight600"><%= @post1.name %></span> on <span class="italic"><%= @post1.created_at.strftime("%b %d, %Y") %></span></p>
 			</div>
 		</div>
+		<% end %>
 	</div>
 	<div class="large-9 columns">
 		<div class="postimage1">
-			<div class="postimageoverlay content2 row1 padding10t1b">
-					<h2 class="margin0b margin0t white weight100 font14 padding05b"><%= @post2.title %></h2>
-					<p class="white weight100 font09 posttitleborder">Posted by <span class="italic weight600"><%= @post2.name %></span> on <span class="italic"><%= @post2.created_at.strftime("%b %d, %Y") %></span></p>
+			<div class="postimageoverlay content2">
+				<div class="row valign-middle">
+					<div class="large-24 columns row1">
+						<h2 class="margin0b margin0t white weight100 font14 padding05b"><%= @post2.title %></h2>
+						<p class="white weight100 font09 posttitleborder">Posted by <span class="italic weight600"><%= @post2.name %></span> on <span class="italic"><%= @post2.created_at.strftime("%b %d, %Y") %></span></p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -74,7 +87,7 @@
 				<div class="row valign-middle row2 padding3v">
 					<div class="large-24 columns">
 						<h3 class=" margin0t white weight100 font12">How to cut your distribution expenses in 10 steps</h3>
-						<p class="white weight100 font07 posttitleborder">Posted by <span class="italic weight600 margin0b">Callum Short</span> on <span class="italic">24th January 2014</span></p>
+						<p class="white weight100 font07 posttitleborder margin0b">Posted by <span class="italic weight600 margin0b">Callum Short</span> on <span class="italic">24th January 2014</span></p>
 					</div>
 				</div>
 			</div>
@@ -86,7 +99,7 @@
 				<div class="row valign-middle row2">
 					<div class="large-24 columns">
 						<h3 class=" margin0t white weight100 font12">How to cut your distribution expenses in 10 steps</h3>
-						<p class="white weight100 font07 posttitleborder">Posted by <span class="italic weight600 margin0b">Callum Short</span> on <span class="italic">24th January 2014</span></p>
+						<p class="white weight100 font07 posttitleborder margin0b">Posted by <span class="italic weight600 margin0b">Callum Short</span> on <span class="italic">24th January 2014</span></p>
 					</div>
 				</div>
 			</div>
@@ -98,6 +111,9 @@
     (function() {
 
         $(function() {
+
+          var elem = $(".charcount4");
+          $(".charlimit4").limiter(10000, elem);
 
 
           $(function() {

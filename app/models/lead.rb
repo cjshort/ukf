@@ -1,5 +1,6 @@
 class Lead < ActiveRecord::Base
-  validates :name, :title, :content, :website, presence: true
-  validates :title, uniqueness: true
-  validates :name, :title, :website, length: { minimum: 5, maximum: 400 }
+	belongs_to :listing
+	
+  validates :fullname, :email, :city, :region, :postcode, presence: true
+  validates :fullname, :email, :city, :region, :postcode, length: { minimum: 0, maximum: 200 }
 end

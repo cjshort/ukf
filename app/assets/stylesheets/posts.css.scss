@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.new_post .textareabig{
+	height: 20rem;
+}
 
 .postimageoverlay1{
 background: -moz-linear-gradient(top,  rgba(51,51,51,0.3) 0%, rgba(51,51,51, 1) 78%, rgba(51,51,51, 1) 100%); /* FF3.6+ */
@@ -59,7 +62,7 @@ border-top: 1px solid rgba(236, 236, 236, 0.18);
 width: 100%;
 border: none;
 box-shadow: none;
-background: #434343;
+background: #3a3a3a;
 color: #fff;
 outline: none;
 padding: 1rem 0;
@@ -71,7 +74,7 @@ transition-duration: 300ms;
 }
 
 .new_post input[type="submit"]:hover{
-	background: #404040;
+	background: #373737;
 }
 
 

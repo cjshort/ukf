@@ -1,8 +1,12 @@
 .notice{
-  background: #558345;
+background: #558345;
 padding: 1.5em 3rem;
 color: #fff;
 font-family: "Ubuntu";
+}
+
+.listingicontext{
+  margin-left: 0.6rem;
 }
 
 .alert{
@@ -34,6 +38,10 @@ width: 100%;
 
 .ubuntu{
   font-family: "Ubuntu", sans-serif;
+}
+
+.merriweather{
+  font-family: "Merriweather";
 }
 
 .inlineblock{
@@ -309,6 +317,11 @@ width: 6rem;
 .padding5v{
   padding-top: 5rem;
   padding-bottom: 5rem;
+}
+
+.padding6v{
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
 
 .padding2{
@@ -814,7 +827,7 @@ select {
   margin-right: auto;
   margin-top: 0;
   margin-bottom: 0;
-  max-width: 90rem; }
+  max-width: 100%; }
   .navrow:before, .navrow:after {
     content: " ";
     display: table; }
@@ -854,7 +867,7 @@ select {
   margin-right: auto;
   margin-top: 0;
   margin-bottom: 0;
-  max-width: 90rem; }
+  max-width: 100%; }
   .row:before, .row:after {
     content: " ";
     display: table; }

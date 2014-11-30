@@ -1,8 +1,13 @@
 source 'https://rubygems.org'
 
+gem "dynamic_sitemaps"
+gem 'friendly_id'
+gem 'metamagic'
+
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 gem 'bonsai-elasticsearch-rails'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
 
 gem 'devise', '3.2.4'
 gem 'impressionist'
@@ -43,7 +48,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # gem 'unicorn'
 
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'capistrano-rails'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]

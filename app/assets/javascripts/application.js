@@ -10,7 +10,9 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require_self
 //= require jquery
+//= require jquery.charcount
+//= require jquery.matchHeight
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .

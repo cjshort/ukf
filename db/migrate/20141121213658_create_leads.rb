@@ -1,4 +1,5 @@
 class CreateLeads < ActiveRecord::Migration
+
   def change
     create_table :leads do |t|
       t.string :fullname
@@ -8,8 +9,8 @@ class CreateLeads < ActiveRecord::Migration
       t.string :city
       t.string :region
       t.string :postcode
-      t.string :country
       t.string :contactpreferal
+      t.integer :listing_id
       t.boolean :toc, default: false
 
       t.timestamps

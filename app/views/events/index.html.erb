@@ -1,3 +1,10 @@
+<%
+meta title: ["Franchise Events", "UKF"],
+     description: "The UK's franchise events can be a great tool for discovering franchise opportunities and gaining insight into their day-to-day activities and potential.",
+     keywords: ["events", "exhibitions", "discover", "locations"]
+%>
+
+
 <div class="mapbg">
 	<div class="mapbgoverlay">
 	  <div class="row padding4v valign-middle">
@@ -40,7 +47,8 @@
 			  <div class="large-11 columns">
 		      <%= event.text_field :enddate, :placeholder => "End Date (DD/MM/YYYY)", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'End Date (DD/MM/YYYY)'", class: "eventnewform" %>
 		    </div>
-	      <%= event.text_area :shortdescription, :placeholder => "Short Description", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Short Description'", class: "eventnewform" %>
+	      <%= event.text_area :shortdescription, :placeholder => "Short Description", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Short Description'", class: "eventnewform charlimit2 margin0b" %>
+        <div class="charcount2 margin1b text-right"></div>
 	      <%= event.text_field :region, :placeholder => "Region", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Region'", class: "eventnewform" %>
 	      <%= event.text_field :postcode, :placeholder => "Postal Code", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Postal Code'", class: "eventnewform" %>
 	      <%= event.text_field :website, :placeholder => "Event Website", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Event Website'", class: "eventnewform" %>
@@ -91,6 +99,9 @@
           $(function() {
             $('.mailer').matchHeight();
           });
+
+          var elem = $(".charcount2");
+          $(".charlimit2").limiter(500, elem);
 
           
         });

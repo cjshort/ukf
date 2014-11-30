@@ -1,3 +1,10 @@
+<%
+meta title: ["Add your franchise", "UKF"],
+     description: "UKF provides free marketing for franchise brands through our online directory. There is absolutely no costs involved and this will never change.",
+     keywords: ["free", "franchise", "marketing", "advertise", "listing", "no cost"]
+%>
+
+
 <div class="darkgreybg">
   <div class="row content padding3v">
     <div class="large-5 columns">
@@ -20,7 +27,8 @@
 
           <p class="offwhite weight100 margin3t">Your description should be used to descriptevely explain the nature of your franchise and what it involves. You may also want to include requirements, awards or any other information of importance.</p>
 
-          <%= f.text_area :longdescription, class: "textareabig listingnewform", :placeholder => "Description", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Description'" %>
+          <%= f.text_area :longdescription, class: "textareabig listingnewform margin0b charlimit3", :placeholder => "Description", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Description'" %>
+          <div class="margin1b charcount3 text-right white"></div>
 
           <%= f.text_field :website, :placeholder => "Website Address", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Website Address'", class: "listingnewform"   %>
 
@@ -45,6 +53,9 @@
 </div>
 
 <script>
+
+var elem = $(".charcount3");
+$(".charlimit3").limiter(4000, elem);
 
 $('.listingnewform')
 .click(function() {

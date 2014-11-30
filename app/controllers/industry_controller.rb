@@ -138,4 +138,21 @@ class IndustryController < ApplicationController
   def repairandmaintenance
     @listing = Listing.where(category: "Repair And Maintenance")
   end
+
+  def investment1
+    @listing = Listing.where(investmentrange: "Less than £15,000")
+  end
+
+  def investment2
+    @listing = Listing.where(investmentrange: "£15,000 to £50,000")
+  end
+
+  def investment3
+    @listing = Listing.where(investmentrange: "£50,000 to £75,000")
+  end
+
+  def investment4
+    @listing = Listing.where(investmentrange: "More than £75,000")
+  end    
+
 end
