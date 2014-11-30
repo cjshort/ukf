@@ -1,4 +1,7 @@
 class HomeController < ApplicationController
+
+  def robots
+  end
   def index
   	@latest = Listing.where(approved: true, topfranchise: true).order('created_at DESC').limit(3)
   	@spotlight = Listing.where(approved: true, spotlight: true).order('created_at DESC').limit(2)

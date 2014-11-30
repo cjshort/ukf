@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  
   get 'lead_form/new'
   get 'lead_form/create'
 
