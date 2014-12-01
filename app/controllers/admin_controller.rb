@@ -1,4 +1,6 @@
 class AdminController < ApplicationController
+   before_filter :authenticate_admin!,
+    :only => [:overview, :listings, :events, :moneyzone]
 
   def overview
   end

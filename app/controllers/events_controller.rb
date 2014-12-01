@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+     before_filter :authenticate_admin!,
+    :only => [:edit, :update]
 
   def index
   	@event = Event.new

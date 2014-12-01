@@ -1,4 +1,6 @@
 class ListingsController < ApplicationController
+  before_filter :authenticate_admin!,
+  :only => [:edit, :update, :destroy]
   impressionist actions: [:show], unique: [:session_hash]
   before_action :industrylist
   before_action :set_listing, only: [:show, :lead]

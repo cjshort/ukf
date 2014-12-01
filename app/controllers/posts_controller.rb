@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_filter :authenticate_admin!,
+  :only => [:edit, :update]
   def index
   	@post = Post.new
     @post1 = Post.where(:approved => true).last

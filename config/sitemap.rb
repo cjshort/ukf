@@ -58,12 +58,12 @@ SitemapGenerator::Sitemap.create do
   add industry_investment2_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
   add industry_investment3_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
   add industry_investment4_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
-  #Post.friendly.all.each do |post|
-	#	add post_path(post), :lastmod => post.updated_at, :changefreq => 'monthly', :priority => 1
-	#end
-	#Listing.friendly.all.each do |listing|
-	#	add listing_path(listing), :lastmod => listing.updated_at, :changefreq => 'yearly', :priority => 1
-	#end
+  Post.all.each do |post|
+		add post_path(post), :lastmod => post.updated_at, :changefreq => 'monthly', :priority => 1
+	end
+	Listing.all.each do |listing|
+		add listing_path(listing), :lastmod => listing.updated_at, :priority => 1
+	end
 end
 
 SitemapGenerator::Sitemap.ping_search_engines # Not needed if you use the rake tasks
