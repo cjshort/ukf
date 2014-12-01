@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  match '/sitemap.xml.gz' => 'sitemaps#show'
+  get '/sitemap.xml.gz', to: 'sitemaps#show'
   
   get 'lead_form/new'
   get 'lead_form/create'
