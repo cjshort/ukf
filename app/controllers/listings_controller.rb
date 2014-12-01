@@ -21,7 +21,8 @@ class ListingsController < ApplicationController
         :JOBTITLE => @listing.jobtitle,
         :FRANCHISE => @listing.franchisename,
         :WEBSITE => @listing.website},
-      :double_optin => false})
+      :double_optin => false,
+      :send_welcome => false})
 
   	respond_to do |format|
     	if @listing.save
@@ -79,7 +80,8 @@ class ListingsController < ApplicationController
         :CITY => @lead.city,
         :REGION => @lead.region,
         :POSTCODE => @lead.postcode},
-      :double_optin => false})
+      :double_optin => false,
+      :send_welcome => false})
     redirect_to listing_path(@listing), notice: "Success! We have sent your details to #{@listing.franchisename} so that they provide additional information."
     else
     redirect_to listing_path(@listing), alert: "Oops! It seems something went wrong, please try again."
