@@ -1,10 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'friendly_id'
-gem 'metamagic'
 gem 'sitemap_generator'
-
-gem 'carrierwave'
 gem 'fog'
 
 gem 'elasticsearch-model'
