@@ -1,8 +1,11 @@
 source 'https://rubygems.org'
 
-gem "dynamic_sitemaps"
 gem 'friendly_id'
 gem 'metamagic'
+gem 'sitemap_generator'
+
+gem 'carrierwave'
+gem 'fog'
 
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
@@ -48,7 +51,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # gem 'unicorn'
 
 # Use Capistrano for deployment
-gem 'capistrano-rails'
+# gem 'capistrano-rails'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]

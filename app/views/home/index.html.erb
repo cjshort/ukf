@@ -41,18 +41,20 @@ meta title: "Franchise Opportunities and Directory | UKF",
           <% @spotlight.each do |latest| %>
             <div class="large-12 columns content1">
               <%= link_to(latest) do %>
-                <div class="whitebg text-center">
-                  <img class="spotlightlogo margin1v" src="<%= latest.logourl %>">
-                </div>
-                <div class="greybg">
-                  <div class="row lightgreybg padding05v content latestbb">
-                    <div class="large-12 columns text-left">
-                      <h4 class="font07 margin0b margin0t"><%= image_tag('listingicon1.png', class: "latesticon") %><span class="listingicontext"><%= latest.franchisename %></span></h4>
-                    </div>
+                <div class="latestlisting">
+                  <div class="whitebg text-center">
+                    <img class="spotlightlogo margin1v" src="<%= latest.logourl %>">
                   </div>
-                  <div class="row lightgreybg padding05v content">
-                    <div class="large-24 columns text-left">
-                      <h4 class="font07 margin0b margin0t"><%= image_tag('listingicon2.png', class: "latesticon") %><span class="listingicontext"><%= latest.mininvestment %> Minimum Investment</span></h4>
+                  <div class="greybg">
+                    <div class="row lightgreybg padding05v content latestbb">
+                      <div class="large-12 columns text-left">
+                        <h4 class="font07 margin0b margin0t"><%= image_tag('listingicon1.png', class: "latesticon") %><span class="listingicontext"><%= latest.franchisename %></span></h4>
+                      </div>
+                    </div>
+                    <div class="row lightgreybg padding05v content">
+                      <div class="large-24 columns text-left">
+                        <h4 class="font07 margin0b margin0t"><%= image_tag('listingicon2.png', class: "latesticon") %><span class="listingicontext"><%= latest.mininvestment %> Minimum Investment</span></h4>
+                      </div>
                     </div>
                   </div>
                 </div>

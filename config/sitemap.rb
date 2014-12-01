@@ -1,90 +1,60 @@
-# Change this to your host. See the readme at https://github.com/lassebunk/dynamic_sitemaps
-# for examples of multiple hosts and folders.
-host "www.uk-franchise.co.uk"
+require 'rubygems'
+require 'sitemap_generator'
 
-sitemap :site do
-	url root_url, last_mod: Time.now, change_freq: "weekly", priority: 1.0
-	url posts_url, last_mod: Time.now, change_freq: "weekly", priority: 1.0
-	url events_url, last_mod: Time.now, change_freq: "monthly", priority: 1.0
-	url industry_accounting_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-	url industry_agriculture_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-	url industry_automotive_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-	url industry_beverage_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-	url industry_B2B_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-	url industry_cafeandcoffee_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-	url industry_care_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-	url industry_chemical_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-	url industry_childrenandbabies_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-	url industry_cleaning_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-	url industry_communications_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-	url industry_computers_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-	url industry_construction_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-	url industry_consultancy_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-	url industry_logistics_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-	url industry_educationandtraining_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-	url industry_electrical_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-	url industry_entertainment_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-	url industry_enviromental_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-	url industry_estateagents_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-	url industry_fashion_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-	url industry_financial_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-	url industry_food_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-	url industry_health_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-	url industry_hirerental_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-	url industry_hospitality_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-	url industry_indoorpropertyservices_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-	url industry_outdoorpropertyservices_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-	url industry_internet_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-	url industry_legal_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-	url industry_manafacture_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-	url industry_pets_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-	url industry_promotional_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-	url industry_print_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-	url industry_repairandmaintenance_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-  url industry_investment1_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-  url industry_investment2_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-  url industry_investment3_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
-  url industry_investment4_url, last_mod: Time.now, change_freq: "Weekly", priority: 1.0
+SitemapGenerator::Sitemap.default_host = "http://www.uk-franchise.co.uk"
+SitemapGenerator::Sitemap.sitemaps_host = "http://#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com/"
+SitemapGenerator::Sitemap.public_path = 'tmp/'
+SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
+SitemapGenerator::Sitemap.adapter = SitemapGenerator::WaveAdapter.new
+SitemapGenerator::Sitemap.create do
+  add root_path, :lastmod => Time.now, :changefreq => 'weekly', :priority => 1
+  add posts_path, :lastmod => Time.now, :changefreq => 'weekly', :priority => 1
+  add events_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1 
+	add industry_accounting_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+	add industry_agriculture_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+	add industry_automotive_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+	add industry_beverage_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+	add industry_B2B_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+	add industry_cafeandcoffee_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+	add industry_care_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+	add industry_chemical_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+	add industry_childrenandbabies_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+	add industry_cleaning_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+	add industry_communications_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+	add industry_computers_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+	add industry_construction_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+	add industry_consultancy_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+	add industry_logistics_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+	add industry_educationandtraining_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+	add industry_electrical_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+	add industry_entertainment_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+	add industry_enviromental_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+	add industry_estateagents_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+	add industry_fashion_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+	add industry_financial_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+	add industry_food_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+	add industry_health_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+	add industry_hirerental_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+	add industry_hospitality_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+	add industry_indoorpropertyservices_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+	add industry_outdoorpropertyservices_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+	add industry_internet_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+	add industry_legal_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+	add industry_manafacture_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+	add industry_pets_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+	add industry_promotional_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+	add industry_print_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+	add industry_repairandmaintenance_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+  add industry_investment1_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+  add industry_investment2_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+  add industry_investment3_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
+  add industry_investment4_path, :lastmod => Time.now, :changefreq => 'monthly', :priority => 1
   Post.all.each do |post|
-		url post, last_mod: post.updated_at, priority: 1.0
+		add post_path(post), :lastmod => post.updated_at, :changefreq => 'monthly', :priority => 1
 	end
-  Listing.all.each do |listing|
-		url listing, last_mod: listing.updated_at, priority: 1.0
+	Listing.all.each do |listing|
+		add listing_path(listing), :lastmod => listing.updated_at, :changefreq => 'yearly', :priority => 1
 	end
 end
 
-ping_with "http://#{host}/sitemap.xml" if Rails.env=='production'
-
-
-# You can have multiple sitemaps like the above – just make sure their names are different.
-
-# Automatically link to all pages using the routes specified
-# using "resources :pages" in config/routes.rb. This will also
-# automatically set <lastmod> to the date and time in page.updated_at:
-#
-#   sitemap_for Page.scoped
-
-# For products with special sitemap name and priority, and link to comments:
-#
-#   sitemap_for Product.published, name: :published_products do |product|
-#     url product, last_mod: product.updated_at, priority: (product.featured? ? 1.0 : 0.7)
-#     url product_comments_url(product)
-#   end
-
-# If you want to generate multiple sitemaps in different folders (for example if you have
-# more than one domain, you can specify a folder before the sitemap definitions:
-# 
-#   Site.all.each do |site|
-#     folder "sitemaps/#{site.domain}"
-#     host site.domain
-#     
-#     sitemap :site do
-#       url root_url
-#     end
-# 
-#     sitemap_for site.products.scoped
-#   end
-
-# Ping search engines after sitemap generation:
-#
-#   ping_with "http://#{host}/sitemap.xml"
+SitemapGenerator::Sitemap.ping_search_engines # Not needed if you use the rake tasks
