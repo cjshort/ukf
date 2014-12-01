@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'sitemap_generator'
-gem 'fog'
 
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
