@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'footerlinks/editlisting'
+
+  get 'footerlinks/franchisorinfo'
+
+  get 'footerlinks/aboutus'
+
+  get 'footerlinks/contactus'
+
+  get 'footerlinks/toc'
+
   get '/sitemap.xml.gz', to: 'sitemaps#show'
   
   get 'lead_form/new'
@@ -61,7 +71,7 @@ Rails.application.routes.draw do
   get 'admin/events'
   get 'admin/moneyzone'
 
-  resources :listings do
+  resources :listings, :path => "franchise" do
      member do
        post :leadcreate
        post :storycreate
