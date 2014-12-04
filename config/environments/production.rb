@@ -11,7 +11,7 @@ Rails.application.configure do
     password: ENV["SMTP_PASSWORD"]
 }
 
-  # Settings specified here will take precedence over those in config/application.rb.
+  # Settings specified h take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
   config.cache_classes = true
