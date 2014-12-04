@@ -20,7 +20,7 @@ meta title: ["Results for #{@query}", "UKF"],
 					<div class="text-center">
 						<div style="border-bottom: 2px solid <%= result.hexbg %>"><img src="<%= result.logourl %>" class="padding1v listinglogo"></div>
 					</div>
-					<p class="font08 content3 lightergreybg padding1v margin0b"><%= truncate("#{result.longdescription}", :length => 360, :separator => '', :omission => "") %></p>
+					<p class="font08 content3 lightergreybg padding1v margin0b"><%= truncate("#{result.longdescription}".gsub(/<[^<>]*>/, " "), :length => 360, :separator => '', :omission => "") %></p>
 					<div class="row lightgreybg padding05v">
 						<div class="large-12 columns text-center">
 							<h4 class="font08 margin0b margin0t"><%= image_tag('listingicon1.png', class: "listingicon") %><span class="listingicontext"><%= result.franchisename %></span></h4>
