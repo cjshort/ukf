@@ -1,5 +1,5 @@
 User-Agent: *
-Sitemap: http://uk-franchise.co.uk/sitemap.xml.gz
+Sitemap: http://www.uk-franchise.co.uk/sitemap.xml.gz
 Disallow: /admin
 Disallow: /admins
 Disallow: /listings/edit
