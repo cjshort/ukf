@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   before_filter :authenticate_admin!,
   :only => [:edit, :update]
+  impressionist actions: [:show], unique: [:session_hash]
+
   def index
   	@post = Post.new
     @post1 = Post.where(:approved => true).last
@@ -23,21 +25,26 @@ class PostsController < ApplicationController
   end
 
   def create
-  	@post = Post.create(post_params)
-  	respond_to do |format|
-    	if @post.save
-        	format.html { redirect_to root_path, notice: 'Success! Your post has been submitted for approval.' }
-        	format.json {  }
-    	else
-        	format.html { redirect_to root_path, notice: 'Oops! It seems something went wrong in your submission, please try again.'  }
-        	format.json {  }
-    	end
+    if params[:post][:nickname].blank?
+    	@post = Post.create(post_params)
+    	respond_to do |format|
+      	if @post.save
+          	format.html { redirect_to root_path, notice: 'Success! Your post has been submitted for approval.' }
+          	format.json {  }
+      	else
+          	format.html { redirect_to root_path, notice: 'Oops! It seems something went wrong in your submission, please try again.'  }
+          	format.json {  }
+      	end
+      end
+    else
+      redirect_to :back, alert: "Oops! It looks like you have entered something incorrectly, please try again."
     end
   end
 
   def show
     @post = Post.friendly.find(params[:id])
     @metadesc = @post.content.truncate(200)
+    impressionist(@post)
   end
 
   def edit
@@ -54,6 +61,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-      params.require(:post).permit(:image, :title, :content, :name, :website, :approved, :toc)
+      params.require(:post).permit(:image, :title, :content, :name, :website, :approved, :toc, :nickname)
   end
 end

@@ -151,6 +151,7 @@ transition-duration: 300ms;
           <%= story.text_field :jobrole, :placeholder => "Job Role (e.g #{@listing.franchisename} Branch Manager)", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Job Role (e.g #{@listing.franchisename} Branch Manager)'", class: "newstoryform" %>
           <%= story.text_area :story, :placeholder => "Your Story", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Your Story'", class: "newstoryform charlimit1" %>
           <div class="charcount1"></div>
+          <%= story.text_field :nickname, class: "displaynone" %>
           <%= story.check_box :toc %>
           <%= story.label :toc, "I agree to the UKF terms and conditions", class: "textup" %>
           <%= story.submit "submit story" %>
@@ -188,6 +189,7 @@ transition-duration: 300ms;
       <%= lead.text_field :region, :placeholder => "Region", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Region'" %>
       <%= lead.text_field :postcode, :placeholder => "Post Code", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Post Code'" %>
       <%= lead.select :contactpreferal, ([["Email", "Email"], ["Phone", "Phone"]]), :prompt => "Select a method of contact" %>
+      <%= lead.text_field :nickname, class: "displaynone" %>
       <%= lead.check_box :toc %>
       <%= lead.label :toc, "I agree to the UKF terms and conditions", class: "textup white" %>
       <%= lead.submit "Get More Information" %>
@@ -195,7 +197,7 @@ transition-duration: 300ms;
   </div>
 </div>
 
-<%= "#{@listing.impressionist_count} views so far!" %>
+<!-- <%= "#{@listing.impressionist_count} views so far!" %> -->
 
 <script type="text/javascript">
     (function() {

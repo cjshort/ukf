@@ -20,11 +20,11 @@
   </div>
   <div class="large-16 medium-16 columns text-center lineheight0 nav content">
     <div class="icon-bar four-up">
-      <a href="finder.html" class="item">
+      <a href="<%= comingsoon_path %>" class="item">
         <%= image_tag('find.png', class: "itemicon") %>
         <label class="itemtext">Finder</label>
       </a>
-      <a href="discover.html" class="item">
+      <a href="<%= comingsoon_path %>" class="item">
         <%= image_tag('discover.png', class: "itemicon") %>
         <label class="itemtext">Discover</label>
       </a>
@@ -69,47 +69,60 @@
 <div class="footerbg">
   <div class="row padding2v opacity03">
     <div class="large-4 text-center columns content">
-      <div class="row valign-middle">
+      <div class="row valign-middle footermatch">
         <div class="large-24 columns">
-          <%= image_tag('logo.png', class: "padding1v") %>
+          <%= image_tag('logo.png') %>
         </div>
       </div>
     </div>
-    <div class="large-5 columns content">
-      <ul class="no-bullet font08 textup white margin0b margin3r">
-        <li class="font09 weight700">Franchisors</li>
-        <a href=""><li>Edit your listing</li></a>
-        <a href=""><li>Create your listing</li></a>
-        <a href=""><li>Franchisor Information</li></a>
-      </ul>
-    </div>
-    <div class="large-5 columns content">
-      <ul class="no-bullet font08 textup white margin0b margin3r">
-        <li class="font09 weight700">Quick Links</li>
-        <a href=""><li>Franchise Finder</li></a>
-        <a href=""><li>Discover Brands</li></a>
-        <a href=""><li>Franchise Events</li></a>
-        <a href=""><li>The Money Zone</li></a>
-      </ul>
-    </div>
-    <div class="large-5 columns content">
-      <ul class="no-bullet font08 textup white margin0b margin3r">
-        <li class="font09 weight700">Company</li>
-        <a href=""><li>About us</li></a>
-        <a href=""><li>Contact us</li></a>
-        <a href="<%= footerlinks_toc_path %>"><li>Terms and Conditions</li></a>
-      </ul>
-    </div>
-    <div class="large-5 columns content">
-      <ul class="no-bullet font08 textup white margin0b margin3r">
-        <li class="font09 weight700">Social Media</li>
-        <a href="https://www.facebook.com/pages/UK-Franchise/656935641081502" target="_blank"><li>Facebook</li></a>
-        <a href="http://www.twitter.com/ukfranchisecouk" target="_blank"><li>Twitter</li></a>
-        <a href="" target="_blank"><li>LinkedIn</li></a>
-      </ul>
+    <div class="large-20 columns">
+      <div class="row footermatch">
+        <div class="large-6 columns content">
+          <ul class="no-bullet font08 textup white margin0b margin3r">
+            <li class="font09 weight700">Franchisors</li>
+            <a href="<%= footerlinks_editlisting_path %>"><li>Edit your listing</li></a>
+            <a href="<%= new_listing_path %>"><li>Create your listing</li></a>
+          </ul>
+        </div>
+        <div class="large-6 columns content">
+          <ul class="no-bullet font08 textup white margin0b margin3r">
+            <li class="font09 weight700">Quick Links</li>
+            <a href=""><li>Franchise Finder</li></a>
+            <a href=""><li>Discover Brands</li></a>
+            <a href=""><li>Franchise Events</li></a>
+            <a href=""><li>The Money Zone</li></a>
+          </ul>
+        </div>
+        <div class="large-6 columns content">
+          <ul class="no-bullet font08 textup white margin0b margin3r">
+            <li class="font09 weight700">Company</li>
+            <a href="<%= footerlinks_contactus_path %>"><li>Contact us</li></a>
+            <a href="<%= footerlinks_toc_path %>"><li>Terms and Conditions</li></a>
+          </ul>
+        </div>
+        <div class="large-6 columns content">
+          <ul class="no-bullet font08 textup white margin0b margin3r">
+            <li class="font09 weight700">Social Media</li>
+            <a href="https://www.facebook.com/pages/UK-Franchise/656935641081502" target="_blank"><li>Facebook</li></a>
+            <a href="http://www.twitter.com/ukfranchisecouk" target="_blank"><li>Twitter</li></a>
+            <a href="https://www.linkedin.com/company/uk-franchise" target="_blank"><li>LinkedIn</li></a>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+<script>
+        $(function() {
+
+
+          $(function() {
+            $('.footermatch').matchHeight();
+          });
+          
+        });
+</script>
 
   </body>
 </html>

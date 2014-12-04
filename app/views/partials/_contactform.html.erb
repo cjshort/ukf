@@ -1,0 +1,9 @@
+<%= form_for @contact, :url => {:controller => "footerlinks", :action => :contactcreate } do |contact|%>
+	<%= contact.text_field :fullname, :placeholder => "Full name", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Full name'" %>
+	<%= contact.text_field :email, :placeholder => "Email", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Email'" %>
+	<%= contact.text_area :query, class: "height15", :placeholder => "Query", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Query'" %>
+	<%= contact.text_field :nickname, class: "displaynone" %>
+  <%= contact.check_box :toc %>
+  <%= contact.label :toc, "I agree to the UKF terms and conditions", class: "textup" %>
+	<p><%= contact.submit "Send" %></p>
+<% end %>

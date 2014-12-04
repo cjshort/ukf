@@ -5,6 +5,7 @@ class Post < ActiveRecord::Base
 
 	is_impressionable
 	
+	validates_acceptance_of :toc, :on => :create, :accept => true
   validates :name, :title, :content, :website, presence: true
   validates :title, uniqueness: true
   validates :name, :title, :website, length: { minimum: 5, maximum: 400 }

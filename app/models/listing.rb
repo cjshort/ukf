@@ -12,6 +12,7 @@ class Listing < ActiveRecord::Base
 
 	is_impressionable
   
+  validates_acceptance_of :toc, :on => :create, :accept => true
   validates :fullname, :jobtitle, :email, :franchisename, :leadrecepient, :longdescription,
             :website, :branchcount, :mininvestment, :category, presence: true
   validates :franchisename, :website, uniqueness: true

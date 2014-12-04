@@ -1,14 +1,11 @@
 Rails.application.routes.draw do
 
   get 'footerlinks/editlisting'
-
   get 'footerlinks/franchisorinfo'
-
   get 'footerlinks/aboutus'
-
   get 'footerlinks/contactus'
-
   get 'footerlinks/toc'
+  post 'footerlinks/contactcreate'
 
   get '/sitemap.xml.gz', to: 'sitemaps#show'
   
@@ -77,6 +74,7 @@ Rails.application.routes.draw do
        post :storycreate
      end
   end
+
   resources :admin
 
   resources :posts
@@ -89,6 +87,7 @@ Rails.application.routes.draw do
 
   get 'home/index'
   get 'home/search'
+  get 'comingsoon', to: "home#comingsoon"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -45,9 +45,10 @@ meta title: ["The Money Zone", "UKF"],
 	    <%= post.text_area :content, :placeholder => "Content", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Content'", class: "margin0b charlimit4 textareabig" %>
 	    <div class="charcount4 text-right white margin1b"></div>
 	    <%= post.text_field :website, :placeholder => "Website URL", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Website URL'" %>
+    	<%= post.text_field :nickname, class: "displaynone" %>
       <%= post.check_box :toc %>
       <%= post.label :toc, "I agree to the UKF terms and conditions", class: "textup offwhite" %>
-	    <%= post.submit "SUBMIT POST" %>
+	    <%= post.submit "Submit Post", class: "textup" %>
     <% end %>
 	</div>
 	<div class="large-5 columns">

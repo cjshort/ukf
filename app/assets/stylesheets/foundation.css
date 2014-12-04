@@ -1,8 +1,20 @@
+.displaynone{
+  display: none;
+}
+
 .notice{
 background: #558345;
 padding: 1.5em 3rem;
 color: #fff;
 font-family: "Ubuntu";
+}
+
+.recaptchatable * {
+  line-height: 16px !important;
+}
+
+#recaptcha_image{
+  box-sizing: content-box !important;
 }
 
 .listingicontext{
@@ -323,6 +335,11 @@ width: 6rem;
   padding-bottom: 5rem;
 }
 
+.padding10v{
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+
 .padding6v{
   padding-top: 6rem;
   padding-bottom: 6rem;
@@ -526,6 +543,10 @@ padding-bottom: 1.2rem;
   height: 85%;
 }
 
+.height15{
+  height: 15rem;
+}
+
 .lightergreybg{
   background: #f7f7f7;
 }
@@ -618,25 +639,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#497cb5', end
 
 .itemtext{
   font-family: "Ubuntu", sans-serif;
-}
-
-.themoneyzoneenter{
-position: absolute;
-bottom: 0;
-width: 100%;
-margin-bottom: 0;
-padding: 1rem 0;
-background: rgba(27, 27, 27, 0.2);
-font-size: 0.7rem;
-color: #fff;
-font-weight: 600;
-letter-spacing: 3px;
-transition-duration: 300ms;
-}
-
-.indexthemoneyzone:hover .themoneyzoneenter{
-  padding: 1.2rem 0;
-  transition-duration: 300ms;
 }
 
 .franchisetitle{
@@ -2979,25 +2981,23 @@ input[type="time"],
 input[type="url"],
 input[type="color"],
 textarea {
-  -webkit-appearance: none;
-  -webkit-border-radius: 0px;
-  background-color: white;
-  font-family: inherit;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #cccccc;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-  color: rgba(0, 0, 0, 0.75);
-  display: block;
-  font-size: 0.875rem;
-  margin: 0 0 1rem 0;
-  padding: 0.5rem;
-  height: 2.3125rem;
-  width: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  transition: box-shadow 0.45s, border-color 0.45s ease-in-out; }
+-webkit-appearance: none;
+-webkit-border-radius: 0px;
+background: rgb(244, 241, 241);
+font-family: inherit;
+border-style: solid;
+border-width: 1px;
+border-color: #cccccc;
+color: #222;
+font-size: 0.875rem;
+margin: 0 0 1rem 0;
+padding: 0.5rem;
+height: 2.6125rem;
+width: 100%;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+transition: box-shadow 0.45s, border-color 0.45s ease-in-out; }
   input[type="text"]:focus,
   input[type="password"]:focus,
   input[type="date"]:focus,
@@ -3013,7 +3013,6 @@ textarea {
   input[type="url"]:focus,
   input[type="color"]:focus,
   textarea:focus {
-    box-shadow: 0 0 5px #999999;
     border-color: #999999; }
   input[type="text"]:focus,
   input[type="password"]:focus,
@@ -3030,8 +3029,8 @@ textarea {
   input[type="url"]:focus,
   input[type="color"]:focus,
   textarea:focus {
-    background: #fafafa;
-    border-color: #999999;
+    background-color: rgb(243, 243, 243);
+    border-color: #b8b8b8;
     outline: none; }
   input[type="text"]:disabled,
   input[type="password"]:disabled,

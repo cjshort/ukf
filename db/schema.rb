@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141130142444) do
+ActiveRecord::Schema.define(version: 20141203213739) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -31,6 +31,16 @@ ActiveRecord::Schema.define(version: 20141130142444) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
+  create_table "contacts", force: true do |t|
+    t.string   "fullname"
+    t.text     "query"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "email"
+    t.string   "nickname"
+    t.boolean  "toc",        default: false
+  end
+
   create_table "events", force: true do |t|
     t.string   "eventname"
     t.string   "startdate"
@@ -43,6 +53,7 @@ ActiveRecord::Schema.define(version: 20141130142444) do
     t.boolean  "toc",              default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "nickname"
   end
 
   create_table "friendly_id_slugs", force: true do |t|
@@ -96,6 +107,7 @@ ActiveRecord::Schema.define(version: 20141130142444) do
     t.boolean  "toc",             default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "nickname"
   end
 
   create_table "listings", force: true do |t|
@@ -124,6 +136,7 @@ ActiveRecord::Schema.define(version: 20141130142444) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+    t.string   "nickname"
   end
 
   add_index "listings", ["slug"], name: "index_listings_on_slug"
@@ -139,6 +152,7 @@ ActiveRecord::Schema.define(version: 20141130142444) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+    t.string   "nickname"
   end
 
   add_index "posts", ["slug"], name: "index_posts_on_slug"
@@ -153,6 +167,7 @@ ActiveRecord::Schema.define(version: 20141130142444) do
     t.integer  "listing_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "nickname"
   end
 
 end

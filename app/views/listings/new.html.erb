@@ -38,6 +38,8 @@ meta title: ["Add your franchise", "UKF"],
 
           <%= f.select :category, @industrylist, :prompt => "Select a Service" %>
 
+          <%= f.text_field :nickname, class: "displaynone" %>
+
           <%= f.check_box :toc %>
           <%= f.label :toc, "I agree to the UKF terms and conditions", class: "textup offwhite" %>
 

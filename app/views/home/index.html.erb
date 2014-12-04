@@ -4,6 +4,14 @@ meta title: "Franchise Opportunities and Directory | UKF",
      keywords: ["investment", "money", "events", "home"]
 %>
 
+<style>
+
+.post1{
+background-image: url("<%= @post1.image %>");
+background-size: cover;
+}
+</style>
+
 <div class="row">
   <div class="large-18 medium-18 columns content2 text-center padding5v indexbackdrop row1">
     <div class="row">
@@ -76,8 +84,16 @@ meta title: "Franchise Opportunities and Directory | UKF",
     </div>
     <div class="row">
       <div class="large-17 columns greybg row3">
-          <h5 class="weight700 textup font08 margin0b margin0t padding05v lightheader content">Latest from The Money Zone</h5>
-          <br><br><br><br><br><br><br><br><br><br><br><br>
+        <h5 class="weight700 textup font08 margin0b margin0t padding05v lightheader content">Latest from The Money Zone</h5>
+        <%= link_to post_path(@post1) do %>
+        <div class="post1">
+          <div class="postimageoverlay content3 padding2v">
+            <h3 class="margin0t white weight100 font14"><%= @post1.title %></h3>
+            <p class="white font085 weight100 margin0b"><%= truncate("#{@post1.content}", :length => 450, :separator => '', :omission => "...") %></p>
+          </div>
+          <p class="postreadmore text-center"><span class="entertext">READ MORE</span></p>
+        </div>
+        <% end %>
       </div>
       <div class="large-7 columns darkgreybg row3">
         <h5 class="weight700 textup font08 margin0b margin0t padding05v darkheader content white">Events</h5>

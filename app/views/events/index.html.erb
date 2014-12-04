@@ -52,6 +52,7 @@ meta title: ["Franchise Events", "UKF"],
 	      <%= event.text_field :region, :placeholder => "Region", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Region'", class: "eventnewform" %>
 	      <%= event.text_field :postcode, :placeholder => "Postal Code", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Postal Code'", class: "eventnewform" %>
 	      <%= event.text_field :website, :placeholder => "Event Website", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Event Website'", class: "eventnewform" %>
+      	<%= event.text_field :nickname, class: "displaynone" %>
         <%= event.check_box :toc %>
         <%= event.label :toc, "I agree to the UKF terms and conditions", class: "textup" %>
         <%= event.submit "Create Your Event", class: "margin1t" %>
