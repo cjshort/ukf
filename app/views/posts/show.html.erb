@@ -51,8 +51,8 @@ meta title: ["#{@post.title}", "UKF"],
 		<div class="postsection1 content2 darkgreybg4 padding3v">
 			<p class="offwhite weight100">Written by<br><span class="font14 weight500"><%= @post.name %></span></p>
 			<p class="offwhite weight100">Author website<br><a href="<%= @post.website %>" target="_blank"><span class="font14 weight500"><%= truncate("#{@post.website}", :length => 21, :separator => '', :omission => "..") %></span></a></p>
-			<p class="offwhite weight100">Written on<br><span class="font14 weight500">2nd Dec, 2014</span></p>
-			<p class="offwhite weight100">View count<br><span class="font14 weight500">2,382</span></p>
+			<p class="offwhite weight100">Written on<br><span class="font14 weight500"><%= @post.created_at.strftime("%b %d, %Y") %></span></p>
+			<p class="offwhite weight100">View count<br><span class="font14 weight500"><%= @post.impressionist_count %></span></p>
 		</div>
 		<% @listing.each do |listing| %>
         <div class="row content padding1t padding0b text-center">
