@@ -56,6 +56,7 @@ meta title: ["#{@post.title}", "UKF"],
 		</div>
 		<% @listing.each do |listing| %>
         <div class="row content padding1t padding0b text-center">
+        	<%= link_to listing do %>
             <div class="large-24 columns latestlisting">
               <div class="latestlogocontainer padding1v"><img class="latestlogo" src="<%= listing.logourl %>"></div>
               <div class="row lightgreybg padding05v content latestbb">
@@ -69,6 +70,7 @@ meta title: ["#{@post.title}", "UKF"],
                 </div>
               </div>
             </div>
+          <% end %>
         </div>
 		<% end %>
 	</div>
