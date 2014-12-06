@@ -6,6 +6,20 @@
 	background: #cecece;
 }
 
+ul,
+ol,
+dl {
+font-size: 0.9rem;
+}
+
+.oneclickenquiry{
+font-size: 0.8rem;
+font-weight: 500;
+font-family: "Ubuntu";
+background: #fff;
+border-radius: 2px;
+padding: 0.7rem 3rem;
+}
 
 .newstoryform::-webkit-input-placeholder {
    color: #333;

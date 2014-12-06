@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+ul,
+ol,
+dl {
+font-size: 1rem;
+}
+
 .latestlogo{
 	height: 2.5rem;
 }

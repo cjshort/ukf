@@ -7,12 +7,12 @@ meta title: ["#{@listing.franchisename}", "UKF"],
 
 <style>
 
-.franchisecolorbg{
-  background: <%= @listing.hexbg %>;
+.franchisecolorborder{
+  border-bottom: 3px solid <%= @listing.hexbg %>;
 }
 
-.riborder{
-  border: 1px solid <%= @listing.hexbg %>;
+.franchisecolorbg{
+  background: <%= @listing.hexbg %>;
 }
 
 .new_lead input[type="submit"]{
@@ -34,16 +34,91 @@ transition-duration: 300ms;
 </style>
 
 
-<div class="franchisecolorbg">
-  <div class="row">
-    <div class="large-24 columns content2 text-center">
-      <img class="margin4v" src="<%= @listing.logourl %>" alt="<%= @listing.franchisename %>">
-      <h1 class="font1 margin0b padding0b franchisetitle"><%= @listing.franchisename %> 
-        <% if admin_signed_in? %>
-         | <%= link_to "Edit", edit_listing_path(@listing) %> | <%= link_to "Delete", listing_path(@listing), :method => :delete, :data => {:confirm => 'Confirm Deletion'} %>
-        <% end %>
-      </h1>
+<div class="greybg">
+  <div class="row padding1t">
+    <div class="large-1 columns"><br></div>
+    <div class="large-8 columns text-center whitebg mainrow">
+      <div class="franchisecolorborder">
+        <img class="padding1v" src="<%= @listing.logourl %>" alt="<%= @listing.franchisename %>">
+      </div>
+      <p class="textup franchisecolorbg padding2v margin0b"><span class="oneclickenquiry">Enable one-click-enquiry</span></p>
     </div>
+    <div class="large-14 columns">
+      <div class="row mainrow">
+        <div class="large-12 columns darkgreybg">
+          <div class="row statsrow">
+            <div class="large-3 small-4 columns content text-center iconcolumn">
+              <%= image_tag('showicon1.png') %>
+            </div>
+            <div class="large-21 small-20 columns content text-left">
+              <p class="white stattext weight100"><%= @listing.franchisename %></p>
+            </div>
+          </div>
+          <div class="row statsrow">
+            <div class="large-3 small-4 columns content text-center iconcolumn stats">
+              <%= image_tag('showicon2.png') %>
+            </div>
+            <div class="large-21 small-20 columns content text-left stats">
+              <p class="white stattext weight100"><a href="http://<%= @listing.website %>"><%= @listing.website %></a></p>
+            </div>
+          </div>
+          <div class="row statsrow">
+            <div class="large-3 small-4 columns content text-center iconcolumn stats">
+              <%= image_tag('showicon3.png') %>
+            </div>
+            <div class="large-21 small-20 columns content text-left stats">
+              <p class="white stattext weight100"><%= @listing.scale %></p>
+            </div>
+          </div>
+        </div>
+        <div class="large-12 columns darkgreybg">
+          <div class="row statsrow">
+            <div class="large-3 small-4 columns content text-center iconcolumn stats">
+              <%= image_tag('showicon4.png') %>
+            </div>
+            <div class="large-21 small-20 columns content text-left stats">
+              <p class="white stattext weight100"><%= @listing.branchcount %> Franchisees</p>
+            </div>
+          </div>
+          <div class="row statsrow">
+            <div class="large-3 small-4 columns content text-center iconcolumn stats">
+              <%= image_tag('showicon5.png') %>
+            </div>
+            <div class="large-21 small-20 columns content text-left stats">
+              <p class="white stattext weight100"><%= @listing.mininvestment %> Min Investment</p>
+            </div>
+          </div>
+          <div class="row statsrow">
+            <div class="large-3 small-4 columns content text-center iconcolumn stats">
+              <%= image_tag('showicon6.png') %>
+            </div>
+            <div class="large-21 small-20 columns content text-left stats">
+              <p class="white stattext weight100"><%= @listing.category %></p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-24 columns content text-center iconcolumn stats">
+            <%= image_tag('showicon7.png') %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-6 columns facebookcolumn text-center">
+            <a href="<%= @listing.facebook %>"><p class="textup font07 white margin0b">Facebook</p></a>
+          </div>
+          <div class="large-6 columns facebookcolumn text-center">
+            <a href="<%= @listing.facebook %>"><p class="textup font07 white margin0b">Facebook</p></a>
+          </div>
+          <div class="large-6 columns facebookcolumn text-center">
+            <a href="<%= @listing.facebook %>"><p class="textup font07 white margin0b">Facebook</p></a>
+          </div>
+          <div class="large-6 columns facebookcolumn text-center">
+            <a href="<%= @listing.facebook %>"><p class="textup font07 white margin0b">Facebook</p></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="large-1 columns"><br></div>
   </div>
 </div>
 
@@ -54,81 +129,8 @@ transition-duration: 300ms;
         <%= simple_format(@listing.longdescription, class: "font09", sanitize: true) %>
       </div>
   </div>
-  <div class="large-7 small-pull-24 columns darkgreybg row1">
-    <h5 class="weight700 textup font08 margin0b margin0t padding05v darkheader content white">Stats</h5>
-    <div class="row statsrow">
-      <div class="large-4 small-4 columns content text-center iconcolumn">
-        <%= image_tag('showicon1.png') %>
-      </div>
-      <div class="large-20 small-20 columns content text-left">
-        <p class="white stattext weight100"><%= @listing.franchisename %></p>
-      </div>
-    </div>
-    <div class="row statsrow">
-      <div class="large-4 small-4 columns content text-center iconcolumn stats">
-        <%= image_tag('showicon2.png') %>
-      </div>
-      <div class="large-20 small-20 columns content text-left stats">
-        <p class="white stattext weight100"><a href="http://<%= @listing.website %>"><%= @listing.website %></a></p>
-      </div>
-    </div>
-    <div class="row statsrow">
-      <div class="large-4 small-4 columns content text-center iconcolumn stats">
-        <%= image_tag('showicon3.png') %>
-      </div>
-      <div class="large-20 small-20 columns content text-left stats">
-        <p class="white stattext weight100"><%= @listing.scale %></p>
-      </div>
-    </div>
-    <div class="row statsrow">
-      <div class="large-4 small-4 columns content text-center iconcolumn stats">
-        <%= image_tag('showicon4.png') %>
-      </div>
-      <div class="large-20 small-20 columns content text-left stats">
-        <p class="white stattext weight100"><%= @listing.branchcount %> Franchisees</p>
-      </div>
-    </div>
-    <div class="row statsrow">
-      <div class="large-4 small-4 columns content text-center iconcolumn stats">
-        <%= image_tag('showicon5.png') %>
-      </div>
-      <div class="large-20 small-20 columns content text-left stats">
-        <p class="white stattext weight100"><%= @listing.mininvestment %> Min Investment</p>
-      </div>
-    </div>
-    <div class="row statsrow">
-      <div class="large-4 small-4 columns content text-center iconcolumn stats">
-        <%= image_tag('showicon6.png') %>
-      </div>
-      <div class="large-20 small-20 columns content text-left stats">
-        <p class="white stattext weight100"><%= @listing.category %></p>
-      </div>
-    </div>
-    <div class="row statsrow">
-      <div class="large-24 columns content text-center iconcolumn stats">
-        <%= image_tag('showicon7.png') %>
-      </div>
-    </div>
-    <div class="row statsrow">
-      <div class="large-24 columns content text-center facebookcolumn stats">
-        <a href="<%= @listing.facebook %>"><p class="textup font07 white margin0b">Facebook</p></a>
-      </div>
-    </div>
-    <div class="row statsrow">
-      <div class="large-24 columns content text-center twittercolumn stats">
-        <a href="<%= @listing.twitter %>"><p class="textup font07 white margin0b">Twitter</p></a>
-      </div>
-    </div>
-    <div class="row statsrow">
-      <div class="large-24 columns content text-center googlepluscolumn stats">
-        <a href="<%= @listing.googleplus %>"><p class="textup font07 white margin0b">Google Plus</p></a>
-      </div>
-    </div>
-    <div class="row statsrow">
-      <div class="large-24 columns content text-center linkedincolumn stats">
-        <a href="<%= @listing.linkedin %>"><p class="textup font07 white margin0b">LinkedIn</p></a>
-      </div>
-    </div>
+  <div class="large-7 small-pull-24 columns greybg row1">
+    <h5 class="weight700 textup font08 margin0b margin0t padding05v lightheader content">Testimonials</h5>
   </div>
 </div>
 
@@ -216,6 +218,10 @@ transition-duration: 300ms;
 
           $(function() {
             $('.stats').matchHeight();
+          });
+
+          $(function() {
+            $('.mainrow').matchHeight();
           });
 
           $(function() {
