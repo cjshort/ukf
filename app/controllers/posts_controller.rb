@@ -48,9 +48,9 @@ class PostsController < ApplicationController
 
     @query = @post.title
     if @post.title.nil?
-      @listing = Listing.search.all.records.records
+      @listing = Listing.where(:approved => true).search.all.records.take(5)
     else
-      @listing = Listing.where(:approved => true).search(@post.title).records
+      @listing = Listing.where(:approved => true).search(@post.title).records.take(5)
     end
 
   end
