@@ -6,8 +6,8 @@ Rails.application.configure do
     domain: "1and1.co.uk",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: "admin@uk-franchise.co.uk",
-    password: "calloveslou100"
+    user_name: ENV["SMTP_USERNAME"],
+    password: ENV["SMTP_PASSWORD"]
 }
 
   config.action_mailer.default_url_options = { host: 'localhost:3000' }

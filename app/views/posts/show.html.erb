@@ -11,30 +11,80 @@ meta title: ["#{@post.title}", "UKF"],
 }
 </style>
 
-
-<div class="postimage">
-	<div class="postimageoverlay1">
-		<div class="row padding5v content2">
-			<div class="large-24 columns text-center padding5v">
-				<h1 class="white weight100"><%= @post.title %></h1>
+<div class="row">
+	<div class="large-18 columns whitebg">
+		<div class="postimage postsection1">
+			<div class="postimageoverlay1">
+				<div class="row padding5v">
+					<div class="large-2 columns"><br>
+					</div>
+					<div class="large-19 columns text-left padding5v content">
+						<h1 class="white ubuntu weight500"><%= @post.title %></h1>
+					</div>
+					<div class="large-3 columns"><br>
+					</div>
+				</div>
+				<a href="<%= @post.website %>">
+					<div class="row">
+						<div class="large-2 columns"><br>
+						</div>
+						<div class="large-19 columns text-left content">
+						<p class="white weight100 font09 posttitleborder margin0b padding1v">Posted by <span class="italic weight600"><%= @post.name %></span> on <span class="italic"><%= @post.created_at.strftime("%b %d, %Y") %></span></p>
+						</div>
+						<div class="large-3 columns"><br>
+						</div>
+					</div>
+				</a>
 			</div>
 		</div>
-		<a href="<%= @post.website %>">
-			<div class="row">
-				<div class="large-24 columns text-center">
-				<p class="white weight100 font09 posttitleborder margin0b padding1v">Posted by <span class="italic weight600"><%= @post.name %></span> on <span class="italic"><%= @post.created_at.strftime("%b %d, %Y") %></span></p>
-				</div>
+		<div class="row padding3v whitebg">
+			<div class="large-2 columns"><br>
 			</div>
-		</a>
+			<div class="large-19 columns merriweather content">
+				<%= simple_format(@post.content, class: "font1", sanitize: true) %>
+			</div>
+			<div class="large-3 columns"><br>
+			</div>
+		</div>
+	</div>
+	<div class="large-6 columns">
+		<div class="postsection1 content2 darkgreybg4 padding3v">
+			<p class="offwhite weight100">Written by<br><span class="font14 weight500"><%= @post.name %></span></p>
+			<p class="offwhite weight100">Author website<br><a href="<%= @post.website %>" target="_blank"><span class="font14 weight500"><%= truncate("#{@post.website}", :length => 21, :separator => '', :omission => "..") %></span></a></p>
+			<p class="offwhite weight100">Written on<br><span class="font14 weight500">2nd Dec, 2014</span></p>
+			<p class="offwhite weight100">View count<br><span class="font14 weight500">2,382</span></p>
+		</div>
+		<% @listing.each do |listing| %>
+        <div class="row content padding1t padding0b text-center">
+            <div class="large-24 columns latestlisting">
+              <div class="latestlogocontainer padding1v"><img class="latestlogo" src="<%= listing.logourl %>"></div>
+              <div class="row lightgreybg padding05v content latestbb">
+                <div class="large-24 columns text-left">
+                  <h4 class="font07 margin0b margin0t"><%= image_tag('listingicon1.png', class: "latesticon") %><span class="listingicontext"><%= listing.franchisename %></span></h4>
+                </div>
+              </div>
+              <div class="row lightgreybg padding05v content">
+                <div class="large-24 columns text-left">
+                  <h4 class="font07 margin0b margin0t"><%= image_tag('listingicon2.png', class: "latesticon") %><span class="listingicontext"><%= listing.mininvestment %> Minimum Investment</span></h4>
+                </div>
+              </div>
+            </div>
+        </div>
+		<% end %>
 	</div>
 </div>
 
-<div class="row padding3v whitebg">
-	<div class="large-5 columns"><br>
-	</div>
-	<div class="large-14 columns merriweather">
-		<%= simple_format(@post.content, class: "font1", sanitize: true) %>
-	</div>
-	<div class="large-5 columns"><br>
-	</div>
-</div>
+<script type="text/javascript">
+    (function() {
+
+        $(function() {
+
+          $(function() {
+            $('.postsection1').matchHeight();
+          });
+
+          
+        });
+
+    })();
+</script>

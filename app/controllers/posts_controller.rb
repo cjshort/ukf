@@ -45,6 +45,14 @@ class PostsController < ApplicationController
     @post = Post.friendly.find(params[:id])
     @metadesc = @post.content.truncate(200)
     impressionist(@post)
+
+    @query = @post.title
+    if @post.title.nil?
+      @listing = Listing.search.all.records
+    else
+      @listing = Listing.search(@post.title).records
+    end
+
   end
 
   def edit

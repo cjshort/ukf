@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.homepostimageoverlay{
+	background: rgba(51, 51, 51, 0.85);
+}
+
 .industrytitle{
 	font-family: "Ubuntu";
 	font-weight: 700;
@@ -40,7 +44,7 @@
 width: 100%;
 margin-bottom: 0;
 padding: 1rem 0;
-	background: rgba(51, 51, 51, 0.95);
+background: rgba(51, 51, 51, 0.95);
 font-size: 0.7rem;
 color: #fff;
 font-weight: 600;
@@ -68,7 +72,7 @@ transition-duration: 300ms;
 }
 
 .postimageoverlay{
-	background: rgba(51, 51, 51, 0.85);
+	background: rgba(51, 51, 51, 0.6);
 }
 
 .pricerange{
