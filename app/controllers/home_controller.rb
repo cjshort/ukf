@@ -12,7 +12,7 @@ class HomeController < ApplicationController
 
   def search
     @query = params[:search]
-    if params[:search].blank?
+    if params[:search].nil?
       @result = Listing.search.all.records
     else
       @result = Listing.search(params[:search]).records
