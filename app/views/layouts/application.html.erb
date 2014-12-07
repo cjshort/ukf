@@ -13,35 +13,55 @@
   </head>
   <body>  
 
-  <div class="navbg">
-<div class="navrow valign-middle">
-  <div class="large-4 medium-6 text-center columns nav content">
-    <a href="<%= root_path %>"><%= image_tag('logo.png', alt: "Uk Franchise Directory") %></a>
+
+<div class="row bluebg padding2h padding05v valign-middle fixed stickyheader">
+  <div class="large-6 columns content">
+    <a href="<%= root_path %>"><h1 class="margin0b margin0t font106 white"><span class="weight900">UKF</span>RANCHISE</h1></a>
   </div>
-  <div class="large-16 medium-16 columns text-center lineheight0 nav content">
-    <div class="icon-bar four-up">
-      <a href="<%= comingsoon_path %>" class="item">
-        <%= image_tag('find.png', class: "itemicon") %>
-        <label class="itemtext">Finder</label>
-      </a>
-      <a href="<%= comingsoon_path %>" class="item">
-        <%= image_tag('discover.png', class: "itemicon") %>
-        <label class="itemtext">Discover</label>
-      </a>
-      <a href="<%= events_index_path %>" class="item">
-        <%= image_tag('events.png', class: "itemicon") %>
-        <label class="itemtext">Events</label>
-      </a>
-      <a href="<%= posts_index_path %>" class="item">
-        <%= image_tag('moneyzone.png', class: "itemicon") %>
-        <label class="itemtext">Money Zone</label>
-      </a>
-    </div>
+  <div class="large-12 columns content text-center valign-normal">
+    <%= form_tag home_search_path, :method => :get, class: "homesearch" do %>
+      <div class="large-21 medium-21 columns">
+        <%= text_field_tag :search, params[:search], id: "indexsearch", :placeholder => "Search by industry, franchise name or related keyword", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Search by industry, franchise name or related keyword'" %>
+      </div>
+      <div class="large-3 medium-3 columns">
+        <%= submit_tag "Search", :name => nil %>
+      </div>
+    <% end %>
   </div>
-  <div class="large-4 columns nav">
+  <div class="large-6 columns content">
+    <br>
   </div>
 </div>
-</div>
+<div class="stickyheader"></div>
+
+
+<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+        <h1 class="displaynone"><a href="<%= root_path %>"><span class="weight900">UKF</span>RANCHISE</a></h1>
+    </li>
+     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+
+    <ul class="left">
+      <li><a href="#">Matcher</a></li>
+      <li><a href="#">Discover</a></li>
+      <li><a href="#">Events</a></li>
+      <li><a href="#">Money Zone</a></li>
+    </ul>
+
+    <ul class="right">
+      <li><a href="#">Industries</a></li>
+      <li><a href="#">Price Ranges</a></li>
+      <li><a href="#">Left Nav Baasdassdutton</a></li>
+      <li><a href="#">Left Nav Buasdtton</a></li>
+    </ul>
+
+  </section>
+</nav>
 
 <% if flash[:notice] %>
 <div class="row notice">
@@ -64,7 +84,9 @@
   </div>
 <% end %>  
 
-<%= yield %>
+<div class="yieldcontainer">
+  <%= yield %>
+</div>
 
 <div class="footerbg">
   <div class="row padding2v opacity03">
@@ -120,8 +142,14 @@
           $(function() {
             $('.footermatch').matchHeight();
           });
+          $(function() {
+            $('.stickyheader').matchHeight();
+          });
           
         });
+</script>
+<script>
+  $(document).foundation();
 </script>
 
   </body>

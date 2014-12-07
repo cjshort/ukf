@@ -15,4 +15,7 @@
 //= require jquery.charcount
 //= require jquery.matchHeight
 //= require jquery_ujs
+//= require modernizr
+//= require foundation
+//= require foundation.topbar
 //= require turbolinks

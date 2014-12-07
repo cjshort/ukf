@@ -12,7 +12,7 @@ meta title: ["Results for #{@query}", "UKF"],
 
 
 <% @result.each_slice(3) do |row_result| %>
-<div class="row padding3v content">
+<div class="row padding3v content lightergreybg">
 	<% row_result.each do |result| %>
 		<div class="large-8 columns content">
 			<a href="<%= listing_path(result) %>">
