@@ -14,21 +14,21 @@
   <body>  
 
 
-<div class="row bluebg padding2h padding05v valign-middle fixed stickyheader">
-  <div class="large-6 columns content">
-    <a href="<%= root_path %>"><h1 class="margin0b margin0t font106 white"><span class="weight900">UKF</span>RANCHISE</h1></a>
+<div class="row bluebg padding2h padding05v fixed stickyheader">
+  <div class="large-6 medium-6 columns content">
+    <a href="<%= root_path %>"><h1 class="margin0b margin0t font106 white padding05v"><span class="weight900">UKF</span>RANCHISE</h1></a>
   </div>
-  <div class="large-12 columns content text-center valign-normal">
-    <%= form_tag home_search_path, :method => :get, class: "homesearch" do %>
+  <div class="large-12 medium-18 columns content text-center valign-normal">
+    <%= form_tag home_search_path, :method => :get, class: "applicationsearch" do %>
       <div class="large-21 medium-21 columns">
-        <%= text_field_tag :search, params[:search], id: "indexsearch", :placeholder => "Search by industry, franchise name or related keyword", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Search by industry, franchise name or related keyword'" %>
+        <%= text_field_tag :search, params[:search], id: "applicationsearch", :placeholder => "Search by industry, franchise name or related keyword", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Search by industry, franchise name or related keyword'" %>
       </div>
       <div class="large-3 medium-3 columns">
         <%= submit_tag "Search", :name => nil %>
       </div>
     <% end %>
   </div>
-  <div class="large-6 columns content">
+  <div class="large-6 show-for-large-only columns content">
     <br>
   </div>
 </div>
@@ -38,7 +38,7 @@
 <nav class="top-bar" data-topbar role="navigation">
   <ul class="title-area">
     <li class="name">
-        <h1 class="displaynone"><a href="<%= root_path %>"><span class="weight900">UKF</span>RANCHISE</a></h1>
+        <h1 class="logodisplay"><a href="<%= root_path %>"><span class="weight900">UKF</span>RANCHISE</a></h1>
     </li>
      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
     <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
@@ -47,17 +47,18 @@
   <section class="top-bar-section">
 
     <ul class="left">
-      <li><a href="#">Matcher</a></li>
-      <li><a href="#">Discover</a></li>
-      <li><a href="#">Events</a></li>
-      <li><a href="#">Money Zone</a></li>
+      <li><a href="<%= comingsoon_path  %>">Matcher</a></li>
+      <li><a href="<%= comingsoon_path %>">Discover</a></li>
+      <li><a href="<%= events_index_path %>">Events</a></li>
+      <li><a href="<%= posts_index_path %>">Money Zone</a></li>
     </ul>
 
     <ul class="right">
-      <li><a href="#">Industries</a></li>
-      <li><a href="#">Price Ranges</a></li>
-      <li><a href="#">Left Nav Baasdassdutton</a></li>
-      <li><a href="#">Left Nav Buasdtton</a></li>
+      <li><a href="<%= %>">Spotlight</a></li>
+      <li><a href="<%= %>">Industries</a></li>
+      <li><a href="<%= %>">Price Ranges</a></li>
+      <li><a href="<%= %>">Left Nav Baasdassdutton</a></li>
+      <li><a href="<%= %>">Left Nav Buasdtton</a></li>
     </ul>
 
   </section>
@@ -85,7 +86,9 @@
 <% end %>  
 
 <div class="yieldcontainer">
-  <%= yield %>
+  <div class="row">
+    <%= yield %>
+  </div>
 </div>
 
 <div class="footerbg">

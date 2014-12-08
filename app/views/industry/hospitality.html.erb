@@ -12,7 +12,7 @@ meta title: ["Hospitality Franchises", "UKF"],
 </div>
 
 <% @listing.in_groups_of(3, false) do |row_listing| %>
-<div class="row padding3v content">
+<div class="row padding3v content lightergreybg">
 	<% for listing in row_listing %>
 		<div class="large-8 columns content">
 			<a href="<%= listing_path(listing) %>">

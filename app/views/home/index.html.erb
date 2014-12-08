@@ -13,8 +13,11 @@ background-size: cover;
 </style>
 
 <div class="row">
-  <div class="large-18 medium-18 columns bluegradientbg row1 content2 text-center padding3v">
-    <h1 class="font14 weight100 white margin3b">Search through the UK's best franchises</h1>
+  <div class="large-18 medium-18 columns bluegradientbg row1 text-left padding3t">
+    <div class="content2 margin2b">
+      <h1 class="font14 weight100 white">Search through the UK's best franchises</h1>
+      <p class="white weight100">UK-Franchise is dedicated to creating a completely free solution for not only discovering and connecting with franchise networks, but for ongoing educational and news services revolved around the franchise industry and related businesses. We are the fastest growing franchise directory, that says enough.</p>
+    </div>
     <%= form_tag home_search_path, :method => :get, class: "homesearch" do %>
       <div class="large-21 medium-21 columns">
         <%= text_field_tag :search, params[:search], id: "indexsearch", :placeholder => "Search by industry, franchise name or related keyword", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Search by industry, franchise name or related keyword'" %>
@@ -87,10 +90,9 @@ background-size: cover;
         <%= link_to post_path(@post1) do %>
         <div class="post1">
           <div class="homepostimageoverlay content3 padding3v">
-            <h3 class="margin0t white font2 ubuntu weight500"><%= @post1.title %></h3>
-            <p class="white font085 weight300 margin0b"><%= truncate("#{@post1.content}".gsub(/<[^<>]*>/, " "), :length => 250, :separator => '', :omission => "...") %></p>
+            <h3 class="margin0t white font2 ubuntu weight500 margin0b"><%= @post1.title %></h3>
+            <p class="white weight100 font09 posttitleborder margin0b margin1t">Posted by <span class="italic weight600"><%= @post1.name %></span> on <span class="italic"><%= @post1.created_at.strftime("%b %d, %Y") %></span></p>
           </div>
-          <p class="postreadmore text-center"><span class="entertext">READ MORE</span></p>
         </div>
         <% end %>
       </div>
@@ -111,14 +113,14 @@ background-size: cover;
       </div>
     </div>
   </div>
-  <div class="large-6 medium-6 columns greybg section1">
+  <div class="large-6 medium-6 columns greybg section1 padding05b">
       <h5 class="weight700 textup font08 margin0b margin0t padding05v lightheader content">Top Franchises</h5>
       <% @latest.each do |latest| %>
         <div class="row content padding1t padding0b text-center">
           <%= link_to(latest) do %>
             <div class="large-24 columns latestlisting">
               <div class="latestlogocontainer padding1v"><img class="latestlogo" src="<%= latest.logourl %>"></div>
-              <div class="row lightgreybg padding05v content latestbb">
+              <div class="row lightgreybg padding05t content latestbb">
                 <div class="large-24 columns text-left">
                   <h4 class="font07 margin0b margin0t"><%= image_tag('listingicon1.png', class: "latesticon") %><span class="listingicontext"><%= latest.franchisename %></span></h4>
                 </div>
@@ -207,10 +209,10 @@ background-size: cover;
   </div>
   <div class="large-6 columns darkgreybg row4">
     <h5 class="weight700 textup font08 margin0b margin0t padding05v darkheader content white">Price Ranges</h5>
-    <a href="<%= industry_investment1_path %>"><p class="padding1v margin0b margin0t text-center offwhite pricerange content textup font09">Less than £15,000</p></a>
-    <a href="<%= industry_investment2_path %>"><p class="padding1v margin0b margin0t text-center offwhite pricerange content textup font09">£15,000 to £50,000</p></a>
-    <a href="<%= industry_investment3_path %>"><p class="padding1v margin0b margin0t text-center offwhite pricerange content textup font09">£50,000 to £75,000</p></a>
-    <a href="<%= industry_investment4_path %>"><p class="padding1v margin0b margin0t text-center offwhite pricerange content textup font09">More than £75,000</p></a>
+    <a href="<%= industry_investment1_path %>"><p class="padding1v margin0b margin0t text-center offwhite pricerange content textup font08">Less than £15,000</p></a>
+    <a href="<%= industry_investment2_path %>"><p class="padding1v margin0b margin0t text-center offwhite pricerange content textup font08">£15,000 to £50,000</p></a>
+    <a href="<%= industry_investment3_path %>"><p class="padding1v margin0b margin0t text-center offwhite pricerange content textup font08">£50,000 to £75,000</p></a>
+    <a href="<%= industry_investment4_path %>"><p class="padding1v margin0b margin0t text-center offwhite pricerange content textup font08">More than £75,000</p></a>
   </div>
 </div>
 
