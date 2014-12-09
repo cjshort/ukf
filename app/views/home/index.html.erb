@@ -19,10 +19,10 @@ background-size: cover;
       <p class="white weight100">UK-Franchise is dedicated to creating a completely free solution for not only discovering and connecting with franchise networks, but for ongoing educational and news services revolved around the franchise industry and related businesses. We are the fastest growing franchise directory, that says enough.</p>
     </div>
     <%= form_tag home_search_path, :method => :get, class: "homesearch" do %>
-      <div class="large-21 medium-21 columns">
+      <div class="large-21 medium-21 small-21 columns">
         <%= text_field_tag :search, params[:search], id: "indexsearch", :placeholder => "Search by industry, franchise name or related keyword", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Search by industry, franchise name or related keyword'" %>
       </div>
-      <div class="large-3 medium-3 columns">
+      <div class="large-3 medium-3 small-3 columns">
         <%= submit_tag "Search", :name => nil %>
       </div>
     <% end %>
@@ -120,7 +120,7 @@ background-size: cover;
           <%= link_to(latest) do %>
             <div class="large-24 columns latestlisting">
               <div class="latestlogocontainer padding1v"><img class="latestlogo" src="<%= latest.logourl %>"></div>
-              <div class="row lightgreybg padding05t content latestbb">
+              <div class="row lightgreybg padding05v content latestbb">
                 <div class="large-24 columns text-left">
                   <h4 class="font07 margin0b margin0t"><%= image_tag('listingicon1.png', class: "latesticon") %><span class="listingicontext"><%= latest.franchisename %></span></h4>
                 </div>

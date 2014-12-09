@@ -13,7 +13,6 @@
   </head>
   <body>  
 
-
 <div class="row bluebg padding2h padding05v fixed stickyheader">
   <div class="large-6 medium-6 columns content">
     <a href="<%= root_path %>"><h1 class="margin0b margin0t font106 white padding05v"><span class="weight900">UKF</span>RANCHISE</h1></a>
@@ -47,18 +46,30 @@
   <section class="top-bar-section">
 
     <ul class="left">
-      <li><a href="<%= comingsoon_path  %>">Matcher</a></li>
+      <li class="matchernav(hovereffect)"><a href="<%= comingsoon_path  %>">Matcher</a></li>
       <li><a href="<%= comingsoon_path %>">Discover</a></li>
       <li><a href="<%= events_index_path %>">Events</a></li>
       <li><a href="<%= posts_index_path %>">Money Zone</a></li>
     </ul>
 
     <ul class="right">
-      <li><a href="<%= %>">Spotlight</a></li>
-      <li><a href="<%= %>">Industries</a></li>
-      <li><a href="<%= %>">Price Ranges</a></li>
-      <li><a href="<%= %>">Left Nav Baasdassdutton</a></li>
-      <li><a href="<%= %>">Left Nav Buasdtton</a></li>
+      <li>
+      <a href="">Industries</a>
+      </li>
+      <li class="has-dropdown"><a href="">Spotlight</a>
+        <ul class="dropdown">
+          <li><a href="#">Test1</a></li>
+          <li><a href="#">Test2</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown"><a href="">Price Ranges</a>
+        <ul class="dropdown">
+          <li><a href="<%= industry_investment1_path %>">Less than £15,000</a></li>
+          <li><a href="<%= industry_investment2_path %>">£15,000 to £50,000</a></li>
+          <li><a href="<%= industry_investment3_path %>">£50,000 to £75,000</a></li>
+          <li><a href="<%= industry_investment4_path %>">More than £75,000</a></li>
+        </ul>
+      </li>
     </ul>
 
   </section>
@@ -86,9 +97,7 @@
 <% end %>  
 
 <div class="yieldcontainer">
-  <div class="row">
     <%= yield %>
-  </div>
 </div>
 
 <div class="footerbg">
