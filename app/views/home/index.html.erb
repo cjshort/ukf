@@ -49,7 +49,7 @@ background-size: cover;
         <h5 class="weight700 textup font08 margin0b margin0t padding05v lightheader content">Spotlight</h5>
         <div class="row content1 padding1v">
           <% @spotlight.each do |latest| %>
-            <div class="large-12 columns content1">
+            <div class="large-12 medium-12 columns content1">
               <%= link_to(latest) do %>
                 <div class="latestlisting">
                   <div class="whitebg text-center">
@@ -73,7 +73,7 @@ background-size: cover;
           <% end %>
         </div>
       </div>
-      <div class="large-7 columns bluegradientbg row2">
+      <div class="large-7 columns bluegradientbg row2 show-for-large-up">
         <h5 class="weight700 textup font08 margin0b margin0t padding05v blueheader content white">Free Marketing</h5>
         <div class="row valign-middle row2 content3 height85">
           <div class="large-24 columns">
@@ -143,7 +143,7 @@ background-size: cover;
       <div class="large-24 columns greybg br1grey row4">
         <h5 class="weight700 textup font08 margin0b margin0t padding05v lightheader content">Jump To Category</h5>
         <div class="row padding1v">
-          <div class="large-6 columns">
+          <div class="large-6 medium-6 small-12 columns">
             <ul class="no-bullet catjump margin0b">
               <%= link_to industry_accounting_path do %><li>Accounting</li><% end %>
               <%= link_to industry_agriculture_path do %><li>Agriculture</li><% end %>
@@ -158,7 +158,7 @@ background-size: cover;
               <%= link_to industry_communications_path do %><li>Communications</li><% end %>
             </ul>
           </div>
-          <div class="large-6 columns">
+          <div class="large-6 medium-6 small-12 columns">
             <ul class="no-bullet catjump margin0b">
               <%= link_to industry_computers_path do %><li>Computers</li><% end %>
               <%= link_to industry_construction_path do %><li>Construction</li><% end %>
@@ -173,7 +173,7 @@ background-size: cover;
               <%= link_to industry_financial_path do %><li>Financial</li><% end %>
             </ul>
           </div>
-          <div class="large-6 columns">
+          <div class="large-6 medium-6 small-12 columns">
             <ul class="no-bullet catjump margin0b">
               <%= link_to industry_food_path do %><li>Food</li><% end %>
               <%= link_to industry_health_path do %><li>Health</li><% end %>
@@ -188,7 +188,7 @@ background-size: cover;
               <%= link_to industry_promotional_path do %><li>Promotional</li><% end %>
             </ul>
           </div>
-          <div class="large-6 columns">
+          <div class="large-6 medium-6 small-12 columns">
             <ul class="no-bullet catjump margin0b">
               <%= link_to industry_print_path do %><li>Print</li><% end %>
               <%= link_to industry_promotional_path do %><li>Promotional</li><% end %>

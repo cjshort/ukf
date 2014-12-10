@@ -7,19 +7,19 @@ meta title: ["Franchise Events", "UKF"],
 
 <div class="mapbg">
 	<div class="mapbgoverlay">
-	  <div class="row padding4v valign-middle">
-	    <div class="large-14 columns content2 eventheader">
+	  <div class="row padding2v valign-middle">
+	    <div class="large-14 medium-14 columns content2 eventheader">
 	      <%= image_tag('eventslogo.png', class: "inlineblock eventslogo") %>
-	      <a href="#"><p class="textup font07 inlineblock addnewevent" id="eventsbutton">Add Event <%= image_tag('plus.png', class: "neweventplus") %></p></a>
+	      <a href="#" class="show-for-large-up"><p class="textup font07 inlineblock addnewevent" id="eventsbutton">Add Event <%= image_tag('plus.png', class: "neweventplus") %></p></a>
 	    </div>
-	    <div class="large-10 columns content2 text-right">
+	    <div class="large-10 medium-10 columns content2 text-right">
 	      <p class="margin0t font08 ubuntu margin0b">Get upcoming franchise events straight to your inbox</p>
 	      <div class="row valign-normal right">
 	      	<%= form_tag('/posts/subscribe', method: "post", id: "subscribe") do%>
-		        <div class="large-18 columns text-right mailer">
+		        <div class="large-18 medium-18 columns text-right mailer">
 	          	<%= email_field(:email, :email, {id: "mailersub", placeholder: "Enter your email"}) %>
 		        </div>
-		        <div class="large-6 columns text-right mailer">
+		        <div class="large-6 medium-6 columns text-right mailer">
 			        <%= submit_tag("Submit", id: "mailersubmit") %>
 		        </div>
 	        <% end %>

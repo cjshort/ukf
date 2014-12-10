@@ -18,4 +18,5 @@
 //= require modernizr
 //= require foundation
 //= require foundation.topbar
+//= require social-likes.min.js
 //= require turbolinks

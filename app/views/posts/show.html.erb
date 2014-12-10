@@ -12,7 +12,7 @@ meta title: ["#{@post.title}", "UKF"],
 </style>
 
 <div class="row">
-	<div class="large-18 columns whitebg">
+	<div class="large-18 medium-18 columns whitebg">
 		<div class="postimage postsection1">
 			<div class="postimageoverlay1">
 				<div class="row padding5v">
@@ -26,7 +26,7 @@ meta title: ["#{@post.title}", "UKF"],
 				</div>
 				<a href="<%= @post.website %>">
 					<div class="row">
-						<div class="large-2 columns"><br>
+						<div class="large-2 medium-2 columns"><br>
 						</div>
 						<div class="large-19 columns text-left content">
 						<p class="white weight100 font09 posttitleborder margin0b padding1v">Posted by <span class="italic weight600"><%= @post.name %></span> on <span class="italic"><%= @post.created_at.strftime("%b %d, %Y") %></span></p>
@@ -47,7 +47,7 @@ meta title: ["#{@post.title}", "UKF"],
 			</div>
 		</div>
 	</div>
-	<div class="large-6 columns">
+	<div class="large-6 medium-6 columns">
 		<div class="postsection1 content2 darkgreybg4 padding3v">
 			<p class="offwhite weight100">Written by<br><span class="font14 weight500"><%= @post.name %></span></p>
 			<p class="offwhite weight100">Author website<br><a href="<%= @post.website %>" target="_blank"><span class="font14 weight500"><%= truncate("#{@post.website}", :length => 21, :separator => '', :omission => "..") %></span></a></p>
@@ -74,6 +74,17 @@ meta title: ["#{@post.title}", "UKF"],
 	          <% end %>
 	        </div>
 			<% end %>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="large-24 columns padding3v text-center lightergreybg">
+		<h4 class="merriweather weight100"><i>Share this article</i></h4>
+		<div class="social-likes">
+			<div class="facebook" title="Share link on Facebook">Facebook</div>
+			<div class="twitter" data-via="ukfranchisecouk" title="Share link on Twitter">Twitter</div>
+			<div class="plusone" title="Share link on Google+">Google+</div>
 		</div>
 	</div>
 </div>
