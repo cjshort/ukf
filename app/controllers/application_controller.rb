@@ -2,10 +2,14 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-	before_filter :spotlightnav
+	before_filter :spotlightnav, :randomfranchise
 
 	def spotlightnav
 	  @spotlightnav = Listing.where(approved: true, spotlight: true).order('created_at DESC').limit(2)
+	end
+
+	def randomfranchise
+		@randomfranchise = Listing.limit(1).order("RAND()").first
 	end
 
   def industrylist
