@@ -13,7 +13,7 @@
   </head>
   <body>  
 
-<div class="row bluebg padding2h padding05v fixed stickyheader">
+<div class="row fullwidth bluebg padding2h padding05v fixed stickyheader">
   <div class="large-6 medium-6 columns content">
     <a href="<%= root_path %>"><h1 class="margin0b margin0t font106 white padding05v"><span class="weight900">UKF</span>RANCHISE</h1></a>
   </div>
@@ -27,8 +27,12 @@
       </div>
     <% end %>
   </div>
-  <div class="large-6 show-for-large-only columns content">
-    <br>
+  <div class="large-6 show-for-large-only columns content padding05v text-right">
+    <ul class="inline-list socials">
+      <li><a href="https://www.linkedin.com/company/uk-franchise" target="_blank"><%= image_tag("linkedin.png") %></a></li>
+      <li><a href="https://www.facebook.com/pages/UK-Franchise/656935641081502" target="_blank"><%= image_tag("facebook.png") %></a></li>
+      <li><a href="http://www.twitter.com/ukfranchisecouk" target="_blank"><%= image_tag("twitter.png") %></a></li>
+    </ul>
   </div>
 </div>
 <div class="stickyheader"></div>
@@ -58,8 +62,9 @@
       </li>
       <li class="has-dropdown"><a href="">Spotlight</a>
         <ul class="dropdown">
-          <li><a href="#">Test1</a></li>
-          <li><a href="#">Test2</a></li>
+          <% @spotlightnav.each do |spotlight| %>
+          <li><%= link_to(spotlight) do %><%= spotlight.franchisename %><% end %></li>
+          <% end %>
         </ul>
       </li>
       <li class="has-dropdown"><a href="">Price Ranges</a>
@@ -105,7 +110,7 @@
     <div class="large-4 text-center columns content">
       <div class="row valign-middle footermatch">
         <div class="large-24 columns">
-          <%= image_tag('logo.png') %>
+          <a href="<%= root_path %>"><h3 class="margin0b margin0t font106 white padding05v"><span class="weight900">UKF</span>RANCHISE</h3></a>
         </div>
       </div>
     </div>
