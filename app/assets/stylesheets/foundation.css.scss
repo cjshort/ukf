@@ -759,10 +759,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#497cb5', end
   .yieldcontainer{
     padding: 0;
   }
-  .content2{
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  }
 }
 
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
@@ -3717,8 +3713,12 @@ meta.foundation-mq-topbar {
         margin-top: 0;
         font-size: 1.125rem; }
         .top-bar-section .dropdown li.title h5 a, .top-bar-section .dropdown li.parent-link a {
-          color: white;
-          display: block; }
+          color: #414141;
+          display: block;
+          text-transform: uppercase;
+          font-family: "Ubuntu", sans-serif;
+          font-size: 0.9rem;
+          font-weight: 600;}
           .top-bar-section .dropdown li.title h5 a:hover, .top-bar-section .dropdown li.parent-link a:hover {
             background: none; }
       .top-bar-section .dropdown li.has-form {
