@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   get 'events/show'
   get 'events/edit'
 
+
+  get 'industry/index'
   get 'industry/accounting'
   get 'industry/agriculture'
   get 'industry/automotive'

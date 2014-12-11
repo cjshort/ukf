@@ -13,16 +13,16 @@
   </head>
   <body>  
 
-<div class="row fullwidth bluebg padding2h padding05v fixed stickyheader">
-  <div class="large-6 medium-6 columns content">
+<div class="row fullwidth bluebg headerpaddingh padding05v fixed stickyheader">
+  <div class="large-6 medium-6 show-for-medium-up columns content">
     <a href="<%= root_path %>"><h1 class="margin0b margin0t font106 white padding05v"><span class="weight900">UKF</span>RANCHISE</h1></a>
   </div>
-  <div class="large-12 medium-18 columns content text-center valign-normal">
+  <div class="large-12 medium-18 small-24 columns content text-center valign-normal">
     <%= form_tag home_search_path, :method => :get, class: "applicationsearch" do %>
-      <div class="large-21 medium-21 columns">
+      <div class="large-21 medium-21 small-21 columns">
         <%= text_field_tag :search, params[:search], id: "applicationsearch", :placeholder => "Search by industry, franchise name or related keyword", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Search by industry, franchise name or related keyword'" %>
       </div>
-      <div class="large-3 medium-3 columns">
+      <div class="large-3 medium-3 small-3 columns">
         <%= submit_tag "Search", :name => nil %>
       </div>
     <% end %>
@@ -35,7 +35,7 @@
     </ul>
   </div>
 </div>
-<div class="stickyheader"></div>
+<div class="stickyheader show-for-medium-up"></div>
 
 
 <nav class="top-bar" data-topbar role="navigation">
@@ -58,7 +58,7 @@
 
     <ul class="right">
       <li>
-        <a href="">Industries</a>
+        <a href="<%= industry_index_path %>">Industries</a>
       </li>
       <li class="has-dropdown"><a href="">Spotlight</a>
         <ul class="dropdown">

@@ -377,6 +377,11 @@ width: 6rem;
   margin-top: 0.5rem;
 }
 
+.headerpaddingh{
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
 .padding2t4b{
   padding-top: 2rem;
   padding-bottom: 4rem;
@@ -750,8 +755,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#497cb5', end
 }
 
 @media only screen and (max-width: 40em) {
-  .stickyheader{
-    display:none;
+  .headerpaddingh{
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .fixed{
+    position: static !important;
   }
   .logodisplay{
     display: inline;
