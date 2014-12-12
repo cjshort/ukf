@@ -16,7 +16,7 @@ background-size: cover;
   <div class="large-18 medium-18 columns bluegradientbg row1 text-left padding3t">
     <div class="content2 margin2b">
       <h1 class="font14 weight100 white">Search through the UK's best franchises</h1>
-      <p class="white weight100">UK-Franchise is dedicated to creating a completely free solution for not only discovering and connecting with franchise networks, but for ongoing educational and news services revolved around the franchise industry and related businesses. We are the fastest growing franchise directory, that says enough.</p>
+      <p class="white weight100">UK-Franchise is dedicated to creating a completely free solution for not only discovering and connecting with franchise networks, but for ongoing educational and news services revolved around the franchise industry and related businesses. We are the fastest growing franchise directory and we hope you find value in our website.</p>
     </div>
     <%= form_tag home_search_path, :method => :get, class: "homesearch" do %>
       <div class="large-21 medium-21 small-21 columns">
@@ -89,7 +89,7 @@ background-size: cover;
         <h5 class="weight700 textup font08 margin0b margin0t padding05v lightheader content">Latest from The Money Zone</h5>
         <%= link_to post_path(@post1) do %>
         <div class="post1">
-          <div class="homepostimageoverlay content3 padding3v">
+          <div class="homepostimageoverlay content3 padding6v">
             <h3 class="margin0t white font2 ubuntu weight500 margin0b"><%= @post1.title %></h3>
             <p class="white weight100 font09 posttitleborder margin0b margin1t">Posted by <span class="italic weight600"><%= @post1.name %></span> on <span class="italic"><%= @post1.created_at.strftime("%b %d, %Y") %></span></p>
           </div>

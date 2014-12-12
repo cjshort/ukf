@@ -2,7 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.industrybutton{
+	background: #cecece;
+	transition-duration: 300ms;
+}
 
+.industrybutton:hover{
+	background: #c2c2c2;
+	transition-duration: 300ms;
+}
 .industrytitle{
 	font-family: "Ubuntu";
 	font-weight: 700;

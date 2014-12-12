@@ -218,7 +218,7 @@ transition-duration: 300ms;
 box-shadow: none;
 background: rgba(237, 236, 235, 0.07);
 border: none;
-color: #333;
+color: #fff;
 transition-duration: 500ms;
 font-weight: 100;
 font-style: italic;
@@ -237,7 +237,7 @@ height: 2.5rem;
 #applicationsearch:focus{
   opacity: 0.9;
    background: rgba(237, 236, 235, 0.9);
-  color: #333;
+  color: #414141;
   font-style: normal;
   font-weight: 500;
 }
@@ -578,6 +578,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#282828', end
   background: #273241;
 }
 
+.headerbg{
+  background: #273241;
+}
+
+
 .blueheader{
   background: #2D3E52; /* Old browsers */
   background: -moz-linear-gradient(-45deg,  #273241 0%, #273241 100%); /* FF3.6+ */
@@ -755,6 +760,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#497cb5', end
 }
 
 @media only screen and (max-width: 40em) {
+    .headerbg{
+      background: #1F2937;
+    }
   .headerpaddingh{
     padding-left: 0;
     padding-right: 0;
