@@ -1,3 +1,13 @@
+.topbaralign{
+  width: 100%;
+  left: 50%;
+  margin: 0 0 0 -50%;
+}
+
+.stickyheader{
+  background: #273241;
+}
+
 .inline-list.socials li img
 {
   height: 1.55rem;
@@ -3442,8 +3452,9 @@ meta.foundation-mq-topbar {
 
 .fixed {
   width: 100%;
-  left: 0;
   position: fixed;
+  left: 50%;
+  margin: 0 0 0 -50%;
   top: 0;
   z-index: 99; }
   .fixed.expanded:not(.top-bar) {
