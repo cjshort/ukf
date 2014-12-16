@@ -13,12 +13,10 @@ class Listing < ActiveRecord::Base
 	is_impressionable
   
   validates_acceptance_of :toc, :on => :create, :accept => true
-  validates :fullname, :jobtitle, :email, :franchisename, :leadrecepient, :longdescription,
-            :website, :branchcount, :mininvestment, :category, presence: true
+  validates :fullname, :jobtitle, :email, :franchisename, presence: true
   validates :franchisename, :website, uniqueness: true
   validates :fullname, :jobtitle, :email, :franchisename, :leadrecepient, :website, length: { minimum: 5, maximum: 80 }
-  validates :branchcount, numericality: { only_integer: true }
-  validates :longdescription, length: {minimum: 500 , maximum: 4000 }
+  validates :longdescription, length: {minimum: 5 , maximum: 4000 }
 
 def self.search(query)
   __elasticsearch__.search(
