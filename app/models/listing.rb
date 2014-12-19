@@ -15,8 +15,8 @@ class Listing < ActiveRecord::Base
   validates_acceptance_of :toc, :on => :create, :accept => true
   validates :fullname, :jobtitle, :email, :franchisename, presence: true
   validates :franchisename, :website, uniqueness: true
-  validates :fullname, :jobtitle, :email, :franchisename, :leadrecepient, :website, length: { minimum: 5, maximum: 80 }
-  validates :longdescription, length: {minimum: 5 , maximum: 4000 }
+  validates :fullname, :jobtitle, :email, :franchisename, :leadrecepient, :website, length: { minimum: 1, maximum: 80 }
+  validates :longdescription, length: {minimum: 1 , maximum: 4000 }
 
 def self.search(query)
   __elasticsearch__.search(
