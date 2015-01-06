@@ -71,24 +71,28 @@ class ListingsController < ApplicationController
   def leadcreate
     @listing = Listing.friendly.find(params[:id])
 
-    @lead = @listing.leads.create(:fullname => current_user.fullname, :email => current_user.email, :phone => current_user.phone, :method => current_user.method, :listing_id => @listing.id)
-
-    if @lead.save
-    LeadMailer.lead_mailer(@listing, @lead).deliver
-
-    mailchimp_list_id = "90e42ef292"
-    gb = Gibbon::API.new
-    gb.lists.subscribe({:id => mailchimp_list_id,
-      :email => {:email => @lead.email},
-      :merge_vars => {
-        :FULLNAME => @lead.fullname,
-        :TELEPHONE => @lead.phone},
-      :double_optin => false,
-      :send_welcome => false})
-
-    redirect_to :back, notice: "Your interest has been registered, #{@listing.franchisename} will get back to you shortly."
+    if Lead.where(listing_id: @listing.id, email: current_user.email).present?
+      redirect_to root_path, alert: "You have already submitted an enquiry to this franchise"
     else
-    redirect_to listing_path(@listing), alert: "Oops! It seems something went wrong, please try again."
+      @lead = @listing.leads.create(:fullname => current_user.fullname, :email => current_user.email, :phone => current_user.phone, :method => current_user.method, :listing_id => @listing.id)
+
+      if @lead.save
+      LeadMailer.lead_mailer(@listing, @lead).deliver
+
+      mailchimp_list_id = "90e42ef292"
+      gb = Gibbon::API.new
+      gb.lists.subscribe({:id => mailchimp_list_id,
+        :email => {:email => @lead.email},
+        :merge_vars => {
+          :FULLNAME => @lead.fullname,
+          :TELEPHONE => @lead.phone},
+        :double_optin => false,
+        :send_welcome => false})
+
+      redirect_to :back, notice: "Your interest has been registered, #{@listing.franchisename} will get back to you shortly."
+      else
+      redirect_to listing_path(@listing), alert: "Oops! It seems something went wrong, please try again."
+      end
     end
   end
 
