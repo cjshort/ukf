@@ -1,0 +1,321 @@
+/* line 5, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.spinner {
+  background-image: url(/assets/spinner.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* line 11, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.logoborder {
+  border-top: 1px solid #ececec;
+  border-left: 1px solid #ececec;
+  border-right: 1px solid #ececec;
+}
+
+/* line 17, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+#newstorycontainer {
+  background: #cecece;
+}
+
+/* line 23, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+ul,
+ol,
+dl {
+  font-size: 0.9rem;
+}
+
+/* line 27, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.oneclickenquiry {
+  font-size: 0.8rem;
+  font-weight: 500;
+  font-family: "Ubuntu";
+  background: #fff;
+  border-radius: 2px;
+  padding: 0.7rem 3rem;
+}
+
+/* line 36, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.newstoryform::-webkit-input-placeholder {
+  color: #333;
+}
+
+/* line 40, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.newstoryform:focus::-webkit-input-placeholder {
+  color: #333;
+}
+
+/* line 44, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.newstoryform:-moz-placeholder {
+  /* Firefox 18- */
+  color: #333;
+}
+
+/* line 48, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.newstoryform::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #333;
+}
+
+/* line 52, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.newstoryform:-ms-input-placeholder {
+  color: #333;
+}
+
+/* line 56, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.new_story input[type="text"] {
+  background: #ececec;
+  box-shadow: none;
+  border: none;
+  color: #333;
+  border-bottom: 1px solid #262626 s;
+  font-size: 1rem;
+  font-weight: 100;
+}
+
+/* line 66, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.new_story input[type="text"]:focus {
+  background: #efefef;
+  box-shadow: none;
+  border: none;
+  color: #000;
+  border-bottom: 1px solid #262626 s;
+  font-size: 1rem;
+  font-weight: 100;
+}
+
+/* line 76, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.new_story textarea {
+  background: #ececec;
+  box-shadow: none;
+  border: none;
+  color: #333;
+  border-bottom: 1px solid #262626 s;
+  font-size: 0.9rem;
+  font-weight: 100;
+  height: 5rem;
+}
+
+/* line 87, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.charcount1 {
+  position: absolute;
+  right: 2rem;
+}
+
+/* line 92, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.new_story textarea:focus {
+  background: #efefef;
+  box-shadow: none;
+  border: none;
+  color: #333;
+  border-bottom: 1px solid #262626 s;
+  font-size: 0.9rem;
+  font-weight: 100;
+  height: 5rem;
+}
+
+/* line 103, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.storyborder {
+  border-top: 1px solid #B0B0B0;
+  height: 6.9rem;
+}
+
+/* line 109, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.new_story input[type="submit"] {
+  width: 100%;
+  border: none;
+  box-shadow: none;
+  background: #ececec;
+  color: #333;
+  outline: none;
+  padding: 1rem 0;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  border-bottom: #4ac031 1px solid;
+  transition-duration: 300ms;
+}
+
+/* line 124, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.new_story input[type="submit"]:hover {
+  background: #efefef;
+}
+
+/* line 129, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.newstorybutton {
+  font-size: 0.7rem;
+  background: #C2C2C2;
+  padding: 0.4rem 1rem 0.4rem 1rem;
+  border-radius: 3px;
+  margin-left: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* line 139, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.new_listing input[type="text"], .new_lead input[type="text"] {
+  background: #373737;
+  box-shadow: none;
+  border: none;
+  color: #fff;
+  border-bottom: 1px solid #262626 s;
+  font-size: 1rem;
+  font-weight: 100;
+}
+
+/* line 150, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.new_listing select, .new_lead select {
+  background-color: #373737;
+  box-shadow: none;
+  border: none;
+  color: #A9A9A9;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #262626 s;
+  font-weight: 100;
+  outline: none;
+}
+
+/* line 161, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.new_lead input[type="text"] {
+  background-color: #373737;
+  box-shadow: none;
+  border: none;
+  color: #fff;
+  border-bottom: 1px solid #262626 s;
+  font-size: 1rem;
+  font-weight: 100;
+  outline: none;
+}
+
+/* line 172, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.new_lead input[type="text"] {
+  height: 2.3rem;
+  font-size: 0.9rem;
+}
+
+/* line 177, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.new_listing input[type="submit"] {
+  width: 100%;
+  border: none;
+  box-shadow: none;
+  background: #434343;
+  color: #fff;
+  outline: none;
+  padding: 1rem 0;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  border-bottom: #4ac031 1px solid;
+  transition-duration: 300ms;
+}
+
+/* line 192, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.new_listing input[type="submit"]:hover, .new_lead input[type="submit"]:hover {
+  background: #404040;
+}
+
+/* line 197, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.new_listing textarea {
+  background: #373737;
+  box-shadow: none;
+  border: none;
+  color: #fff;
+  border-bottom: 1px solid #262626 s;
+  font-size: 0.9rem;
+  font-weight: 100;
+  height: 5rem;
+}
+
+/* line 208, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.new_listing .textareabig {
+  height: 20rem;
+}
+
+/* line 212, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.statsrow {
+  border-bottom: 1px solid #c9c9c9;
+}
+
+/* line 216, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.iconcolumn {
+  background: #e2e2e2;
+  padding: 0.5rem 0;
+}
+
+/* line 221, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.facebookcolumn {
+  background: #3E4B67;
+  padding: 0.5rem 0;
+  transition-duration: 300ms;
+}
+
+/* line 227, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.twittercolumn {
+  background: #246F8C;
+  padding: 0.5rem 0;
+  transition-duration: 300ms;
+}
+
+/* line 233, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.googlepluscolumn {
+  background: #85453D;
+  padding: 0.5rem 0;
+  transition-duration: 300ms;
+}
+
+/* line 239, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.linkedincolumn {
+  background: #245A74;
+  padding: 0.5rem 0;
+  transition-duration: 300ms;
+}
+
+/* line 245, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.facebookcolumn:hover {
+  background: #3E4B67;
+  padding: 0.5rem 0;
+  transition-duration: 300ms;
+}
+
+/* line 251, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.twittercolumn:hover {
+  background: #246F8C;
+  padding: 0.5rem 0;
+  transition-duration: 300ms;
+}
+
+/* line 257, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.googlepluscolumn:hover {
+  background: #85453D;
+  padding: 0.5rem 0;
+  transition-duration: 300ms;
+}
+
+/* line 263, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.linkedincolumn:hover {
+  background: #245A74;
+  padding: 0.5rem 0;
+  transition-duration: 300ms;
+}
+
+/* line 270, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.column {
+  background: #00aced;
+  padding: 0.5rem 0;
+}
+
+/* line 275, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.stattext {
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-top: 0.7rem;
+}
+
+/* line 281, C:/Users/Callum/Documents/directory/app/assets/stylesheets/listings.css.scss */
+.requestinformation {
+  background: #333;
+  border-radius: 3px;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 0.8rem 3rem;
+  margin-bottom: 0;
+}

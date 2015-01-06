@@ -1,0 +1,21 @@
+/* line 5, C:/Users/Callum/Documents/directory/app/assets/stylesheets/footerlinks.css.scss */
+::-webkit-input-placeholder {
+  color: #c9c9c9;
+}
+
+/* line 9, C:/Users/Callum/Documents/directory/app/assets/stylesheets/footerlinks.css.scss */
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #c9c9c9;
+}
+
+/* line 13, C:/Users/Callum/Documents/directory/app/assets/stylesheets/footerlinks.css.scss */
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #c9c9c9;
+}
+
+/* line 17, C:/Users/Callum/Documents/directory/app/assets/stylesheets/footerlinks.css.scss */
+:-ms-input-placeholder {
+  color: #c9c9c9;
+}
