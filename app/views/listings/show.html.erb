@@ -9,8 +9,14 @@ meta title: ["#{@listing.franchisename}", "UK Franchise"],
     <div class="whitebg logoborder">
       <img class="margin2v" src="<%= @listing.logourl %>" alt="<%= @listing.franchisename %>">
     </div>
-    <%= link_to(:controller => "listings", :action => :leadcreate) do %>
-      <p class="textup greenbg white padding15v margin0b weight700 font08 clicktrigger"><span class="triggercontent">one-click-enquiry</span></p>
+    <% if user_signed_in? %>
+      <%= link_to(:controller => "listings", :action => :leadcreate) do %>
+        <p class="textup greenbg white padding15v margin0b weight700 font08 clicktrigger"><span class="triggercontent">one-click-enquiry</span></p>
+      <% end %>
+    <% else %>
+      <%= link_to new_user_registration_path do %>
+        <p class="textup greenbg white padding15v margin0b weight700 font08 clicktrigger"><span class="triggercontent">one-click-enquiry</span></p>
+      <% end %>  
     <% end %>
       <div class="row statsrow">
         <div class="large-4 small-4 columns content text-center iconcolumn">
