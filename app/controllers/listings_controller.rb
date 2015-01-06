@@ -72,7 +72,7 @@ class ListingsController < ApplicationController
     @listing = Listing.friendly.find(params[:id])
 
     if Lead.where(listing_id: @listing.id, email: current_user.email).present?
-      redirect_to root_path, alert: "You have already submitted an enquiry to this franchise"
+      redirect_to listing_path(@listing), alert: "You have already submitted an enquiry to this franchise"
     else
       @lead = @listing.leads.create(:fullname => current_user.fullname, :email => current_user.email, :phone => current_user.phone, :method => current_user.method, :listing_id => @listing.id)
 

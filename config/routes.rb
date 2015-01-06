@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'insights/dashboard'
+
+  get 'insights/leads'
+
+  get 'insights/editlisting'
+
   devise_for :franchises, :controllers => {:registrations => "franchises/registrations"}
   devise_for :users, :controllers => {:registrations => "users/registrations"}
 

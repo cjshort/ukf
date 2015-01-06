@@ -11,7 +11,7 @@ class Franchises::RegistrationsController < Devise::RegistrationsController
           :FULLNAME => params[:franchise][:fullname],
           :JOBTITLE => params[:franchise][:jobtitle],
           :FRANCHISE => params[:franchise][:listing_attributes][:franchisename],
-          :WEBSITE => params[:franchise][:listing_attributes][:websie]},
+          :WEBSITE => params[:franchise][:listing_attributes][:website]},
         :double_optin => false,
         :send_welcome => false})
 

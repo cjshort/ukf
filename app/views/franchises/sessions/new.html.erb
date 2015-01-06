@@ -1,17 +1,31 @@
-<h2>Sign in</h2>
+<div class="row padding2v">
+  <div class="large-7 columns">
+    <br>
+  </div>
+  <div class="large-10 columns whitebg content padding2v greyb1 row1">
+
+  <h5 class="textcenter textup">Franchise Analytics</h5>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
 
-  <div><%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+  <%= f.email_field :email, :placeholder => "Enter your email address", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Enter your email address'"  %>
 
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
+  <%= f.password_field :password, autocomplete: "off", :placeholder => "Enter your password", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Enter your password'" %>
 
-  <div><%= f.submit "Sign in" %></div>
+		<div class="row">
+			<div class="large-12 columns text-left">
+		  <% if devise_mapping.rememberable? -%>
+		    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+		  <% end -%>
+			</div>
+
+		  <div class="large-12 columns text-right"><%= f.submit "Sign in", class: "font08 textup ubuntu white weight700 registrationsubmit" %></div>
+		</div>
+
+        <a href="<%= new_franchise_password_path %>"><p class="margin0b">Forgot your password?</p></a>
 <% end %>
-
-<%= render "franchises/shared/links" %>
+</div>
+  <div class="large-7 columns">
+    <br>
+  </div>
+</div>
