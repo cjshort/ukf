@@ -1,0 +1,54 @@
+<div class="row padding2v">
+  <div class="large-4 columns">
+    <Br>
+  </div>
+  <div class="large-10 columns whitebg content padding2v greyb1 row1">
+    <h5>Edit Account</h5>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= devise_error_messages! %>
+
+
+      <%= f.text_field :fullname, :placeholder => "Enter your full name", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Enter your full name'"  %>
+
+      <%= f.text_field :phone, :placeholder => "Enter your phone number", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Enter your phone number'" %>
+
+      <%= f.email_field :email, :placeholder => "Enter your email", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Enter your email'" %>
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+
+      <%= f.password_field :password, autocomplete: "off", :placeholder => "Password (leave blank if you do not want to change it)", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Password (leave blank if you do not want to change it)'" %>
+
+        <%= f.password_field :password_confirmation, autocomplete: "off", :placeholder => "Password (leave blank if you do not want to change it)", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Password (leave blank if you do not want to change it)'" %>
+
+        <%= f.password_field :current_password, autocomplete: "off", :placeholder => "Current Password (to confirm your changes)", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Current Password (to confirm your changes)'" %>
+
+      <div><%= f.submit "Update", class: "font08 textup ubuntu white weight700 registrationsubmit" %></div>
+    <% end %>
+  </div>
+  <div class="large-6 columns lightestgreybg row1 content">
+    <div class="padding2v">
+      <p class="font1 margin05b submitbut">Information</p>
+      <p class="font08">Please note this information is only distribued between franchisers which you have specifically shown interest in. Additionally, the franchisers agree to only utilise your information in a way which provides you with relevent and valuable opportunities and information. If you find this not to be the case, please <%= link_to 'contact us', footerlinks_contactus_path, class: "weight700" %>.</p>
+    </div>
+  </div>
+  <div class="large-4 columns">
+    <Br>
+  </div>
+</div>
+
+<script type="text/javascript">
+    (function() {
+
+        $(function() {
+
+          $(function() {
+            $('.row1').matchHeight();
+          });
+          
+        });
+
+    })();
+</script>

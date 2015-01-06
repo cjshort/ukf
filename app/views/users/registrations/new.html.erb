@@ -1,0 +1,30 @@
+<div class="row padding2v">
+  <div class="large-7 columns">
+    <br>
+  </div>
+  <div class="large-10 columns whitebg content padding2v greyb1 row1">
+
+<h5>Register to enable one-click-enquiry</h5>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <%= f.text_field :fullname, :placeholder => "Enter your full name", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Enter your full name'"  %>
+
+  <%= f.text_field :phone, :placeholder => "Enter your phone number", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Enter your phone number'" %>
+
+  <%= f.email_field :email, :placeholder => "Enter your email", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Enter your email'" %>
+
+  <%= f.select :method, ([["Email", "Email"], ["Phone", "Phone"]]), :prompt => "Prefered method of contact" %>
+
+  <%= f.password_field :password, autocomplete: "off", :placeholder => "Enter your passowrd", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Enter your passowrd'" %>
+
+  <%= f.password_field :password_confirmation, autocomplete: "off", :placeholder => "Re-enter your password", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Re-enter your password'" %>
+
+  <div><%= f.submit "Sign up", class: "font08 textup ubuntu white weight700 registrationsubmit" %></div>
+<% end %>
+</div>
+  <div class="large-7 columns">
+    <br>
+  </div>
+</div>
