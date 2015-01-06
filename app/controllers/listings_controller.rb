@@ -65,59 +65,35 @@ class ListingsController < ApplicationController
     @story = Story.new
     @stories = Story.where(:listing_id => params[:id]).reverse.take(4)
     impressionist(@listing)
+    @related = Listing.where(:category => @listing.category).sort_by { rand }.slice(0, 4)
   end
 
   def leadcreate
-    if params[:lead][:nickname].blank?
-      @listing = Listing.friendly.find(params[:id])
-      @lead = @listing.leads.create(lead_params)
+    @listing = Listing.friendly.find(params[:id])
 
-      if @lead.save
-      LeadMailer.lead_mailer(@listing, @lead).deliver
+    @lead = @listing.leads.create(:fullname => current_user.fullname, :email => current_user.email, :phone => current_user.phone, :method => current_user.method, :listing_id => @listing.id)
 
-      mailchimp_list_id = "90e42ef292"
-      gb = Gibbon::API.new
-      gb.lists.subscribe({:id => mailchimp_list_id,
-        :email => {:email => @lead.email},
-        :merge_vars => {
-          :FULLNAME => @lead.fullname,
-          :TELEPHONE => @lead.phone,
-          :ADDRESS => @lead.address,
-          :CITY => @lead.city,
-          :REGION => @lead.region,
-          :POSTCODE => @lead.postcode},
-        :double_optin => false,
-        :send_welcome => false})
-      redirect_to listing_path(@listing), notice: "Success! We have sent your details to #{@listing.franchisename} so that they provide additional information."
-      else
-      redirect_to listing_path(@listing), alert: "Oops! It seems something went wrong, please try again."
-      end
+    if @lead.save
+    LeadMailer.lead_mailer(@listing, @lead).deliver
+
+    mailchimp_list_id = "90e42ef292"
+    gb = Gibbon::API.new
+    gb.lists.subscribe({:id => mailchimp_list_id,
+      :email => {:email => @lead.email},
+      :merge_vars => {
+        :FULLNAME => @lead.fullname,
+        :TELEPHONE => @lead.phone},
+      :double_optin => false,
+      :send_welcome => false})
+
+    redirect_to :back, notice: "Your interest has been registered, #{@listing.franchisename} will get back to you shortly."
     else
-      redirect_to :back, alert: "Oops! It looks like you have entered something incorrectly, please try again."
+    redirect_to listing_path(@listing), alert: "Oops! It seems something went wrong, please try again."
     end
-  end
-
-  def storycreate
-    if params[:story][:nickname].blank?
-      @listing = Listing.friendly.find(params[:id])
-      @story = @listing.stories.create(story_params)
-
-      if @story.save
-      redirect_to listing_path(@listing), notice: "Success! Your testimonial has been submitted for approval."
-      else
-      redirect_to listing_path(@listing), alert: "Oops! It seems something went wrong in your submission, please try again."
-      end
-    else
-      redirect_to :back, alert: "Oops! It looks like you have entered something incorrectly, please try again."
-    end
-  end
-
-  def story_params
-    params.require(:story).permit(:fullname, :email, :jobrole, :story, :toc, :nickname)
   end
 
   def lead_params
-    params.require(:lead).permit(:fullname, :email, :phone, :address, :city, :region, :postcode, :country, :contactpreferal, :toc, :listing_id, :nickname)
+    #params.require(:lead).permit(:fullname, :email, :phone, :method, :toc, :listing_id,)
   end
   
   def listing_params

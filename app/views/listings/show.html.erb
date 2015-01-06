@@ -4,205 +4,128 @@ meta title: ["#{@listing.franchisename}", "UK Franchise"],
      keywords: ["#{@listing.franchisename}", "#{@listing.scale}", "#{@listing.category}"]
 %>
 
-
-<style>
-
-.franchisecolorbg{
-  background: <%= @listing.hexbg %>;
-}
-
-.riborder{
-  border: 1px solid <%= @listing.hexbg %>;
-}
-
-.new_lead input[type="submit"]{
-width: 100%;
-border: none;
-box-shadow: none;
-background: #434343;
-color: #fff;
-outline: none;
-padding: 1rem 0;
-font-weight: 500;
-font-size: 0.9rem;
-text-transform: uppercase;
-border: <%= @listing.hexbg %> 1px solid ;
-transition-duration: 300ms;
-}
-
-
-</style>
-
-
-<div class="franchisecolorbg">
-  <div class="row">
-    <div class="large-24 columns content2 text-center">
-      <img class="margin4v" src="<%= @listing.logourl %>" alt="<%= @listing.franchisename %>">
-      <h1 class="font1 margin0b padding0b franchisetitle"><%= @listing.franchisename %> 
-        <% if admin_signed_in? %>
-         | <%= link_to "Edit", edit_listing_path(@listing) %> | <%= link_to "Delete", listing_path(@listing), :method => :delete, :data => {:confirm => 'Confirm Deletion'} %>
-        <% end %>
-      </h1>
+<div class="row padding1t">
+  <div class="large-8 columns text-center offwhitebg row1">
+    <div class="whitebg logoborder">
+      <img class="margin2v" src="<%= @listing.logourl %>" alt="<%= @listing.franchisename %>">
     </div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="large-17 small-push-24 columns whitebg row1">
-      <h5 class="weight700 textup font08 margin0b margin0t padding05v lightheader content">Introduction</h5>
-      <div class="content3 whitebg franchisetextcontainer padding1v">
-        <%= simple_format(@listing.longdescription, class: "font09", sanitize: true) %>
-      </div>
-  </div>
-  <div class="large-7 small-pull-24 columns darkgreybg row1">
-    <h5 class="weight700 textup font08 margin0b margin0t padding05v darkheader content white">Stats</h5>
-    <div class="row statsrow">
-      <div class="large-4 small-4 columns content text-center iconcolumn">
-        <%= image_tag('showicon1.png') %>
-      </div>
-      <div class="large-20 small-20 columns content text-left">
-        <p class="white stattext weight100"><%= @listing.franchisename %></p>
-      </div>
-    </div>
-    <div class="row statsrow">
-      <div class="large-4 small-4 columns content text-center iconcolumn stats">
-        <%= image_tag('showicon2.png') %>
-      </div>
-      <div class="large-20 small-20 columns content text-left stats">
-        <p class="white stattext weight100"><a href="http://<%= @listing.website %>"><%= @listing.website %></a></p>
-      </div>
-    </div>
-    <div class="row statsrow">
-      <div class="large-4 small-4 columns content text-center iconcolumn stats">
-        <%= image_tag('showicon3.png') %>
-      </div>
-      <div class="large-20 small-20 columns content text-left stats">
-        <p class="white stattext weight100"><%= @listing.scale %></p>
-      </div>
-    </div>
-    <div class="row statsrow">
-      <div class="large-4 small-4 columns content text-center iconcolumn stats">
-        <%= image_tag('showicon4.png') %>
-      </div>
-      <div class="large-20 small-20 columns content text-left stats">
-        <p class="white stattext weight100"><%= @listing.branchcount %> Franchisees</p>
-      </div>
-    </div>
-    <div class="row statsrow">
-      <div class="large-4 small-4 columns content text-center iconcolumn stats">
-        <%= image_tag('showicon5.png') %>
-      </div>
-      <div class="large-20 small-20 columns content text-left stats">
-        <p class="white stattext weight100"><%= @listing.mininvestment %> Min Investment</p>
-      </div>
-    </div>
-    <div class="row statsrow">
-      <div class="large-4 small-4 columns content text-center iconcolumn stats">
-        <%= image_tag('showicon6.png') %>
-      </div>
-      <div class="large-20 small-20 columns content text-left stats">
-        <p class="white stattext weight100"><%= @listing.category %></p>
-      </div>
-    </div>
-    <div class="row statsrow">
-      <div class="large-24 columns content text-center iconcolumn stats">
-        <%= image_tag('showicon7.png') %>
-      </div>
-    </div>
-    <div class="row statsrow">
-      <div class="large-24 columns content text-center facebookcolumn stats">
-        <a href="<%= @listing.facebook %>"><p class="textup font07 white margin0b">Facebook</p></a>
-      </div>
-    </div>
-    <div class="row statsrow">
-      <div class="large-24 columns content text-center twittercolumn stats">
-        <a href="<%= @listing.twitter %>"><p class="textup font07 white margin0b">Twitter</p></a>
-      </div>
-    </div>
-    <div class="row statsrow">
-      <div class="large-24 columns content text-center googlepluscolumn stats">
-        <a href="<%= @listing.googleplus %>"><p class="textup font07 white margin0b">Google Plus</p></a>
-      </div>
-    </div>
-    <div class="row statsrow">
-      <div class="large-24 columns content text-center linkedincolumn stats">
-        <a href="<%= @listing.linkedin %>"><p class="textup font07 white margin0b">LinkedIn</p></a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="row whitebg">
-  <div class="large-14 columns row2 overflowhidden">
-    <h5 class="weight700 textup font08 margin0b margin0t padding05v lightheader content">Testimonials</h5>
-    <div class="row padding2v greybg margin0r margin0l">
-      <div class="large-13 columns content3">
-        <p class="font1 margin0b">Learn from people who have already experienced the <span class="weight600"><%= @listing.franchisename %></span> franchise.</p>
-      </div>
-      <div class="large-11 columns content3 text-center padding05t">
-        <p><span class="newstorybutton">Add your testimonial</span></p>
-      </div>
-    </div>
-    <div class="row padding10b" id="newstorycontainer" style="display: none;">
-      <div class="large-24 columns content3">
-        <%= form_for @story, :url => {:controller => "listings", :action => :storycreate } do |story|%>
-          <%= story.text_field :fullname, :placeholder => "Full Name", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Full Name'", class: "newstoryform" %>
-          <%= story.text_field :email, :placeholder => "Email", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Email'", class: "newstoryform" %>
-          <%= story.text_field :jobrole, :placeholder => "Job Role (e.g #{@listing.franchisename} Branch Manager)", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Job Role (e.g #{@listing.franchisename} Branch Manager)'", class: "newstoryform" %>
-          <%= story.text_area :story, :placeholder => "Your Story", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Your Story'", class: "newstoryform charlimit1" %>
-          <div class="charcount1"></div>
-          <%= story.text_field :nickname, class: "displaynone" %>
-          <%= story.check_box :toc %>
-          <%= story.label :toc, "I agree to the UKF terms and conditions", class: "textup" %>
-          <%= story.submit "submit story" %>
-        <% end %>
-      </div>
-    </div>
-    <div id="storycontainer">
-      <% if @stories.blank? %>
-        <div class="row padding5v content">
-          <div class="large-24 columns text-center">
-            <p class="font1"><%= @listing.franchisename %> has no testimonials yet</p>
-            <p><span class="newstorybutton">Add your testimonial</span></p>
-          </div>
-        </div>
-      <% else %>
-        <% @stories.each do |story| %>
-        <div class="row padding1v storyborder content3">
-          <div class="large 12 columns">
-            <p class="font09 margin0b weight600"><%= story.fullname %>, <%= story.jobrole %></p>
-            <p class="font09 margin0b">"<%= truncate(story.story, :length => 360, :separator => '', :omission => "") %>"</p>
-          </div>
-        </div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-  <div class="large-10 columns text-left padding1v darkgreybg2 row2 content2">
-    <h4 class="white weight100 margin1b font13">Learn more about <%= @listing.franchisename %></h4>
-    <%= form_for @lead, :url => {:controller => "listings", :action => :leadcreate } do |lead|%>
-      <%= lead.text_field :fullname, :placeholder => "Full Name", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Full Name'" %>
-      <%= lead.text_field :email, :placeholder => "Email", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Email'" %>
-      <%= lead.text_field :phone, :placeholder => "Phone", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Phone'" %>
-      <%= lead.text_field :address, :placeholder => "Address", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Address'" %>
-      <%= lead.text_field :city, :placeholder => "City", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'City'" %>
-      <%= lead.text_field :region, :placeholder => "Region", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Region'" %>
-      <%= lead.text_field :postcode, :placeholder => "Post Code", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Post Code'" %>
-      <%= lead.select :contactpreferal, ([["Email", "Email"], ["Phone", "Phone"]]), :prompt => "Select a method of contact" %>
-      <%= lead.text_field :nickname, class: "displaynone" %>
-      <%= lead.check_box :toc %>
-      <%= lead.label :toc, "I agree to the UKF terms and conditions", class: "textup white" %>
-      <%= lead.submit "Get More Information" %>
+    <%= link_to(:controller => "listings", :action => :leadcreate) do %>
+      <p class="textup greenbg white padding15v margin0b weight700 font08 clicktrigger"><span class="triggercontent">one-click-enquiry</span></p>
     <% end %>
+      <div class="row statsrow">
+        <div class="large-4 small-4 columns content text-center iconcolumn">
+          <%= image_tag('showicon1.png') %>
+        </div>
+        <div class="large-20 small-20 columns content text-left">
+          <p class=" stattext"><%= @listing.franchisename %></p>
+        </div>
+      </div>
+      <div class="row statsrow">
+        <div class="large-4 small-4 columns content text-center iconcolumn stats">
+          <%= image_tag('showicon2.png') %>
+        </div>
+        <div class="large-20 small-20 columns content text-left stats">
+          <p class="stattext"><a rel="nofollow" href="http://<%= @listing.website %>"><%= @listing.website %></a></p>
+        </div>
+      </div>
+      <div class="row statsrow">
+        <div class="large-4 small-4 columns content text-center iconcolumn stats">
+          <%= image_tag('showicon3.png') %>
+        </div>
+        <div class="large-20 small-20 columns content text-left stats">
+          <p class="stattext"><%= @listing.scale %></p>
+        </div>
+      </div>
+      <div class="row statsrow">
+        <div class="large-4 small-4 columns content text-center iconcolumn stats">
+          <%= image_tag('showicon5.png') %>
+        </div>
+        <div class="large-20 small-20 columns content text-left stats">
+          <p class="stattext"><%= @listing.mininvestment %> Min Investment</p>
+        </div>
+      </div>
+      <div class="row statsrow">
+        <div class="large-4 small-4 columns content text-center iconcolumn stats">
+          <%= image_tag('showicon6.png') %>
+        </div>
+        <div class="large-20 small-20 columns content text-left stats">
+          <p class="stattext"><%= @listing.category %></p>
+        </div>
+      </div>
+      <div class="row statsrow">
+        <div class="large-24 columns content text-center iconcolumn stats">
+          <%= image_tag('showicon7.png') %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-12 medium-12 columns content text-center facebookcolumn stats">
+          <a href="<%= @listing.facebook %>"><p class="textup font07 white margin0b">Facebook</p></a>
+        </div>
+        <div class="large-12 medium-12 columns content text-center twittercolumn stats">
+          <a href="<%= @listing.twitter %>"><p class="textup font07 white margin0b">Twitter</p></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-12 medium-12 columns content text-center googlepluscolumn stats">
+          <a href="<%= @listing.googleplus %>"><p class="textup font07 white margin0b">Google Plus</p></a>
+        </div>
+        <div class="large-12 medium-12 columns content text-center linkedincolumn stats">
+          <a href="<%= @listing.linkedin %>"><p class="textup font07 white margin0b">LinkedIn</p></a>
+        </div>
+      </div>
+  </div>
+  <div class="large-16 columns row1 whitebg content3 padding2v">
+    <h1 class="font16 margin1b"><%= @listing.franchisename %><h1> 
+    <%= simple_format(@listing.longdescription, class: "font09", sanitize: true) %>
   </div>
 </div>
+
+<% if Listing.where(:category => @listing.category).count > 3 %> 
+  <div class="row padding2t">
+    <div class="large-24 columns">
+      <h5 class="textup weight900 font085 grey genericborder margin2t">Related franchises</h5>
+      <div class="row">
+        <% @related.each do |latest| %>
+          <div class="large-8 medium-8 columns content1 padding1v">
+            <%= link_to(latest) do %>
+              <div class="latestlisting">
+                <div class="whitebg text-center">
+                  <img class="spotlightlogo margin05v" src="<%= latest.logourl %>">
+                </div>
+                <div class="greybg">
+                  <div class="row lightgreybg padding03v content latestbb">
+                    <div class="large-24 columns text-left">
+                      <h4 class="font07 margin0b margin0t"><%= image_tag('listingicon1.png', class: "latesticon") %><span class="listingicontext"><%= latest.franchisename %></span></h4>
+                    </div>
+                  </div>
+                  <div class="row lightgreybg padding03v content">
+                    <div class="large-24 columns text-left">
+                      <h4 class="font07 margin0b margin0t"><%= image_tag('listingicon2.png', class: "latesticon") %><span class="listingicontext"><%= latest.mininvestment %> Minimum Investment</span></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
 
 <!-- <%= "#{@listing.impressionist_count} views so far!" %> -->
 
 <script type="text/javascript">
+
     (function() {
 
         $(function() {
+
+          $(".clicktrigger").click(function(){
+            $(".triggercontent").css("visibility", "hidden");
+            $(".clicktrigger").addClass("spinner");
+          });
 
           var elem = $(".charcount1");
           $(".charlimit1").limiter(360, elem);

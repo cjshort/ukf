@@ -4,6 +4,6 @@ class LeadMailer < ActionMailer::Base
   def lead_mailer(listing, lead)
   	@listing = listing
   	@lead = lead
-  	mail(to: @listing.leadrecepient, subject: "Your franchise has a new lead courtesy of uk-franchise.co.uk")
+  	mail(to: @listing.franchise.email, subject: "Your franchise has a new lead courtesy of uk-franchise.co.uk")
   end
 end

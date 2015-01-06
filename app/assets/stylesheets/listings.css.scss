@@ -2,6 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.spinner{
+	background-image: image-url('spinner.gif');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.logoborder{
+	border-top: 1px solid #ececec;
+	border-left: 1px solid #ececec;
+	border-right: 1px solid #ececec;
+}
+
 #newstorycontainer{
 	background: #cecece;
 }
@@ -198,58 +210,58 @@ transition-duration: 300ms;
 }
 
 .statsrow{
-	border-bottom: 1px solid #333333;
+	border-bottom: 1px solid #c9c9c9;
 }
 
 .iconcolumn{
-	background: #414141;
+	background: #e2e2e2;
 	padding: 0.5rem 0;
 }
 
 .facebookcolumn{
-	background: rgba(59, 89, 152, 0.44);
+	background: #3E4B67;
 	padding: 0.5rem 0;
 	transition-duration: 300ms;
 }
 
 .twittercolumn{
-	background: rgba(0, 172, 237, 0.44);
+	background: #246F8C;
 	padding: 0.5rem 0;
 	transition-duration: 300ms;
 }
 
 .googlepluscolumn{
-	background: rgba(221, 75, 57, 0.44);
+	background: #85453D;
 	padding: 0.5rem 0;
 	transition-duration: 300ms;
 }
 
 .linkedincolumn{
-	background: rgba(0, 123, 182, 0.44);
+	background: #245A74;
 	padding: 0.5rem 0;
 	transition-duration: 300ms;
 }
 
 .facebookcolumn:hover{
-	background: rgba(59, 89, 152, 0.54);
+	background: #3E4B67;
 	padding: 0.5rem 0;
 	transition-duration: 300ms;
 }
 
 .twittercolumn:hover{
-	background: rgba(0, 172, 237, 0.54);
+	background: #246F8C;
 	padding: 0.5rem 0;
 	transition-duration: 300ms;
 }
 
 .googlepluscolumn:hover{
-	background: rgba(221, 75, 57, 0.54);
+	background: #85453D;
 	padding: 0.5rem 0;
 	transition-duration: 300ms;
 }
 
 .linkedincolumn:hover{
-	background: rgba(0, 123, 182, 0.54);
+	background: #245A74;
 	padding: 0.5rem 0;
 	transition-duration: 300ms;
 }

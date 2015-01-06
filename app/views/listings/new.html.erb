@@ -32,8 +32,6 @@ meta title: ["Add your franchise", "UK Franchise"],
 
           <%= f.text_field :website, :placeholder => "Website Address", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Website Address'", class: "listingnewform"   %>
 
-          <%= f.text_field :branchcount, :placeholder => "Number Of Branches", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Number Of Branches'", class: "listingnewform"   %>
-        
           <%= f.text_field :mininvestment, :placeholder => "Minimum Investment", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Minimum Investment'", class: "listingnewform"   %>
 
           <%= f.select :category, @industrylist, :prompt => "Select a Service" %>

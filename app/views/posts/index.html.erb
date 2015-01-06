@@ -11,24 +11,21 @@ meta title: ["The Money Zone", "UK Franchise"],
 }
 </style>
 
-<div class="moneybg">
-  <div class="row padding2v valign-middle">
-    <div class="large-14 columns content2 postheader">
-      <%= image_tag('moneyzonelogo.png', class: "inlineblock moneyzonelogo") %>
-      <a href="#" class="show-for-large-up"><p class="textup font07 inlineblock addnewpost white" id="postbutton">Add Post <%= image_tag('whiteplus.png', class: "neweventplus") %></p></a>
-    </div>
-    <div class="large-10 columns content2 text-right">
-      <p class="margin0t font08 ubuntu margin0b white">Get upcoming franchise events straight to your inbox</p>
-      <div class="row valign-normal right">
-      	<%= form_tag('/posts/subscribe', method: "post", id: "subscribe") do%>
-	        <div class="large-18 columns text-right mailer">
-          	<%= email_field(:email, :email, {id: "mailersub", placeholder: "Enter your email"}) %>
-	        </div>
-	        <div class="large-6 columns text-right mailer">
-		        <%= submit_tag("Submit", id: "mailersubmit") %>
-	        </div>
-        <% end %>
-      </div>
+
+<div class="row padding2v moneybg">
+  <div class="large-14 columns content2 postheader">
+    <%= image_tag('moneyzonelogo.png', class: "moneyzonelogo") %>
+  </div>
+  <div class="large-10 columns content2 text-right">
+    <div class="row valign-normal right">
+    	<%= form_tag('/posts/subscribe', method: "post", id: "subscribe") do%>
+        <div class="large-18 columns text-right mailer">
+        	<%= email_field(:email, :email, {id: "mailersub", placeholder: "Sign up to our newsletter", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Sign up to our newsletter'" }) %>
+        </div>
+        <div class="large-6 columns text-right mailer">
+	        <%= submit_tag("Submit", id: "mailersubmit", class: "ubuntu") %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

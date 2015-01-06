@@ -13,136 +13,111 @@ background-size: cover;
 </style>
 
 <div class="row">
-  <div class="large-18 medium-18 columns bluegradientbg row1 text-left padding3t">
-    <div class="content2 margin2b">
-      <h1 class="font14 weight100 white">Search through the UK's best franchises</h1>
-      <p class="white weight100">Whether you are looking for a franchise, exploring business opportunities or just trying to stay updated with industry news, UK-Franchise.co.uk is dedicated to providing a 100% free directory and blog revolved around franchising. <span class="weight700">We are the fastest growing franchise directory.</span></p>
-    </div>
-    <%= form_tag home_search_path, :method => :get, class: "homesearch" do %>
-      <div class="large-21 medium-21 small-21 columns">
-        <%= text_field_tag :search, params[:search], id: "indexsearch", :placeholder => "Search by industry, franchise name or related keyword", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Search by industry, franchise name or related keyword'" %>
-      </div>
-      <div class="large-3 medium-3 small-3 columns">
-        <%= submit_tag "Search", :name => nil %>
-      </div>
-    <% end %>
-  </div>
-  <div class="large-6 medium-6 columns indexthemoneyzone row1 themoneyzonebg text-center">
-    <a href="<%= posts_index_path %>">
-      <div class="row row1">
-        <div class="large-24 columns height100">
-          <div class="padding3t4b">
-          	<%= image_tag('themoneyzonelogo.png', class: 'themoneyzonelogo content' ) %>
-            <p class="white font08 padding11t content2">The non-stop franchise blog, master franchising on one website.</p>
-          </div>
-          <p class="themoneyzoneenter"><span class="entertext">ENTER</span></p>
-        </div>
-      </div>
-    </a>
-  </div>
-</div>
-    
-<div class="row darkgreybg">
-  <div class="large-18 medium-18 columns section1">
-    <div class="row">
-      <div class="large-17 columns greybg row2">
-        <h5 class="weight700 textup font08 margin0b margin0t padding05v lightheader content">Spotlight</h5>
-        <div class="row content1">
-          <% @spotlight.each do |latest| %>
-            <div class="large-12 medium-12 columns content1 padding1v">
-              <%= link_to(latest) do %>
-                <div class="latestlisting">
-                  <div class="whitebg text-center">
-                    <img class="spotlightlogo margin1v" src="<%= latest.logourl %>">
-                  </div>
-                  <div class="greybg">
-                    <div class="row lightgreybg padding05v content latestbb">
-                      <div class="large-12 columns text-left">
-                        <h4 class="font07 margin0b margin0t"><%= image_tag('listingicon1.png', class: "latesticon") %><span class="listingicontext"><%= latest.franchisename %></span></h4>
-                      </div>
-                    </div>
-                    <div class="row lightgreybg padding05v content">
-                      <div class="large-24 columns text-left">
-                        <h4 class="font07 margin0b margin0t"><%= image_tag('listingicon2.png', class: "latesticon") %><span class="listingicontext"><%= latest.mininvestment %> Minimum Investment</span></h4>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-      <div class="large-7 columns bluegradientbg row2 show-for-large-up">
-        <h5 class="weight700 textup font08 margin0b margin0t padding05v blueheader content white">Free Marketing</h5>
-        <div class="row valign-middle row2 content3 height85">
-          <div class="large-24 columns">
-            <%= image_tag('mapicon.png') %>
-            <h3 class="white weight100 font1 margin05t">Put your franchise on the map</h3>
-            <a href="<%= new_listing_path %>"><h6 class="createlistingbutton textup">Add your franchise for free</h6></a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="large-17 columns greybg row3">
-        <h5 class="weight700 textup font08 margin0b margin0t padding05v lightheader content">Latest from The Money Zone</h5>
-        <%= link_to post_path(@post1) do %>
-        <div class="post1">
-          <div class="homepostimageoverlay content3 padding6v">
-            <h3 class="margin0t white font2 ubuntu weight500 margin0b"><%= @post1.title %></h3>
-            <p class="white weight100 font09 posttitleborder margin0b margin1t">Posted by <span class="italic weight600"><%= @post1.name %></span> on <span class="italic"><%= @post1.created_at.strftime("%b %d, %Y") %></span></p>
-          </div>
-        </div>
-        <% end %>
-      </div>
-      <div class="large-7 columns darkgreybg row3">
-        <h5 class="weight700 textup font08 margin0b margin0t padding05v darkheader content white">Events</h5>
-        <% @events.each do |event| %>
-          <div class="row content padding1t">
-            <%= link_to(events_index_path) do %>
-              <div class="large-24 columns eventcontainer">
-                <div class="darkgreybg2 padding05t">
-                  <h4 class="white font08 content weight100"><%= event.eventname %> in <%= event.region %>, <%= event.postcode %></h4>
-                  <p class="text-center eventlearnmore">LEARN MORE</p>
-                </div>
-              </div>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-  <div class="large-6 medium-6 columns greybg section1 padding1b">
-      <h5 class="weight700 textup font08 margin0b margin0t padding05v lightheader content">Top Franchises</h5>
-      <% @latest.each do |latest| %>
-        <div class="row content padding1t padding0b text-center">
+  <div class="large-18 medium-18 columns row1 text-left">
+    <div class="rowmarginminus04h">
+      <% @spotlight.each do |latest| %>
+        <div class="large-8 medium-8 columns content1 padding1v">
           <%= link_to(latest) do %>
-            <div class="large-24 columns latestlisting">
-              <div class="latestlogocontainer padding1v"><img class="latestlogo" src="<%= latest.logourl %>"></div>
-              <div class="row lightgreybg padding05v content latestbb">
-                <div class="large-24 columns text-left">
-                  <h4 class="font07 margin0b margin0t"><%= image_tag('listingicon1.png', class: "latesticon") %><span class="listingicontext"><%= latest.franchisename %></span></h4>
-                </div>
+            <div class="latestlisting">
+              <div class="whitebg text-center">
+                <img class="spotlightlogo margin05v" src="<%= latest.logourl %>">
               </div>
-              <div class="row lightgreybg padding05v content">
-                <div class="large-24 columns text-left">
-                  <h4 class="font07 margin0b margin0t"><%= image_tag('listingicon2.png', class: "latesticon") %><span class="listingicontext"><%= latest.mininvestment %> Minimum Investment</span></h4>
+              <div class="greybg">
+                <div class="row lightgreybg padding03v content latestbb">
+                  <div class="large-24 columns text-left">
+                    <h4 class="font07 margin0b margin0t"><%= image_tag('listingicon1.png', class: "latesticon") %><span class="listingicontext"><%= latest.franchisename %></span></h4>
+                  </div>
+                </div>
+                <div class="row lightgreybg padding03v content">
+                  <div class="large-24 columns text-left">
+                    <h4 class="font07 margin0b margin0t"><%= image_tag('listingicon2.png', class: "latesticon") %><span class="listingicontext"><%= latest.mininvestment %> Minimum Investment</span></h4>
+                  </div>
                 </div>
               </div>
             </div>
           <% end %>
         </div>
       <% end %>
+    </div>
+    <div class="row content1">
+      <div class="row offwhitebg content searchboxpadding">
+        <h3 class="font12">Search across the UK's fastest growing franchise directory</h3>
+          <%= form_tag home_search_path, :method => :get, class: "homesearch" do %>
+            <div class="large-21 medium-21 small-21 columns">
+              <%= text_field_tag :search, params[:search], id: "indexsearch", :placeholder => "Search by industry, franchise name or related keyword", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Search by industry, franchise name or related keyword'" %>
+            </div>
+            <div class="large-3 medium-3 small-3 columns">
+              <%= submit_tag "Search", :name => nil %>
+            </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="large-6 medium-6 columns row1 text-right padding1t">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- index-one -->
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:300px;height:250px"
+         data-ad-client="ca-pub-3449156753114364"
+         data-ad-slot="8094596937"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
   </div>
 </div>
 
-<div class="row">
-  <div class="large-18 columns">
+<div class="row padding1v">
+  <div class="large-18 columns content1 marginminus04h">
+    <h5 class="textup weight900 font085 grey moneyzoneborder">Money Zone</h5>
     <div class="row">
-      <div class="large-24 columns greybg br1grey row4">
-        <h5 class="weight700 textup font08 margin0b margin0t padding05v lightheader content">Jump To Category</h5>
-        <div class="row padding1v">
+      <div class="large-16 columns">
+        <%= link_to post_path(@post1) do %>
+        <div class="post1 blogwidget">
+          <div class="homepostimageoverlay content3 padding8t2b blogwidget">
+            <h3 class="margin0t white font2 ubuntu weight500 margin0b"><%= @post1.title %></h3>
+            <p class="white weight100 font09 posttitleborder margin0b margin1t">Posted by <span class="italic weight600"><%= @post1.name %></span> on <span class="italic"><%= @post1.created_at.strftime("%b %d, %Y") %></span></p>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <div class="large-8 columns blogwidget lightergreybg blogwidgetborder">
+        <h4 class="testerson blogadditionals">This is a title regarding franchises for the blog which could</h4>
+        <h4 class="testerson blogadditionals">This is a title regarding franchises for the blog which could</h4>
+        <h4 class="testerson blogadditionals">This is a title regarding franchises for the blog which could</h4>
+      </div>
+    </div>
+    <h5 class="textup weight900 font085 grey eventsborder margin1t">Events</h5>
+    <div class="row">
+      <div id="map-canvas"></div>
+    </div>
+  </div>
+  <div class="large-6 columns marginminus04h">
+    <% @latest.each do |latest| %>
+      <div class="row content1 padding1t padding0b text-center">
+        <%= link_to(latest) do %>
+          <div class="large-24 columns latestlisting whitebg">
+            <div class="latestlogocontainer margin05v"><img class="latestlogo" src="<%= latest.logourl %>"></div>
+            <div class="row lightgreybg padding03v content latestbb">
+              <div class="large-24 columns text-left">
+                <h4 class="font07 margin0b margin0t"><%= image_tag('listingicon1.png', class: "latesticon") %><span class="listingicontext"><%= latest.franchisename %></span></h4>
+              </div>
+            </div>
+            <div class="row lightgreybg padding03v content">
+              <div class="large-24 columns text-left">
+                <h4 class="font07 margin0b margin0t"><%= image_tag('listingicon2.png', class: "latesticon") %><span class="listingicontext"><%= latest.mininvestment %> Minimum Investment</span></h4>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="row padding1v">
+  <div class="large-18 medium-18 columns row3 content1 marginminus04h">
+    <h5 class="textup weight900 font085 grey genericborder margin1t">Categories</h5>
+        <div class="row">
           <div class="large-6 medium-6 small-12 columns">
             <ul class="no-bullet catjump margin0b">
               <%= link_to industry_accounting_path do %><li>Accounting</li><% end %>
@@ -194,27 +169,53 @@ background-size: cover;
               <%= link_to industry_promotional_path do %><li>Promotional</li><% end %>
               <%= link_to industry_print_path do %><li>Print</li><% end %>
               <%= link_to industry_repairandmaintenance_path do %><li>Repair &amp; Maintenance</li><% end %>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
+              <br>
+              <%= link_to industry_investment1_path do %><li class="weight600">Less than £15,000</li><% end %>
+              <%= link_to industry_investment2_path do %><li class="weight600">£15,000 to £50,000</li><% end %>
+              <%= link_to industry_investment4_path do %><li class="weight600">£50,000 to £75,000</li><% end %>
+              <%= link_to industry_investment3_path do %><li class="weight600">More than £75,000</li><% end %>
             </ul>
           </div>
         </div>
-      </div>
-    </div>
   </div>
-  <div class="large-6 columns darkgreybg row4">
-    <h5 class="weight700 textup font08 margin0b margin0t padding05v darkheader content white">Price Ranges</h5>
-    <a href="<%= industry_investment1_path %>"><p class="padding1v margin0b margin0t text-center offwhite pricerange content textup font08">Less than £15,000</p></a>
-    <a href="<%= industry_investment2_path %>"><p class="padding1v margin0b margin0t text-center offwhite pricerange content textup font08">£15,000 to £50,000</p></a>
-    <a href="<%= industry_investment3_path %>"><p class="padding1v margin0b margin0t text-center offwhite pricerange content textup font08">£50,000 to £75,000</p></a>
-    <a href="<%= industry_investment4_path %>"><p class="padding1v margin0b margin0t text-center offwhite pricerange content textup font08">More than £75,000</p></a>
+  <div class="large-6 medium-6 columns row3 marginminus1h">
+    <h5 class="textup weight900 font085 grey matcherborder margin1t">Matcher</h5>
   </div>
 </div>
+
+<script type="text/javascript">
+  function initialize() {
+
+  var styles = [
+{"featureType":"administrative","elementType":"geometry","stylers":[{"color":"#cccccc"}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"visibility":"on"}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"visibility":"on"},{"color":"#737373"}]},{"featureType":"administrative.province","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"administrative.province","elementType":"geometry.stroke","stylers":[{"visibility":"on"},{"saturation":"-59"}]},{"featureType":"administrative.province","elementType":"labels","stylers":[{"visibility":"on"}]},{"featureType":"administrative.locality","elementType":"geometry","stylers":[{"visibility":"off"}]},{"featureType":"administrative.locality","elementType":"geometry.fill","stylers":[{"visibility":"off"},{"saturation":"88"},{"color":"#cf0e0e"}]},{"featureType":"administrative.locality","elementType":"geometry.stroke","stylers":[{"visibility":"off"},{"saturation":"-100"},{"color":"#b30303"}]},{"featureType":"administrative.locality","elementType":"labels","stylers":[{"hue":"#ff0000"},{"visibility":"on"}]},{"featureType":"administrative.neighborhood","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"administrative.neighborhood","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"administrative.neighborhood","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"administrative.land_parcel","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"administrative.land_parcel","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#e9e9e9"}]},{"featureType":"landscape.natural.terrain","elementType":"geometry.stroke","stylers":[{"color":"#ff0000"},{"visibility":"off"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#dadada"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#696969"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#c9c9c9"},{"visibility":"on"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"visibility":"simplified"},{"color":"#dddddd"}]},{"featureType":"road.highway","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#d5d5d5"},{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"color":"#d6d6d6"},{"visibility":"on"}]},{"featureType":"road.local","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"visibility":"off"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#dcdcdc"},{"weight":1.8}]},{"featureType":"road.local","elementType":"geometry.stroke","stylers":[{"color":"#d6d6d6"}]},{"featureType":"transit","elementType":"all","stylers":[{"color":"#808080"},{"visibility":"off"}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#f7f7f7"}]    }
+    ];
+
+    var mapOptions = {
+      center: { lat: 52.253027, lng: -1.252441},
+      zoom: 6
+    };
+
+    var map = new google.maps.Map(document.getElementById('map-canvas'),
+        mapOptions);
+
+    map.setOptions({styles: styles});
+
+
+    var marker1 = new google.maps.Marker({
+    position: {lat: 50.718309, lng: -3.53386},
+    map: map,
+    title:"Hello World!"
+    });
+
+    marker1.setIcon("<%= image_path('maps-icon.png') %>")
+
+    google.maps.event.addListener(marker1, 'click', function() {
+      window.location.href = "http://google.com";
+    });
+
+  }
+  google.maps.event.addDomListener(window, 'load', initialize);
+</script>
 
 <script type="text/javascript">
     (function() {
@@ -234,11 +235,11 @@ background-size: cover;
           });
 
           $(function() {
-            $('.row4').matchHeight();
+            $('.blogwidget').matchHeight();
           });
 
           $(function() {
-            $('.section1').matchHeight();
+            $('.blogadditionals').matchHeight();
           });
 
           $(function() {

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141203213739) do
+ActiveRecord::Schema.define(version: 20150106012036) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -56,6 +56,26 @@ ActiveRecord::Schema.define(version: 20141203213739) do
     t.string   "nickname"
   end
 
+  create_table "franchises", force: true do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "fullname"
+    t.string   "jobtitle"
+  end
+
+  add_index "franchises", ["email"], name: "index_franchises_on_email", unique: true
+  add_index "franchises", ["reset_password_token"], name: "index_franchises_on_reset_password_token", unique: true
+
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
     t.integer  "sluggable_id",              null: false
@@ -98,16 +118,10 @@ ActiveRecord::Schema.define(version: 20141203213739) do
     t.string   "fullname"
     t.string   "email"
     t.integer  "phone"
-    t.string   "address"
-    t.string   "city"
-    t.string   "region"
-    t.string   "postcode"
-    t.string   "contactpreferal"
     t.integer  "listing_id"
-    t.boolean  "toc",             default: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "nickname"
+    t.string   "method"
   end
 
   create_table "listings", force: true do |t|
@@ -118,7 +132,6 @@ ActiveRecord::Schema.define(version: 20141203213739) do
     t.string   "leadrecepient"
     t.text     "longdescription"
     t.string   "website"
-    t.integer  "branchcount"
     t.string   "scale"
     t.string   "mininvestment"
     t.string   "investmentrange"
@@ -137,6 +150,7 @@ ActiveRecord::Schema.define(version: 20141203213739) do
     t.datetime "updated_at"
     t.string   "slug"
     t.string   "nickname"
+    t.integer  "franchise_id"
   end
 
   add_index "listings", ["slug"], name: "index_listings_on_slug"
@@ -169,5 +183,26 @@ ActiveRecord::Schema.define(version: 20141203213739) do
     t.datetime "updated_at"
     t.string   "nickname"
   end
+
+  create_table "users", force: true do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "fullname"
+    t.string   "phone"
+    t.string   "method"
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end

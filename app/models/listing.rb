@@ -1,6 +1,7 @@
 require 'elasticsearch/model'
 
 class Listing < ActiveRecord::Base
+  belongs_to :franchise
   has_many :leads
   has_many :stories
 
@@ -11,12 +12,8 @@ class Listing < ActiveRecord::Base
   include Elasticsearch::Model::Callbacks
 
 	is_impressionable
-  
-  validates_acceptance_of :toc, :on => :create, :accept => true
-  validates :fullname, :jobtitle, :email, :franchisename, presence: true
-  validates :franchisename, :website, uniqueness: true
-  validates :fullname, :jobtitle, :email, :franchisename, :leadrecepient, :website, length: { minimum: 1, maximum: 80 }
-  validates :longdescription, length: {minimum: 1 , maximum: 4000 }
+
+
 
 def self.search(query)
   __elasticsearch__.search(

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%= stylesheet_link_tag    'application', params[:controller], media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxCjj26YNpwOdQq3XZ7JncPz9WQEqSqOw"type="text/javascript"></script>
     <%= csrf_meta_tags %>
     <link href="//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic" rel="stylesheet" type="text/css">
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,700,600,300italic,600italic' rel='stylesheet' type='text/css'>
@@ -13,11 +14,11 @@
   </head>
   <body>  
 
-<div class="row fullwidth headerbg headerpaddingh padding05v fixed stickyheader">
-  <div class="large-6 medium-6 show-for-medium-up columns content">
-    <a href="<%= root_path %>"><h1 class="margin0b margin0t font106 white padding05v"><span class="weight900">UKF</span>RANCHISE</h1></a>
+<div class="row fullwidth headerbg headerpaddingh fixed stickyheader">
+  <div class="large-5 medium-6 show-for-medium-up columns padding07v">
+    <a href="<%= root_path %>"><h1 class="margin0b margin0t font11 logotext padding05v"><span class="weight900">UKF</span>RANCHISE</h1></a>
   </div>
-  <div class="large-12 medium-18 small-24 columns content text-center valign-normal">
+  <div class="large-14 medium-18 small-24 columns content text-center padding07v">
     <%= form_tag home_search_path, :method => :get, class: "applicationsearch" do %>
       <div class="large-21 medium-21 small-21 columns">
         <%= text_field_tag :search, params[:search], id: "applicationsearch", :placeholder => "Search by industry, franchise name or related keyword", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Search by industry, franchise name or related keyword'" %>
@@ -27,17 +28,37 @@
       </div>
     <% end %>
   </div>
-  <div class="large-6 show-for-large-up columns content padding05v text-right">
-    <ul class="inline-list socials">
-      <li><a href="https://www.linkedin.com/company/uk-franchise" target="_blank"><%= image_tag("linkedin.png") %></a></li>
-      <li><a href="https://www.facebook.com/ukfranchise" target="_blank"><%= image_tag("facebook.png") %></a></li>
-      <li><a href="http://www.twitter.com/ukfranchisecouk" target="_blank"><%= image_tag("twitter.png") %></a></li>
+  <div class="large-5 show-for-large-up columns content padding05v text-right">
+    <ul class="inline-list profilemargin">
+      <% if user_signed_in? %>
+        <li>
+          <%= image_tag('profile1.png') %>
+        </li>
+        <li>
+        <a href="<%= edit_user_registration_path %>"><p class="font09 margin0b lineheight24 weight600">Account</p></a>
+        <%= link_to(destroy_user_session_path, :method => :delete) do %><p class="font07 margin0b lineheight8">Sign Out</p></a><% end %>
+      <% elsif franchise_signed_in? %>
+        <li>
+          <%= image_tag('profile1.png') %>
+        </li>
+        <li>
+        <a href="<%= edit_franchise_registration_path %>"><p class="font09 margin0b lineheight24 weight600">Analytics</p></a>
+        <%= link_to(destroy_franchise_session_path, :method => :delete) do %><p class="font07 margin0b lineheight8">Sign Out</p></a><% end %>
+      <% else %>
+        <li>
+          <%= image_tag('profile1.png') %>
+        </li>
+        <li>
+        <a href="<%= new_user_session_path %>"><p class="font09 margin0b lineheight24 weight600">Sign in</p></a>
+        <a href="<%= new_user_registration_path %>"><p class="font07 margin0b lineheight8">Register</p></a>
+      <% end %>
+      </li>
     </ul>
   </div>
 </div>
-<div class="stickyheader show-for-medium-up"></div>
 
 
+<div class="container-to-grid secondnavmargin">
 <nav class="top-bar" data-topbar role="navigation">
   <ul class="title-area">
     <li class="name">
@@ -49,14 +70,14 @@
 
   <section class="top-bar-section">
 
-    <ul class="left">
-      <li class="matchernav(hovereffect)"><a href="<%= comingsoon_path  %>">Matcher</a></li>
-      <li><a href="<%= comingsoon_path %>">Discover</a></li>
-      <li><a href="<%= events_index_path %>">Events</a></li>
-      <li><a href="<%= posts_index_path %>">Money Zone</a></li>
+    <ul class="left marginminus1h">
+      <li class="matchernav(hovereffect)"><a href="<%= comingsoon_path  %>"><%= image_tag("matchericon.png", class: "navicons") %>Matcher</a></li>
+      <li><a href="<%= comingsoon_path %>"><%= image_tag("discovericon.png", class: "navicons") %>Discover</a></li>
+      <li><a href="<%= events_index_path %>"><%= image_tag("eventsicon.png", class: "navicons") %>Events</a></li>
+      <li><a href="<%= posts_index_path %>"><%= image_tag("moneyzoneicon.png", class: "navicons") %>Money Zone</a></li>
     </ul>
 
-    <ul class="right">
+    <ul class="right marginminus1h">
       <li>
         <a href="<%= industry_index_path %>">Industries</a>
       </li>
@@ -79,78 +100,77 @@
 
   </section>
 </nav>
-
-<% if flash[:notice] %>
-<div class="row notice">
-  <div class="large-20 columns">
-  <%= notice %>
-  </div>
-  <div class="large-4 columns">
-    <a href="">X</a>
-  </div>
 </div>
-<% end %>
-<% if flash[:alert] %>
-  <div class="row alert">
+
+<div class="yieldcontainer">
+  <% if flash[:notice] %>
+  <div class="row notice">
     <div class="large-20 columns">
-    <%= alert %>
+    <%= notice %>
     </div>
     <div class="large-4 columns">
       <a href="">X</a>
     </div>
   </div>
-<% end %>  
-
-<div class="yieldcontainer">
+  <% end %>
+  <% if flash[:alert] %>
+    <div class="row alert">
+      <div class="large-20 columns">
+      <%= alert %>
+      </div>
+      <div class="large-4 columns">
+        <a href="">X</a>
+      </div>
+    </div>
+  <% end %>  
     <%= yield %>
 </div>
 
-<div class="footerbg">
-  <div class="row padding2v opacity03">
-    <div class="large-4 text-center columns content">
-      <div class="row valign-middle footermatch">
-        <div class="large-24 medium-24 columns">
-          <a href="<%= root_path %>"><h3 class="margin0b margin0t font106 white padding05v"><span class="weight900">UKF</span>RANCHISE</h3></a>
-        </div>
+<div class="row padding2v">
+  <div class="large-4 text-center columns content">
+    <div class="row valign-middle footermatch">
+      <div class="large-24 medium-24 columns">
+        <a href="<%= root_path %>"><h3 class="margin0b margin0t font106 padding05v"><span class="weight900">UKF</span>RANCHISE</h3></a>
       </div>
     </div>
-    <div class="large-20 medium-24 columns">
-      <div class="row footermatch">
-        <div class="large-6 medium-6 columns content">
-          <ul class="no-bullet font08 textup white margin0b margin3r">
-            <li class="font09 weight700">Franchisors</li>
-            <a href="<%= footerlinks_editlisting_path %>"><li>Edit your listing</li></a>
-            <a href="<%= new_listing_path %>"><li>Create your listing</li></a>
-          </ul>
-        </div>
-        <div class="large-6 medium-6 columns content">
-          <ul class="no-bullet font08 textup white margin0b margin3r">
-            <li class="font09 weight700">Quick Links</li>
-            <a href=""><li>Franchise Finder</li></a>
-            <a href=""><li>Discover Brands</li></a>
-            <a href=""><li>Franchise Events</li></a>
-            <a href=""><li>The Money Zone</li></a>
-          </ul>
-        </div>
-        <div class="large-6 medium-6 columns content">
-          <ul class="no-bullet font08 textup white margin0b margin3r">
-            <li class="font09 weight700">Company</li>
-            <a href="<%= footerlinks_contactus_path %>"><li>Contact us</li></a>
-            <a href="<%= footerlinks_toc_path %>"><li>Terms and Conditions</li></a>
-          </ul>
-        </div>
-        <div class="large-6 medium-6 columns content">
-          <ul class="no-bullet font08 textup white margin0b margin3r">
-            <li class="font09 weight700">Social Media</li>
-            <a href="https://www.facebook.com/pages/UK-Franchise/656935641081502" target="_blank"><li>Facebook</li></a>
-            <a href="http://www.twitter.com/ukfranchisecouk" target="_blank"><li>Twitter</li></a>
-            <a href="https://www.linkedin.com/company/uk-franchise" target="_blank"><li>LinkedIn</li></a>
-          </ul>
-        </div>
+  </div>
+  <div class="large-20 medium-24 columns">
+    <div class="row footermatch">
+      <div class="large-6 medium-6 columns content">
+        <ul class="no-bullet font08 textup margin0b margin3r">
+          <li class="font09 weight700">Franchisors</li>
+          <a href="<%= footerlinks_editlisting_path %>"><li>Edit your listing</li></a>
+          <a href="<%= new_listing_path %>"><li>Create your listing</li></a>
+        </ul>
+      </div>
+      <div class="large-6 medium-6 columns content">
+        <ul class="no-bullet font08 textup margin0b margin3r">
+          <li class="font09 weight700">Quick Links</li>
+          <a href=""><li>Franchise Finder</li></a>
+          <a href=""><li>Discover Brands</li></a>
+          <a href=""><li>Franchise Events</li></a>
+          <a href=""><li>The Money Zone</li></a>
+        </ul>
+      </div>
+      <div class="large-6 medium-6 columns content">
+        <ul class="no-bullet font08 textup margin0b margin3r">
+          <li class="font09 weight700">Company</li>
+          <a href="<%= footerlinks_contactus_path %>"><li>Contact us</li></a>
+          <a href="<%= footerlinks_toc_path %>"><li>Terms and Conditions</li></a>
+        </ul>
+      </div>
+      <div class="large-6 medium-6 columns content">
+        <ul class="no-bullet font08 textup margin0b margin3r">
+          <li class="font09 weight700">Social Media</li>
+          <a href="https://www.facebook.com/pages/UK-Franchise/656935641081502" target="_blank"><li>Facebook</li></a>
+          <a href="http://www.twitter.com/ukfranchisecouk" target="_blank"><li>Twitter</li></a>
+          <a href="https://www.linkedin.com/company/uk-franchise" target="_blank"><li>LinkedIn</li></a>
+        </ul>
       </div>
     </div>
   </div>
 </div>
+
 
 <script>
         $(function() {

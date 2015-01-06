@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  devise_for :franchises, :controllers => {:registrations => "franchises/registrations"}
+  devise_for :users, :controllers => {:registrations => "users/registrations"}
+
   get 'footerlinks/editlisting'
   get 'footerlinks/franchisorinfo'
   get 'footerlinks/aboutus'
@@ -72,7 +75,7 @@ Rails.application.routes.draw do
 
   resources :listings, :path => "franchise" do
      member do
-       post :leadcreate
+       get :leadcreate
        post :storycreate
      end
   end
