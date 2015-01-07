@@ -1,2 +1,28 @@
-<h1>Insights#dashboard</h1>
-<p>Find me in app/views/insights/dashboard.html.erb</p>
+<div class="row">
+	<div class="large-24 columns whitebg greyb1">
+		<div class="row bluebg padding2v">
+			<div class="large-12 columns content2">
+				<h1 class="white font14 weight100">Franchise Insights</h1>
+			</div>
+		</div>
+		<div class="row padding2v">
+			<div class="large-6 columns text-center">
+				<h2 class="ubuntu logotext font3"><%= @leads.where("created_at >= ?", 1.week.ago.utc).count %></h2>
+				<p>Leads this week</p>
+			</div>
+			<div class="large-6 columns text-center">
+				<h2 class="ubuntu logotext font3"><%= @listing.impressionist_count.where("created_at >= ?", 1.week.ago.utc) %></h2>
+				<p>Views this week</p>
+			</div>
+			<div class="large-6 columns text-center">
+				<h2 class="ubuntu font3 weight600"><%= @leads.count %></h2>
+				<p>Leads all time</p>
+			</div>
+			<div class="large-6 columns text-center">
+				<h2 class="ubuntu font3 weight600"><%= @listing.impressionist_count %></h2>
+				<p>Views all time</p>
+			</div>
+		</div>
+		<br><br><br><br><br><br><br><br><br><br>
+	</div>
+</div>
