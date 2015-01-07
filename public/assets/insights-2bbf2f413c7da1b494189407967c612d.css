@@ -1,0 +1,16 @@
+/* line 5, C:/Users/Callum/Documents/directory/app/assets/stylesheets/insights.css.scss */
+.datatype {
+  color: #999999;
+}
+
+/* line 9, C:/Users/Callum/Documents/directory/app/assets/stylesheets/insights.css.scss */
+.infotype {
+  font-family: ubuntu;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* line 15, C:/Users/Callum/Documents/directory/app/assets/stylesheets/insights.css.scss */
+span.datamargin {
+  margin-left: 1.3rem;
+}

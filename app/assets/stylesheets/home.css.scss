@@ -55,35 +55,33 @@ height: 2.5rem;
 
 #indexsearch:hover{
    transition-duration: 500ms;
-   background: rgba(237, 236, 235, 0.1);
 }
 
 #indexsearch:focus{
   opacity: 0.9;
-	background: rgba(237, 236, 235, 0.9);
   color: #414141;
   font-style: normal;
   font-weight: 500;
 }
 
 #indexsearch::-webkit-input-placeholder {
-   color: #c9c9c9;
+   color: #898989;
 }
 
 #indexsearch:focus::-webkit-input-placeholder{
-   color: #c9c9c9;
+   color: #898989;
 }
 
 #indexsearch:-moz-placeholder { /* Firefox 18- */
-   color: #c9c9c9;  
+   color: #898989;  
 }
 
 #indexsearch::-moz-placeholder {  /* Firefox 19+ */
-   color: #c9c9c9; 
+   color: #898989; 
 }
 
 #indexsearch:-ms-input-placeholder {  
-   color: #c9c9c9;
+   color: #898989;
 }
 
 .indexpostimageoverlay{

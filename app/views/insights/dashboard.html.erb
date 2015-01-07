@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="large-24 columns whitebg greyb1">
-		<div class="row bluebg padding2v">
+		<div class="row bluebg padding15v">
 			<div class="large-12 columns content2">
 				<h1 class="white font14 weight100">Franchise Insights</h1>
 			</div>
@@ -32,6 +32,33 @@
 				<p>Views all time</p>
 			</div>
 		</div>
-		<br><br><br><br><br><br><br><br><br><br>
+		<div class="row padding1t padding3b content">
+		  <div class="large-24 medium-24 columns row3">
+		    <h5 class="textup weight900 font085 grey genericborder">leads</h5>
+		    <% if @leads.count > 0 %>
+			    <% @leads.each do |lead| %>
+				    <div class="row lightestgreybg margin1v padding1v content">
+				    	<div class="large-4 columns">
+				    		<p class="margin0b margin0t infotype"><span class="datamargin"><span class="datatype">Name:</span> <%= lead.fullname %></span></p>
+				    	</div>
+				    	<div class="large-7 columns">
+			    		<p class="margin0b margin0t infotype"><span class="datamargin"><span class="datatype">Email:</span> <%= lead.email %></span></p>
+				    	</div>
+				    	<div class="large-4 columns">
+			    		<p class="margin0b margin0t infotype"><span class="datamargin"><span class="datatype">Phone:</span> <%= lead.phone %></span></p>
+				    	</div>
+				    	<div class="large-6 columns">
+			    		<p class="margin0b margin0t infotype"><span class="datamargin"><span class="datatype">Contact method:</span> <%= lead.method %></span></p>
+				    	</div>
+				    	<div class="large-2 columns text-right">
+				    		<p class="margin0b margin0t infotype"><%= lead.created_at.strftime("%d %b %Y") %></p>
+				    	</div>
+				    </div>
+			    <% end %>
+		    <% else %>
+		    <p class="padding2v text-center">Your listing has no leads yet</p>
+		    <% end %>
+		  </div>
+		</div>
 	</div>
 </div>

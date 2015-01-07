@@ -274,35 +274,33 @@ height: 2.3rem;
 
 #applicationsearch:hover{
    transition-duration: 500ms;
-   background: rgba(237, 236, 235, 0.1);
 }
 
 #applicationsearch:focus{
   opacity: 0.9;
-   background: rgba(237, 236, 235, 0.9);
   color: #424242;
   font-style: normal;
   font-weight: 500;
 }
 
 #applicationsearch::-webkit-input-placeholder {
-   color: #c9c9c9;
+   color: #898989;
 }
 
 #applicationsearch:focus::-webkit-input-placeholder{
-   color: #c9c9c9;
+   color: #898989;
 }
 
 #applicationsearch:-moz-placeholder { /* Firefox 18- */
-   color: #c9c9c9;  
+   color: #898989;  
 }
 
 #applicationsearch::-moz-placeholder {  /* Firefox 19+ */
-   color: #c9c9c9; 
+   color: #898989; 
 }
 
 #applicationsearch:-ms-input-placeholder {  
-   color: #c9c9c9;
+   color: #898989;
 }
 
 #mailersub{
@@ -320,24 +318,44 @@ padding-bottom: 0em;
 width: 20rem;
 }
 
+::-webkit-input-placeholder {
+   color: #898989;
+}
+
+:focus::-webkit-input-placeholder{
+   color: #898989;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #898989;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #898989; 
+}
+
+:-ms-input-placeholder {  
+   color: #898989;
+}
+
 #mailersub::-webkit-input-placeholder {
-   color: #424242;
+   color: #898989;
 }
 
 #mailersub:focus::-webkit-input-placeholder{
-   color: #424242;
+   color: #898989;
 }
 
 #mailersub:-moz-placeholder { /* Firefox 18- */
-   color: #424242;  
+   color: #898989;  
 }
 
 #mailersub::-moz-placeholder {  /* Firefox 19+ */
-   color: #424242; 
+   color: #898989; 
 }
 
 #mailersub:-ms-input-placeholder {  
-   color: #424242;
+   color: #898989;
 }
 
 #mailersubmit{
@@ -528,6 +546,10 @@ width: 6rem;
 
 .padding1b{
   padding-bottom: 1rem;
+}
+
+.padding3b{
+  padding-bottom: 3rem;
 }
 
 .padding05b{
@@ -3388,7 +3410,7 @@ select {
   padding: 0.5rem;
   font-size: 0.875rem;
   font-family: "Open Sans", sans-serif;
-  color: rgba(177, 169, 187, 1);
+  color: #898989;
   line-height: normal;
   border-radius: 0;
   height: 2.3125rem; }

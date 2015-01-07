@@ -42,7 +42,7 @@
           <%= image_tag('profile1.png') %>
         </li>
         <li>
-        <a href="<%= edit_franchise_registration_path %>"><p class="font09 margin0b lineheight24 weight600">Analytics</p></a>
+        <a href="<%= insights_dashboard_path %>"><p class="font09 margin0b lineheight24 weight600">Leads Panel</p></a>
         <%= link_to(destroy_franchise_session_path, :method => :delete) do %><p class="font07 margin0b lineheight8">Sign Out</p></a><% end %>
       <% else %>
         <li>
