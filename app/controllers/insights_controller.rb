@@ -1,5 +1,5 @@
 class InsightsController < ApplicationController
-	#before_action :authenticate_franchise!
+	before_action :authenticate_franchise!
 
   def dashboard
   	@listing = Listing.where(franchise_id: current_franchise.id)
