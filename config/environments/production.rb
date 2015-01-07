@@ -11,6 +11,8 @@ Rails.application.configure do
     password: ENV["SMTP_PASSWORD"]
 }
 
+  config.action_mailer.default_url_options = { host: 'https://uk-franchise.co.uk' }
+
   # Settings specified h take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.

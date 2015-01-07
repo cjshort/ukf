@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 	before_filter :spotlightnav
 
 	def spotlightnav
-	  @spotlightnav = Listing.where(approved: true, spotlight: true).order('created_at DESC').limit(2)
+	  @spotlightnav = Listing.where(approved: true, spotlight: true).order('created_at DESC').limit(3)
 	end
 
   def industrylist
