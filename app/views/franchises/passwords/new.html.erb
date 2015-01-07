@@ -1,12 +1,19 @@
-<h2>Forgot your password?</h2>
+<div class="row padding2v">
+	<div class="large-7 columns">
+		<br>
+	</div>
+	<div class="large-10 columns whitebg content padding2v greyb1 row1">
+		<h5>Franchise account recovery</h5>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+		<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+		  <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+		  <%= f.email_field :email, :placeholder => "Enter your account email address", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Enter your account email address'"  %>
 
-  <div><%= f.submit "Send me reset password instructions" %></div>
-<% end %>
-
-<%= render "franchises/shared/links" %>
+		  <div><%= f.submit "Send me reset password instructions", class: "font08 textup ubuntu white weight700 registrationsubmit" %></div>
+		<% end %>
+	</div>
+	<div class="large-7 columns">
+		<br>
+	</div>
+</div>

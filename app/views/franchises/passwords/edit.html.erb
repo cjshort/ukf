@@ -1,4 +1,9 @@
-<h2>Change your password</h2>
+<div class="row padding2v">
+	<div class="large-7 columns">
+		<br>
+	</div>
+	<div class="large-10 columns whitebg content padding2v greyb1 row1">
+<h5>Change your password</h5>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -10,7 +15,10 @@
   <div><%= f.label :password_confirmation, "Confirm new password" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
-  <div><%= f.submit "Change my password" %></div>
+  <div><%= f.submit "Change my password", class: "font08 textup ubuntu white weight700 registrationsubmit" %></div>
 <% end %>
-
-<%= render "franchises/shared/links" %>
+</div>
+	<div class="large-7 columns">
+		<br>
+	</div>
+</div>
