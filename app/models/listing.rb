@@ -1,7 +1,7 @@
 require 'elasticsearch/model'
 
 class Listing < ActiveRecord::Base
-  belongs_to :franchise
+  belongs_to :franchise, :dependent => :delete
   has_many :leads
   has_many :stories
 

@@ -62,7 +62,7 @@
 <nav class="top-bar" data-topbar role="navigation">
   <ul class="title-area">
     <li class="name">
-      <h1 class="logodisplay"><a href="<%= root_path %>"><span class="weight900">UKF</span>RANCHISE</a></h1>
+      <h1 class="logodisplay"><a href="<%= root_path %>" class="logotext"><span class="weight900">UKF</span>RANCHISE</a></h1>
     </li>
 
     <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
@@ -105,23 +105,23 @@
 <div class="yieldcontainer">
   <% if flash[:notice] %>
   <div class="row notice">
-    <div class="large-20 columns">
+    <div class="large-20 medium-20 small-18 padding15v content2 columns">
     <%= notice %>
     </div>
-    <div class="large-4 columns">
+    <div class="large-3 medium-3 small-6 noticearrowbg text-center padding15v columns">
       <a href="">X</a>
     </div>
   </div>
   <% end %>
   <% if flash[:alert] %>
-    <div class="row alert">
-      <div class="large-20 columns">
-      <%= alert %>
-      </div>
-      <div class="large-4 columns">
-        <a href="">X</a>
-      </div>
+  <div class="row alert">
+    <div class="large-20 medium-20 small-18 padding15v content2 columns">
+    <%= alert %>
     </div>
+    <div class="large-3 medium-3 small-6 alertarrowbg text-center padding15v columns">
+      <a href="">X</a>
+    </div>
+  </div>
   <% end %>  
     <%= yield %>
 </div>
@@ -140,7 +140,7 @@
         <ul class="no-bullet font08 textup margin0b margin3r">
           <li class="font09 weight700">Franchisors</li>
           <a href="<%= footerlinks_editlisting_path %>"><li>Edit your listing</li></a>
-          <a href="<%= new_listing_path %>"><li>Create your listing</li></a>
+          <a href="<%= new_franchise_registration_path %>"><li>Create your listing</li></a>
         </ul>
       </div>
       <div class="large-6 medium-6 columns content">

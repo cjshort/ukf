@@ -2,6 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.blogadditionals:hover{
+	background: image-url('moneyzoneicon.png');
+	background-repeat: no-repeat;
+	background-size: 17px;
+	background-position: 95% 90%;
+	transition-duration: 300ms;
+}
+
+.blogadditionals{
+	background: image-url('moneyzoneicon.png');
+	background-repeat: no-repeat;
+	background-size: 17px;
+	background-position: 110% 90%;
+	transition-duration: 300ms;
+}
+
 .catjump li:hover{
     background: #ececec;
 }

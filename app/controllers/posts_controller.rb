@@ -4,7 +4,6 @@ class PostsController < ApplicationController
   impressionist actions: [:show], unique: [:session_hash]
 
   def index
-  	@post = Post.new
     @post1 = Post.where(:approved => true).last
     @post2 = Post.where(:approved => true).offset(1).last
     @post3 = Post.where(:approved => true).offset(2).last

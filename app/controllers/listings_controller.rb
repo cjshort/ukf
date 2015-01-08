@@ -4,11 +4,7 @@ class ListingsController < ApplicationController
   impressionist actions: [:show], unique: [:session_hash]
   before_action :industrylist
   before_action :set_listing, only: [:show, :lead]
-
-  def new
-  	@listing = Listing.new
-  end
-
+  
   def create
     if params[:listing][:nickname].blank?
     	@listing = Listing.create(listing_params)
