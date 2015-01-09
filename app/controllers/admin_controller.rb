@@ -10,10 +10,12 @@ class AdminController < ApplicationController
   end
 
   def events
+    @newevent = Event.new
   	@events = Event.where(approved: false).reverse
   end
 
   def moneyzone
+    @newpost = Post.new
     @post = Post.where(approved: false).reverse
   end
 end

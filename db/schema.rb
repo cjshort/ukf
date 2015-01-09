@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150106205435) do
+ActiveRecord::Schema.define(version: 20150108204105) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -50,10 +50,10 @@ ActiveRecord::Schema.define(version: 20150106205435) do
     t.string   "postcode"
     t.string   "website"
     t.boolean  "approved",         default: false
-    t.boolean  "toc",              default: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "nickname"
+    t.string   "long"
+    t.string   "lat"
   end
 
   create_table "franchises", force: true do |t|

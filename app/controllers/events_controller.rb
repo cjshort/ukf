@@ -24,6 +24,8 @@ class EventsController < ApplicationController
   end
   
   def show
+    @event = Event.find(params[:id])
+    @metadesc = @event.shortdescription.truncate(250)
   end
 
   def edit

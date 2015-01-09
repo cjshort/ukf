@@ -2,9 +2,38 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#map-canvas img{
+	max-width : none;
+}
+
+.stattext{
+	margin-bottom: 0;
+	margin-top: 0;
+	padding-top: 0.7rem;
+}
+
+.statsrow{
+	border-bottom: 1px solid #c9c9c9;
+}
+
+.iconcolumn{
+	background: #e2e2e2;
+	padding: 0.5rem 0;
+}
+
 .eventsbg{
   background: #fff;
 	border-top: 2px solid #5B8E8C;
+}
+
+.datetext{
+	color: #949494;
+}
+
+.eventboxborder {
+border-top: 1px solid #ececec;
+border-left: 1px solid #ececec;
+border-bottom: 1px solid #ececec;
 }
 
 

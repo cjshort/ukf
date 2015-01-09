@@ -1,3 +1,26 @@
+   <%= form_for(@event) do |event| %>
+      <%= event.text_field :eventname, :placeholder => "Event Name", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Event Name'", class: "eventnewform" %>
+      <div class="row">
+      	<div class="large-11 columns">
+		      <%= event.text_field :startdate, :placeholder => "Start Date (DD/MM/YYYY)", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Start Date (DD/MM/YYYY)'", class: "eventnewform" %>
+		    </div>
+		    <div class="large-2 columns">
+		    	<br>
+		    </div>
+			  <div class="large-11 columns">
+		      <%= event.text_field :enddate, :placeholder => "End Date (DD/MM/YYYY)", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'End Date (DD/MM/YYYY)'", class: "eventnewform" %>
+		    </div>
+	      <%= event.text_area :shortdescription, :placeholder => "Short Description", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Short Description'", class: "eventnewform charlimit2 margin0b" %>
+        <div class="charcount2 margin1b text-right"></div>
+	      <%= event.text_field :region, :placeholder => "Region", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Region'", class: "eventnewform" %>
+	      <%= event.text_field :postcode, :placeholder => "Postal Code", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Postal Code'", class: "eventnewform" %>
+	      <%= event.text_field :website, :placeholder => "Event Website", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Event Website'", class: "eventnewform" %>
+	      <%= event.text_field :long, :placeholder => "long", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'long'", class: "eventnewform" %>
+	      <%= event.text_field :lat, :placeholder => "lat", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'lat'", class: "eventnewform" %>
+        <%= event.submit "Create Event", class: "margin1t" %>
+		  </div>
+    <% end %>
+
 <% @events.each do |event| %>
 <ul>
 	<li><%= event.eventname %></li>

@@ -16,42 +16,20 @@ meta title: ["The Money Zone", "UK Franchise"],
   <div class="large-14 columns content2 postheader">
     <%= image_tag('moneyzonelogo.png', class: "moneyzonelogo") %>
   </div>
-  <div class="large-10 columns content2 text-right">
+  <div class="large-10 medium-10 columns content2 text-right">
     <div class="row valign-normal right">
-    	<%= form_tag('/posts/subscribe', method: "post", id: "subscribe") do%>
-        <div class="large-18 columns text-right mailer">
-        	<%= email_field(:email, :email, {id: "mailersub", placeholder: "Sign up to our newsletter", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Sign up to our newsletter'" }) %>
+      <%= form_tag('/posts/subscribe', method: "post", id: "subscribe") do%>
+        <div class="large-18 medium-18 columns text-right mailer">
+          <%= email_field(:email, :email, {id: "mailersub", placeholder: "Sign up to our newsletter", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Sign up to our newsletter'" }) %>
         </div>
-        <div class="large-6 columns text-right mailer">
-	        <%= submit_tag("Submit", id: "mailersubmit", class: "ubuntu") %>
+        <div class="large-6 medium-6 columns text-right mailer">
+          <%= submit_tag("Submit", id: "mailersubmit", class: "ubuntu") %>
         </div>
       <% end %>
     </div>
   </div>
 </div>
 
-<div class="row darkgreybg postformcontainer padding3v" style="display: none;">
-	<div class="large-5 columns">
-		<br>
-	</div>
-	<div class="large-14 columns content">
-    <h4 class="weight100 margin1b white">Add a post to The Money Zone</h4>
-    <%= form_for(@post) do |post| %>
-	    <%= post.text_field :name, :placeholder => "Full Name", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Full Name'" %>
-	    <%= post.text_field :title, :placeholder => "Title", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Title'" %>
-	    <%= post.text_area :content, :placeholder => "Content", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Content'", class: "margin0b charlimit4 textareabig" %>
-	    <div class="charcount4 text-right white margin1b"></div>
-	    <%= post.text_field :website, :placeholder => "Website URL", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Website URL'" %>
-    	<%= post.text_field :nickname, class: "displaynone" %>
-      <%= post.check_box :toc %>
-      <%= post.label :toc, "I agree to the UKF terms and conditions", class: "textup offwhite" %>
-	    <%= post.submit "Submit Post", class: "textup" %>
-    <% end %>
-	</div>
-	<div class="large-5 columns">
-		<br>
-	</div>
-</div>
 
 
 
@@ -59,10 +37,6 @@ meta title: ["The Money Zone", "UK Franchise"],
     (function() {
 
         $(function() {
-
-          var elem = $(".charcount4");
-          $(".charlimit4").limiter(10000, elem);
-
 
           $(function() {
             $('.row1').matchHeight();
@@ -78,29 +52,6 @@ meta title: ["The Money Zone", "UK Franchise"],
 
           
         });
-
-				$('.postnewform')
-				.click(function() {
-				    // when click check input empty or not
-				    // if empty change border-bottom to yellow
-				    if($(this).val() == ""){
-				        $(this).css('border-bottom','1px solid #C0AE31');
-				    }
-				})
-
-				// when keyup check for valid name and change border-bottom to green
-				.keyup(function() {
-				    if($(this).length){
-				    $(this).css('border-bottom','1px solid rgb(74, 192, 49)');
-				    }
-				})
-
-				.keyup(function() {
-				    if($(this).val() ==""){
-				    $(this).css('border-bottom','1px solid #C0AE31');
-				    }
-				})
-				// when focusout return border-bottom to input border
 
     })();
 </script>
