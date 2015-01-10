@@ -21,12 +21,12 @@ Rails.application.routes.draw do
   get 'lead_form/new'
   get 'lead_form/create'
 
-  get 'posts/index'
+  get 'blog', to: 'posts#index'
   get 'posts/new'
   get 'posts/edit'
   get 'posts/show'
 
-  get 'events/index'
+  get 'events/', to: 'events#index'
   get 'events/new'
   get 'events/show'
   get 'events/edit'
@@ -88,12 +88,13 @@ Rails.application.routes.draw do
 
   resources :admin
 
-  resources :posts
+  resources :posts, :path => "blog"
   post 'posts/subscribe' => 'posts#subscribe'
 
   resources :events
 
   devise_for :admins
+
   root to: 'home#index'
 
   get 'home/index'

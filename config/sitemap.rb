@@ -2,7 +2,7 @@ require 'rubygems'
 require 'sitemap_generator'
 
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "http://www.uk-franchise.co.uk"
+SitemapGenerator::Sitemap.default_host = "https://www.uk-franchise.co.uk"
  
 # pick a place safe to write the files
 SitemapGenerator::Sitemap.public_path = 'tmp/'
@@ -63,6 +63,9 @@ SitemapGenerator::Sitemap.create do
 	end
 	Listing.all.each do |listing|
 		add listing_path(listing), :lastmod => listing.updated_at, :priority => 1
+	end
+	Event.all.each do |event|
+		add event_path(event), :lastmod => event.updated_at, :priority => 1
 	end
 end
 
