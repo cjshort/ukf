@@ -201,7 +201,7 @@ background-size: cover;
       });
 
       google.maps.event.addListener(marker, 'click', function() {
-        window.location.href = "<%= link_to(event) %>";
+        window.location.href = "<%= link_to event_path(event) %>";
       });
     <% end %>
 
