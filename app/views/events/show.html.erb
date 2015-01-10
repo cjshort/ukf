@@ -51,7 +51,7 @@ meta title: ["#{@event.eventname}", "UK Franchise"],
     ];
 
     var mapOptions = {
-      center: { lat: 52.734629, lng: 52.734629},
+      center: { lat: <%= @event.lat %>, <%= @event.long %>},
       zoom: 6
     };
 
