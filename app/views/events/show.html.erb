@@ -21,7 +21,7 @@ meta title: ["#{@event.eventname}", "UK Franchise"],
 			</div>
 		</div>
 
-    <p class="content padding2v font09 margin0b"><%= @event.shortdescription %></p>
+    <div class="content padding2v margin0b"><%= simple_format(@event.shortdescription, class: "font09", sanitize: true) %></div>
 
     <div class="row offwhitebg">
       <div class="large-2 small-4 columns content text-center iconcolumn">
