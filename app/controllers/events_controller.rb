@@ -24,16 +24,16 @@ class EventsController < ApplicationController
   end
   
   def show
-    @event = Event.find(params[:id])
+    @event = Event.friendly.find(params[:id])
     @metadesc = @event.shortdescription.truncate(250)
   end
 
   def edit
-    @event = Event.find(params[:id])
+    @event = Event.friendly.find(params[:id])
   end
 
   def update
-    @event = Event.find(params[:id])
+    @event = Event.friendly.find(params[:id])
     if @event.update(event_params)
       redirect_to admin_events_path, notice: 'Event was successfully updated.'
     else
