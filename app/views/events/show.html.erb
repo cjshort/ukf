@@ -51,7 +51,7 @@ meta title: ["#{@event.eventname}", "UK Franchise"],
     ];
 
     var mapOptions = {
-      center: { lat: <%= "#{@event.lat}" %>, <%= "#{@event.long}" %>},
+      center: { lat: <%= "#{@event.lat}" %>, <%= "#{@event.long}" %> },
       zoom: 6
     };
 
@@ -62,7 +62,7 @@ meta title: ["#{@event.eventname}", "UK Franchise"],
 
 
    var marker1 = new google.maps.Marker({
-    position: {lat: <%= "#{@event.lat}" %>, lng: <%= "#{@event.long}" %>},
+    position: {lat: <%= "#{@event.lat}" %>, lng: <%= "#{@event.long}" %> },
     map: map,
     title:"Hello World!"
     });
