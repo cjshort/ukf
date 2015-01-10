@@ -34,7 +34,7 @@ meta title: ["Franchise Events", "UK Franchise"],
 					<div class="singleevent">
 						<h3 class="font11 padding15t1b content"><%= event.eventname %></h3>
 						<p class="text-center textup margin0b content dateline"><%= event.startdate %> to <%= event.enddate %></p>
-						<p class="font08 padding1v content margin0b"><%= truncate("#{event.shortdescription}".gsub(/<[^<>]*>/, " "), :length => 250, :separator => '', :omission => "") %></p>
+						<p class="font09 padding1v content margin0b"><%= truncate("#{event.shortdescription}".gsub(/<[^<>]*>/, " "), :length => 250, :separator => '', :omission => "") %></p>
 						<p class="text-center textup margin0b content moreline font08">MORE INFORMATION</p>
 					</div>
         <% end %>
