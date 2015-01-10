@@ -193,7 +193,7 @@ background-size: cover;
     map.setOptions({styles: styles});
 
 
-    var image = "<%= image_path('maps-icon.png') %>"
+    var image = '<%= image_path('maps-icon.png') %>';
 
 
     <% @events.each do |event| %>
@@ -201,7 +201,7 @@ background-size: cover;
       var marker<%= event.id %> = new google.maps.Marker({
       position: {lat: <%= event.lat %>, lng: <%= event.long %>},
       map: map,
-      title:"<%= event.eventname %>"
+      title:"<%= event.eventname %>",
       icon: image
       });
 
