@@ -1,0 +1,195 @@
+/* line 5, C:/Users/Callum/Documents/directory/app/assets/stylesheets/events.css.scss */
+#map-canvas img {
+  max-width: none;
+}
+
+/* line 9, C:/Users/Callum/Documents/directory/app/assets/stylesheets/events.css.scss */
+.stattext {
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-top: 0.7rem;
+}
+
+/* line 15, C:/Users/Callum/Documents/directory/app/assets/stylesheets/events.css.scss */
+.statsrow {
+  border-bottom: 1px solid #c9c9c9;
+}
+
+/* line 19, C:/Users/Callum/Documents/directory/app/assets/stylesheets/events.css.scss */
+.iconcolumn {
+  background: #e2e2e2;
+  padding: 0.5rem 0;
+}
+
+/* line 24, C:/Users/Callum/Documents/directory/app/assets/stylesheets/events.css.scss */
+.eventsbg {
+  background: #fff;
+  border-top: 2px solid #5B8E8C;
+}
+
+/* line 29, C:/Users/Callum/Documents/directory/app/assets/stylesheets/events.css.scss */
+.datetext {
+  color: #949494;
+}
+
+/* line 33, C:/Users/Callum/Documents/directory/app/assets/stylesheets/events.css.scss */
+.eventboxborder {
+  border-top: 1px solid #ececec;
+  border-left: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
+}
+
+/* line 40, C:/Users/Callum/Documents/directory/app/assets/stylesheets/events.css.scss */
+.neweventplus {
+  padding-bottom: 3px;
+  padding-left: 3px;
+  height: 12px;
+}
+
+/* line 46, C:/Users/Callum/Documents/directory/app/assets/stylesheets/events.css.scss */
+.new_event textarea {
+  background: #f7f7f7;
+  box-shadow: none;
+  border: none;
+  color: #333;
+  border-bottom: 1px solid #262626 s;
+  font-size: 0.9rem;
+  font-weight: 100;
+  height: 5rem;
+}
+
+/* line 57, C:/Users/Callum/Documents/directory/app/assets/stylesheets/events.css.scss */
+.new_event textarea:focus {
+  background: #f7f7f7;
+  box-shadow: none;
+  border: none;
+  color: #333;
+  border-bottom: 1px solid #262626 s;
+  font-size: 0.9rem;
+  font-weight: 100;
+  height: 5rem;
+}
+
+/* line 69, C:/Users/Callum/Documents/directory/app/assets/stylesheets/events.css.scss */
+.new_event input[type="submit"] {
+  width: 100%;
+  border: none;
+  box-shadow: none;
+  background: #f7f7f7;
+  color: #333;
+  outline: none;
+  padding: 1rem 0;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  border-bottom: #4ac031 1px solid;
+  transition-duration: 300ms;
+}
+
+/* line 84, C:/Users/Callum/Documents/directory/app/assets/stylesheets/events.css.scss */
+.new_event input[type="submit"]:hover {
+  background: #ececec;
+}
+
+/* line 88, C:/Users/Callum/Documents/directory/app/assets/stylesheets/events.css.scss */
+.eventslogo {
+  padding-bottom: 0.65rem;
+  padding-right: 2.1rem;
+}
+
+/* line 93, C:/Users/Callum/Documents/directory/app/assets/stylesheets/events.css.scss */
+.addnewevent {
+  background: #ececec;
+  border-radius: 3px;
+  padding: 0.4em 3em;
+  font-weight: 500;
+}
+
+/* line 100, C:/Users/Callum/Documents/directory/app/assets/stylesheets/events.css.scss */
+.eventheader {
+  position: relative;
+  top: 0.8rem;
+}
+
+/* line 105, C:/Users/Callum/Documents/directory/app/assets/stylesheets/events.css.scss */
+.singleevent {
+  background: #fff;
+  border: 1px solid #ececec;
+  transition-duration: 300ms;
+}
+
+/* line 111, C:/Users/Callum/Documents/directory/app/assets/stylesheets/events.css.scss */
+.singleevent:hover {
+  border: 1px solid #dadada;
+  transition-duration: 300ms;
+}
+
+/* line 116, C:/Users/Callum/Documents/directory/app/assets/stylesheets/events.css.scss */
+.dateline {
+  background: #f0f0f0;
+  color: #696969;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* line 123, C:/Users/Callum/Documents/directory/app/assets/stylesheets/events.css.scss */
+.moreline {
+  background: #ececec;
+  color: #696969;
+  padding-top: 0.5rem;
+  padding-bottom: 0.4rem;
+}
+
+/* line 130, C:/Users/Callum/Documents/directory/app/assets/stylesheets/events.css.scss */
+.eventsformcontainer {
+  background: #e0e0e0;
+}
+
+/* line 134, C:/Users/Callum/Documents/directory/app/assets/stylesheets/events.css.scss */
+.new_event input[type="text"] {
+  background: #f7f7f7;
+  box-shadow: none;
+  border: none;
+  color: #333;
+  border-bottom: 1px solid #262626 s;
+  font-size: 1rem;
+  font-weight: 100;
+}
+
+/* line 144, C:/Users/Callum/Documents/directory/app/assets/stylesheets/events.css.scss */
+.new_event input[type="text"]:focus {
+  background: #fff;
+  box-shadow: none;
+  border: none;
+  color: #000;
+  border-bottom: 1px solid #262626 s;
+  font-size: 1rem;
+  font-weight: 100;
+}
+
+/* line 154, C:/Users/Callum/Documents/directory/app/assets/stylesheets/events.css.scss */
+.eventnewform::-webkit-input-placeholder {
+  color: #333;
+}
+
+/* line 158, C:/Users/Callum/Documents/directory/app/assets/stylesheets/events.css.scss */
+.eventnewform:focus::-webkit-input-placeholder {
+  color: #333;
+}
+
+/* line 162, C:/Users/Callum/Documents/directory/app/assets/stylesheets/events.css.scss */
+.eventnewform:-moz-placeholder {
+  /* Firefox 18- */
+  color: #333;
+}
+
+/* line 166, C:/Users/Callum/Documents/directory/app/assets/stylesheets/events.css.scss */
+.eventnewform::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #333;
+}
+
+/* line 170, C:/Users/Callum/Documents/directory/app/assets/stylesheets/events.css.scss */
+.eventnewform:-ms-input-placeholder {
+  color: #333;
+}

@@ -1,36 +1,36 @@
 <div class="row padding2v">
-	<div class="large-4 columns">
+	<div class="large-4 medium-2 columns">
 		<Br>
 	</div>
-	<div class="large-10 columns whitebg content padding2v greyb1 row1">
+	<div class="large-10 medium-12 columns whitebg content padding2v greyb1 row1">
 		<h5>Sign in to enable one-click-enquiry</h5>
 		<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 		<div class="row">
-			<div class="large-4 columns lightgreybg height100 formequal text-center">
+			<div class="large-4 medium-4 small-4 columns lightgreybg height100 formequal text-center">
 				<%= image_tag('aticon.png', class: "margin08v height17") %>
 			</div>
-			<div class="large-20 columns">
+			<div class="large-20 medium-20 small-20 columns">
 			  <%= f.email_field :email, class: "formequal", :placeholder => "Enter your email address", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Enter your email address'"  %>
 			</div>
 		</div>
 
 		<div class="row">
-			<div class="large-4 columns lightgreybg height100 formequal text-center">
+			<div class="large-4 medium-4 small-4 columns lightgreybg height100 formequal text-center">
 				<%= image_tag('passicon.png', class: "margin08v height17") %>
 			</div>
-			<div class="large-20 columns">
+			<div class="large-20 medium-20 small-20 columns">
 		    <%= f.password_field :password, autocomplete: "off", class: "formequal", :placeholder => "Enter your password", onfocus: "this.placeholder = ''", onblur: "this.placeholder = 'Enter your password'"  %>
 			</div>
 		</div>
 
 		<div class="row">
-			<div class="large-12 columns text-left">
+			<div class="large-12 medium-12 small-12 columns text-left">
 		  <% if devise_mapping.rememberable? -%>
 		    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
 		  <% end -%>
 			</div>
 
-		  <div class="large-12 columns text-right"><%= f.submit "Sign in", class: "font08 textup ubuntu white weight700 registrationsubmit" %></div>
+		  <div class="large-12 medium-12 small-12 columns text-right"><%= f.submit "Sign in", class: "font08 textup ubuntu white weight700 registrationsubmit" %></div>
 			<% end %>
 		</div>
 
@@ -38,7 +38,7 @@
 
 
 	</div>
-	<div class="large-6 columns lightestgreybg row1 content">
+	<div class="large-6 medium-8 columns lightestgreybg row1 content">
 		<div class="padding2v">
 			<p class="font1 margin05b">Not yet a user?</p>
 			<a href="<%= new_user_registration_path %>"><span class="font07 textup ubuntu registrationsbutton weight700">Sign Up</span></a>
@@ -48,7 +48,7 @@
 			<a href="<%= new_franchise_session_path %>"><span class="font07 textup ubuntu registrationsbutton weight700">Go to login</span></a>
 		</div>
 	</div>
-	<div class="large-4 columns">
+	<div class="large-4 medium-2 columns">
 		<Br>
 	</div>
 </div>

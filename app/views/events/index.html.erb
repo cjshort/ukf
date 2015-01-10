@@ -25,22 +25,24 @@ meta title: ["Franchise Events", "UK Franchise"],
 </div>
 
 
-<% @events.in_groups_of(3, false) do |row_event| %>
-	<div class="row padding3t content">
+<div class="row">
+<% @events.in_groups_of(2, false) do |row_event| %>
+	<div class="row padding1v marginminus04h">
 		<% for event in row_event %>
-			<div class="large-8 columns content">
-				<a href="<%= event.website %>">
+  		<div class="large-12 columns content1">
+				<%= link_to event_path(event), 'data-no-turbolink' => true do %>
 					<div class="singleevent">
-						<h4 class="font095 padding15t1b content"><span class="weight600"><%= event.eventname %></span><br> <span class="weight100">in</span> <%= event.region %>, <%= event.postcode %></h4>
+						<h3 class="font11 padding15t1b content"><%= event.eventname %></h3>
 						<p class="text-center textup margin0b content dateline"><%= event.startdate %> to <%= event.enddate %></p>
-						<p class="font08 padding1v content"><%= event.shortdescription %></p>
-						<a href="#"><p class="text-center textup margin0b content moreline font08">MORE INFORMATION</p></a>
+						<p class="font08 padding1v content margin0b"><%= truncate("#{event.shortdescription}".gsub(/<[^<>]*>/, " "), :length => 250, :separator => '', :omission => "") %></p>
+						<p class="text-center textup margin0b content moreline font08">MORE INFORMATION</p>
 					</div>
-				</a>
-			</div>
-		<% end %>
+        <% end %>
+      </div>
+    <% end %>
 	</div>
 <% end %>
+</div>
 
 <div class="row">
 	<div class="large-24 columns padding15v">

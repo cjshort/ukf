@@ -33,6 +33,7 @@ color: #ABABAB !important;
 ul.dropdown li a {
 color: #424242 !important;
 }
+
 .genericborder{
   border-bottom: 2px solid #414141;
 }
@@ -65,7 +66,7 @@ font-family: "Ubuntu";
 }
 
 .yieldcontainer{
-  padding: 1rem 2rem;
+  padding: 0.5rem 2rem;
 }
 
 .alert{
@@ -518,6 +519,11 @@ width: 6rem;
   padding-bottom: 0.3rem;
 }
 
+.padding02v{
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+}
+
 .padding2v{
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -690,6 +696,10 @@ padding-bottom: 1.2rem;
   background:#fff;
 }
 
+.greybluebg{
+  background: #5B8E8C;
+}
+
 .height85{
   height: 85%;
 }
@@ -738,6 +748,10 @@ padding-bottom: 1.2rem;
 
 .greyb1{
   border: 1px solid #E4E4E4;
+}
+
+.lightborder{
+  border: 1px solid #c9c9c9;
 }
 
 .darkgreybg2{
@@ -3542,6 +3556,7 @@ meta.foundation-mq-topbar {
 .contain-to-grid {
   width: 100%;
   padding: 0 2rem;
+  margin-bottom: 1rem;
 background: #EAEAEA;
 background: -moz-linear-gradient(top,#eaeaea 0%,#f9f9f9 100%);
 background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#eaeaea),color-stop(100%,#f9f9f9));

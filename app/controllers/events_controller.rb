@@ -3,7 +3,7 @@ class EventsController < ApplicationController
     :only => [:edit, :update]
 
   def index
-    @events = Event.where(:approved => true)
+    @events = Event.all
   end
 
   def create
