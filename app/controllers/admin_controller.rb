@@ -15,7 +15,6 @@ class AdminController < ApplicationController
   end
 
   def moneyzone
-    @newpost = Post.new
-    @post = Post.where(approved: false).reverse
+    @post = Post.new
   end
 end

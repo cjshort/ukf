@@ -1,10 +1,15 @@
-<% @post.each do |post| %>
-<ul>
-	<li><%= post.name %></li>
-	<li><%= post.title %></li>
-	<li><%= post.content %></li>
-	<li><%= post.website %></li>
-	<li><%= post.approved %></li>
-	<li><%= link_to 'Finalise', edit_post_path(post) %></li>
-</ul>
-<% end %>
+ <%= form_for(@post) do |post| %>
+	 <%= post.label :image %>
+   <%= post.text_field :image %>
+   <%= post.label :title %>
+   <%= post.text_field :title %>
+	 <%= post.label :content %>
+   <%= post.text_area :content %>
+	 <%= post.label :name %>
+   <%= post.text_field :name %>
+	 <%= post.label :website %>
+   <%= post.text_field :website %>
+	 <%= post.label :approved %>
+   <%= post.text_field :approved %>
+   <%= post.submit %>
+ <% end %>
