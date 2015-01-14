@@ -45,48 +45,56 @@ meta title: ["The Money Zone", "UK Franchise"],
 
 <div class="row padding2t">
   <div class="large-15 columns">
-    <div class="postimage1">
-      <div class="postimageoverlay1 content2 row1 padding10t1b">
-          <h1 class="margin0b margin0t white weight100 font2 padding05b"><%= @post1.title %></h1>
-          <p class="white weight100 font09 posttitleborder">Posted by <span class="italic weight600"><%= @post1.name %></span> on <span class="italic"><%= @post1.created_at.strftime("%b %d, %Y") %></span></p>
+    <%= link_to post_path(@post1) do %>
+      <div class="postimage1">
+        <div class="postimageoverlay1 content2 row1 padding10t1b">
+            <h1 class="margin0b margin0t white weight500 font2 padding05b ubuntu"><%= @post1.title %></h1>
+            <p class="white weight100 font09 posttitleborder">Posted by <span class="italic weight600"><%= @post1.name %></span> on <span class="italic"><%= @post1.created_at.strftime("%b %d, %Y") %></span></p>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
   <div class="large-9 columns">
-    <div class="postimage2">
-      <div class="postimageoverlay content2 row1 padding10t1b">
-          <h2 class="margin0b margin0t white weight100 font14 padding05b"><%= @post2.title %></h2>
-          <p class="white weight100 font09 posttitleborder">Posted by <span class="italic weight600"><%= @post2.name %></span> on <span class="italic"><%= @post2.created_at.strftime("%b %d, %Y") %></span></p>
+    <%= link_to post_path(@post2) do %>
+      <div class="postimage2">
+        <div class="postimageoverlay1 content2 row1 padding10t1b">
+            <h2 class="margin0b margin0t white weight500 font14 padding05b ubuntu"><%= @post2.title %></h2>
+            <p class="white weight100 font09 posttitleborder">Posted by <span class="italic weight600"><%= @post2.name %></span> on <span class="italic"><%= @post2.created_at.strftime("%b %d, %Y") %></span></p>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
 
 <div class="row">
   <div class="large-12 columns text-left">
-    <div class="postimage3">
-      <div class="postimageoverlay content2">
-        <div class="row valign-middle row2 padding3v">
-          <div class="large-24 columns">
-            <h3 class=" margin0t white weight100 font12"><%= @post3.title %></h3>
-            <p class="white weight100 font07 posttitleborder margin0b">Posted by <span class="italic weight600 margin0b"><%= @post3.name %></span> on <span class="italic"><%= @post2.created_at.strftime("%b %d, %Y") %></span></p>
+    <%= link_to post_path(@post3) do %>
+      <div class="postimage3">
+        <div class="postimageoverlay1 content2">
+          <div class="row valign-middle row2 padding3v">
+            <div class="large-24 columns">
+              <h3 class=" margin0t white weight500 font12 ubuntu"><%= @post3.title %></h3>
+              <p class="white weight100 font07 posttitleborder margin0b">Posted by <span class="italic weight600 margin0b"><%= @post3.name %></span> on <span class="italic"><%= @post2.created_at.strftime("%b %d, %Y") %></span></p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    <% end %>
   </div>
 
   <div class="large-12 columns text-left">
-    <div class="postimage4">
-      <div class="postimageoverlay content2">
-        <div class="row valign-middle row2 padding3v">
-          <div class="large-24 columns">
-            <h3 class=" margin0t white weight100 font12"><%= @post4.title %></h3>
-            <p class="white weight100 font07 posttitleborder margin0b">Posted by <span class="italic weight600 margin0b"><%= @post4.name %></span> on <span class="italic"><%= @post4.created_at.strftime("%b %d, %Y") %></span></p>
+    <%= link_to post_path(@post4) do %>
+      <div class="postimage4">
+        <div class="postimageoverlay1 content2">
+          <div class="row valign-middle row2 padding3v ubuntu">
+            <div class="large-24 columns">
+              <h3 class=" margin0t white weight500 font12 ubuntu"><%= @post4.title %></h3>
+              <p class="white weight100 font07 posttitleborder margin0b">Posted by <span class="italic weight600 margin0b"><%= @post4.name %></span> on <span class="italic"><%= @post4.created_at.strftime("%b %d, %Y") %></span></p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
 
