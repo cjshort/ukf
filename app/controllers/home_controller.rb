@@ -8,6 +8,9 @@ class HomeController < ApplicationController
   	@spotlight = Listing.where(approved: true, spotlight: true).order('created_at DESC').limit(3)
   	@events = Event.all
     @post1 = Post.where(:approved => true).last
+    @additional1 = Post.where(:approved => true).offset(1).last
+    @additional2 = Post.where(:approved => true).offset(2).last
+    @additional3 = Post.where(:approved => true).offset(3).last
   end
 
   def search
