@@ -6,8 +6,20 @@ meta title: ["The Money Zone", "UK Franchise"],
 
 <style>
 .postimage1{
-	background: url("https://unsplash.imgix.net/photo-1416339442236-8ceb164046f8?q=75&fm=jpg&s=8eb83df8a744544977722717b1ea4d09");
+	background: url("<%= @post1.image %>");
 	background-size: cover;
+}
+.postimage2{
+  background: url("<%= @post2.image %>");
+  background-size: cover;
+}
+.postimage3{
+  background: url("<%= @post3.image %>");
+  background-size: cover;
+}
+.postimage4{
+  background: url("<%= @post4.image %>");
+  background-size: cover;
 }
 </style>
 
@@ -26,6 +38,54 @@ meta title: ["The Money Zone", "UK Franchise"],
           <%= submit_tag("Submit", id: "mailersubmit", class: "ubuntu") %>
         </div>
       <% end %>
+    </div>
+  </div>
+</div>
+
+
+<div class="row padding2t">
+  <div class="large-15 columns">
+    <div class="postimage1">
+      <div class="postimageoverlay1 content2 row1 padding10t1b">
+          <h1 class="margin0b margin0t white weight100 font2 padding05b"><%= @post1.title %></h1>
+          <p class="white weight100 font09 posttitleborder">Posted by <span class="italic weight600"><%= @post1.name %></span> on <span class="italic"><%= @post1.created_at.strftime("%b %d, %Y") %></span></p>
+      </div>
+    </div>
+  </div>
+  <div class="large-9 columns">
+    <div class="postimage2">
+      <div class="postimageoverlay content2 row1 padding10t1b">
+          <h2 class="margin0b margin0t white weight100 font14 padding05b"><%= @post2.title %></h2>
+          <p class="white weight100 font09 posttitleborder">Posted by <span class="italic weight600"><%= @post2.name %></span> on <span class="italic"><%= @post2.created_at.strftime("%b %d, %Y") %></span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-12 columns text-left">
+    <div class="postimage3">
+      <div class="postimageoverlay content2">
+        <div class="row valign-middle row2 padding3v">
+          <div class="large-24 columns">
+            <h3 class=" margin0t white weight100 font12"><%= @post3.title %></h3>
+            <p class="white weight100 font07 posttitleborder margin0b">Posted by <span class="italic weight600 margin0b"><%= @post3.name %></span> on <span class="italic"><%= @post2.created_at.strftime("%b %d, %Y") %></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="large-12 columns text-left">
+    <div class="postimage4">
+      <div class="postimageoverlay content2">
+        <div class="row valign-middle row2 padding3v">
+          <div class="large-24 columns">
+            <h3 class=" margin0t white weight100 font12"><%= @post4.title %></h3>
+            <p class="white weight100 font07 posttitleborder margin0b">Posted by <span class="italic weight600 margin0b"><%= @post4.name %></span> on <span class="italic"><%= @post4.created_at.strftime("%b %d, %Y") %></span></p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
