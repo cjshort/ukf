@@ -21,12 +21,11 @@ meta title: ["Care Franchises", "UK Franchise"],
 					</div>
 					<p class="font08 content3 lightergreybg padding1v margin0b"><%= truncate("#{listing.longdescription}".gsub(/<[^<>]*>/, " "), :length => 250, :separator => '', :omission => "...") %></p>
 					<div class="row lightgreybg padding05v">
-						<div class="large-12 columns text-center">
+					<div class="row lightgreybg padding05v">
+						<div class="large-24 columns text-center">
 							<h4 class="font08 margin0b margin0t"><%= image_tag('listingicon1.png', class: "listingicon") %><span class="listingicontext"><%= listing.franchisename %></span></h4>
 						</div>
-						<div class="large-12 columns text-center">
-							<h4 class="font08 margin0b margin0t"><%= image_tag('listingicon2.png', class: "listingicon") %><span class="listingicontext"><%= listing.mininvestment %></span></h4>
-						</div>
+					</div>
 					</div>
 					<p class="text-center textup white margin0b padding05v font07 viewfranchiseprofile">VIEW FRANCHISE PROFILE</p>
 				</div>
