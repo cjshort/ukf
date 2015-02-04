@@ -102,7 +102,7 @@ meta title: ["The Money Zone", "UK Franchise"],
   <div class="large-18 columns whitebg content2 padding1v row3">
     <% @postlist.each do |post| %>
     <div class="textcontainer padding1v">
-      <p class="bloglistinfo weight100 font08 posttitleborder margin0b">Posted by <span class="italic weight600 margin0b"><%= post.name %></span> on <span class="italic"><%= post.created_at.strftime("%b %d, %Y") %></span></p>
+      <p class="weight100 font08 posttitleborder margin0b">Posted by <span class="italic weight600 margin0b"><%= post.name %></span> on <span class="italic"><%= post.created_at.strftime("%b %d, %Y") %></span></p>
       <h4 class="ubuntu font13 weight500"><%= post.title %></h4>
       <p class="margin0b font08"><%= truncate("#{post.content}".gsub(/<[^<>]*>/, " "), :length => 500, :separator => '', :omission => "") %><%= link_to post_path(post) do %><span class="bloglistreadmore">READ MORE</span><% end %></p>
     </div>
