@@ -98,6 +98,28 @@ meta title: ["The Money Zone", "UK Franchise"],
   </div>
 </div>
 
+<div class="row">
+  <div class="large-18 columns whitebg content2 padding1v row3">
+    <% @postlist.each do |post| %>
+    <div class="textcontainer padding1v">
+      <h4 class="ubuntu font13 weight500"><%= post.title %><span class="bloglistinfo weight100 font08 posttitleborder margin0b">Posted by <span class="italic weight600 margin0b"><%= post.name %></span> on <span class="italic"><%= post.created_at.strftime("%b %d, %Y") %></span></span></h4>
+      <p class="margin0b font08"><%= truncate("#{post.content}".gsub(/<[^<>]*>/, " "), :length => 250, :separator => '', :omission => "") %><%= link_to post_path(post) do %><span class="bloglistreadmore">READ MORE</span><% end %></p>
+    </div>
+    <% end %>
+  </div>
+  <div class="large-6 columns lightergreybg padding1v text-center row3">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- blogmain -->
+    <ins class="adsbygoogle"
+    style="display:inline-block;width:300px;height:600px"
+    data-ad-client="ca-pub-3449156753114364"
+    data-ad-slot="9484357734"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  </div>
+</div>
+
 
 
 
@@ -112,6 +134,10 @@ meta title: ["The Money Zone", "UK Franchise"],
 
           $(function() {
             $('.row2').matchHeight();
+          });
+
+          $(function() {
+            $('.row3').matchHeight();
           });
 
           $(function() {
