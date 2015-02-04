@@ -99,16 +99,16 @@ meta title: ["The Money Zone", "UK Franchise"],
 </div>
 
 <div class="row">
-  <div class="large-18 columns whitebg content2 padding1v row3">
+  <div class="large-18 medium-18 columns whitebg content2 padding1v row3">
     <% @postlist.each do |post| %>
     <div class="textcontainer padding1v">
       <p class="weight100 font08 posttitleborder margin0b">Posted by <span class="italic weight600 margin0b"><%= post.name %></span> on <span class="italic"><%= post.created_at.strftime("%b %d, %Y") %></span></p>
       <h4 class="ubuntu font13 weight500"><%= post.title %></h4>
-      <p class="margin0b font08"><%= truncate("#{post.content}".gsub(/<[^<>]*>/, " "), :length => 500, :separator => '', :omission => "") %><%= link_to post_path(post) do %><span class="bloglistreadmore">READ MORE</span><% end %></p>
+      <p class="margin0b font08"><%= truncate("#{post.content}".gsub(/<[^<>]*>/, "..."), :length => 500, :separator => '', :omission => "") %><%= link_to post_path(post) do %><span class="bloglistreadmore">READ MORE</span><% end %></p>
     </div>
     <% end %>
   </div>
-  <div class="large-6 columns lightergreybg padding1v text-center row3">
+  <div class="large-6 medium-6 columns lightergreybg padding1v text-center row3">
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <!-- blogmain -->
     <ins class="adsbygoogle"
