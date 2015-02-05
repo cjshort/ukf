@@ -4,7 +4,7 @@ class HomeController < ApplicationController
   end
 
   def index
-  	@latest = Listing.where(approved: true, topfranchise: true).order('created_at DESC').limit(4)
+  	@latest = Listing.where(approved: true, topfranchise: true).order('created_at DESC').limit(5)
   	@spotlight = Listing.where(approved: true, spotlight: true).order('created_at DESC').limit(3)
   	@events = Event.all
     @post1 = Post.where(:approved => true).last
