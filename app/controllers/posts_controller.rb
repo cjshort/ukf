@@ -8,7 +8,7 @@ class PostsController < ApplicationController
     @post2 = Post.where(:approved => true).offset(1).last
     @post3 = Post.where(:approved => true).offset(2).last
     @post4 = Post.where(:approved => true).offset(3).last
-    @postlist = Post.where(:approved => true).offset(4)
+    @postlist = Post.all.reverse.drop(1)
   end
 
   def subscribe
