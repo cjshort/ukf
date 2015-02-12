@@ -8,7 +8,7 @@ class PostsController < ApplicationController
     @post2 = Post.where(:approved => true).offset(1).last
     @post3 = Post.where(:approved => true).offset(2).last
     @post4 = Post.where(:approved => true).offset(3).last
-    @postlist = Post.where(:approved => true).all(:order => 'created_at DESC', :limit => 1000).offset(4)
+    @postlist = Post.where(:approved => true).all(:order => 'created_at DESC', :limit => 1000)
   end
 
   def subscribe
