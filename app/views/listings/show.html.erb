@@ -91,9 +91,11 @@ meta title: ["#{@listing.franchisename}", "UK Franchise"],
         </script>
       </div>
   </div>
-  <div class="large-16 columns row1 whitebg content3 padding2v">
-    <h1 class="font16 margin1b"><%= @listing.franchisename %><h1> 
-    <%= simple_format(@listing.longdescription, class: "font09", sanitize: true) %>
+  <div class="large-16 columns row1 whitebg">
+    <h1 class="font16 margin1b content3 darkgreycontainer padding2v lightgreybg margin0b weight600"><%= @listing.franchisename %><h1> 
+    <div class="padding2v content3">
+      <%= simple_format(@listing.longdescription, class: "font09", sanitize: true) %>
+    </div>
   </div>
 </div>
 
